@@ -1,0 +1,67 @@
+@media only screen and (max-width: 769px) {
+  .community3-starter-h {
+    color: #333;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+    right: 305px;
+  }
+
+  .community3-starter-p {
+    color: #555;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 200px;
+  }
+
+  .grp-cat-mb {
+    color: #333;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .comm-grp-cats-mb {
+    transform: scale(0.7);
+    position: relative;
+    right: 103px;
+  }
+
+  .comm-grp-cats-mb {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(3, auto); /* Three rows */
+    position: relative;
+    left: -40px;
+    bottom: 30px;
+  }
+
+  .Create-new-dis-cont-mb {
+    transform: scale(0.7);
+    position: relative;
+    right: 115px;
+    bottom: 130px;
+  }
+
+  .new-topic-form-l input {
+    width: 300px;
+  }
+
+  .new-topic-form input {
+    width: 300px;
+  }
+
+  .dis-btn {
+    transform: scale(0.7);
+  }
+}

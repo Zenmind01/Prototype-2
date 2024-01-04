@@ -1,0 +1,131 @@
+.nav-container {
+  width: 1519px;
+  height: 88px;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: -2px 2px 8px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* To position elements at each end of the flex container */
+  align-items: center; /* To vertically center items within the navbar */
+}
+
+.nav-logo {
+  width: 163.83px;
+  height: 56px;
+  flex-shrink: 0;
+  padding-top: 16px;
+  padding-left: 42px;
+}
+
+.nav-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-search input {
+  width: 428px;
+  height: 56px;
+  border-radius: 100px;
+  border: none;
+  padding-left: 50px;
+  background: url("../images/search.png") no-repeat 13px;
+  background-color: #f2f2f2;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.nav-icons img {
+  cursor: pointer;
+}
+
+#mb-view-class-1 {
+  display: none;
+}
+
+.ham-img {
+  display: none;
+  cursor: pointer;
+}
+
+.sign-search {
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-container {
+    width: 360px;
+    height: 56px;
+    flex-shrink: 0;
+    background: #fff;
+    box-shadow: -2px 2px 8px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    width: 81px;
+    height: 28px;
+    flex-shrink: 0;
+    padding-top: 16px;
+    padding-left: 42px;
+    position: relative;
+    bottom: 10px;
+    right: 25px;
+  }
+
+  .nav-search input {
+    /* width: 428px;
+    height: 56px;
+    border-radius: 100px;
+    border: none;
+    padding-left: 50px;
+    background: url("../images/search.png") no-repeat 13px;
+    background-color: #f2f2f2; */
+
+    display: none;
+  }
+  .mb-view-class {
+    display: none;
+  }
+
+  .comm-sub-img2-up {
+    width: 28px;
+    height: 23px;
+  }
+
+  #mb-view-class-1 {
+    display: block;
+  }
+
+  .ham-img {
+    display: block;
+  }
+
+  .sign-img {
+    display: none;
+  }
+
+  .nav-logo-mb {
+    width: 81.914px;
+    height: 21.516px;
+    position: relative;
+    top: 10px;
+  }
+
+  .noti-img-mb {
+    height: 21px;
+  }
+
+  .sign-search {
+    display: flex;
+  }
+}

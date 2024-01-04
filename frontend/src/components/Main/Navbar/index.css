@@ -1,0 +1,268 @@
+.Navbar {
+  width: calc(100% - 240px);
+  height: 95px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 120px;
+  padding-right: 120px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.Navbar-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  width: 100%;
+}
+
+.main-logo {
+  height: 50px;
+  width: 150px;
+  float: left;
+}
+
+.nav-options {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  gap: 36px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.auth1 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+}
+
+.auth2 {
+  color: #1fa9ab;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+}
+.options {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.nav-options div {
+  cursor: pointer;
+  transition: font-weight 0.2s ease-in-out;
+}
+
+.fontweight6 {
+  font-weight: 600;
+}
+
+.auth1,
+.auth2 {
+  font-size: 16px;
+  border-radius: 50px;
+  height: 47px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(37, 206, 209, 1);
+  transition: 0.2s;
+}
+
+.auth1 {
+  background-color: rgba(37, 206, 209, 1);
+  color: white;
+}
+
+.auth2 {
+  color: #1fa9ab;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 769px) {
+  .auth1 {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px; /* 193.75% */
+    letter-spacing: 0.32px;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 0;
+  }
+
+  .Navbar {
+    width: 360px;
+    height: 56px;
+    flex-shrink: 0;
+    background: #fff;
+    box-shadow: -2px 2px 8px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .hamburger-menu {
+    width: 16px;
+    height: 14.4px;
+    flex-shrink: 0;
+    stroke-width: 2.5px;
+    stroke: #24b8bb;
+    position: relative;
+    left: 110px;
+    bottom: 30px;
+  }
+
+  .auth2 {
+    color: #1fa9ab;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px; /* 193.75% */
+    letter-spacing: 0.32px;
+    text-transform: capitalize;
+  }
+
+  .auth1,
+  .auth2 {
+    font-size: 16px;
+    border-radius: 50px;
+    height: 47px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 2px solid rgba(37, 206, 209, 1);
+    transition: 0.2s;
+  }
+
+  .auth1 {
+    background-color: rgba(37, 206, 209, 1);
+    color: white;
+    display: flex;
+    position: relative;
+
+    text-align: center;
+    align-items: center;
+  }
+
+  .options {
+    text-align: left;
+  }
+
+  .logo-res {
+    width: 81.914px;
+    height: 26.516px;
+    flex-shrink: 0;
+  }
+
+  .auth2 {
+    color: #1fa9ab;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px; /* 193.75% */
+    letter-spacing: 0.32px;
+    text-transform: capitalize;
+  }
+
+  .hamburger-menu {
+    display: block;
+    font-size: 2.5rem;
+  }
+
+  .nav-options {
+    display: none;
+  }
+
+  .main-logo {
+    position: relative;
+    right: 90px;
+    bottom: 3px;
+  }
+
+  .mobile-menu-link {
+    position: relative;
+    top: 320px;
+    right: 255px;
+    left: -200px;
+    z-index: 99;
+    animation: fadeIn 0.5s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  .options-1 {
+    width: 150px;
+  }
+
+  .mobile-menu-link {
+    background-color: white;
+    height: 550px;
+    display: grid;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    padding-top: 30p;
+    transform-origin: top;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .mobile-menu-link div {
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: ;
+  }
+
+  .Navbar {
+    z-index: 100;
+  }
+}

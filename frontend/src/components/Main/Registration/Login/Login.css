@@ -1,0 +1,429 @@
+.signup {
+  display: flex; /* Use flexbox to create a row layout */
+  justify-content: space-between; /* Add space between the left and right sides */
+  align-items: center;
+  padding-top: 39px;
+}
+
+.left {
+  flex: 1; /* Take up 50% of the available space */
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.right {
+  flex: 1; /* Take up 50% of the available space */
+  width: 600px;
+  height: 800px;
+  flex-shrink: 0;
+}
+
+.sign-up-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.auth-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  padding-top: 16px;
+}
+
+.fb-button {
+  display: flex;
+  width: 214px;
+  height: 58px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  color: #333;
+  text-align: center;
+  font-family: Rounded Mplus 1c;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+  border: none;
+}
+
+.divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.form-control {
+  width: 463px;
+  height: 56px;
+  border-radius: 5px;
+  background: #f2f2f2;
+  border: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  overflow: hidden;
+  color: #333;
+  text-overflow: ellipsis;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.star {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #fa2020;
+  text-overflow: ellipsis;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  text-transform: lowercase;
+}
+
+.group {
+  padding-bottom: 24px;
+}
+
+.group-2 {
+  padding-bottom: 8px;
+}
+
+.form-group .eye-image {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  top: 643px;
+  left: 575px;
+  cursor: pointer;
+}
+
+.button-signup {
+  display: flex;
+  width: 136px;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 16px;
+  background: #25ced1;
+  box-shadow: 0px 8px 20px 0px rgba(37, 206, 209, 0.15);
+  border: none;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.Sign-up-box {
+  display: flex;
+  height: 123px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 40px;
+}
+
+/* =========== Typography =============== */
+
+.form-title {
+  color: #333;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31px; /* 96.875% */
+  letter-spacing: 0.64px;
+  text-transform: capitalize;
+}
+
+.sign-up-box p {
+  color: #333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 172.222% */
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.sign-up-box p a {
+  color: #25ced1;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.divider {
+  color: #7b7b7b;
+  text-align: center;
+  font-family: Rounded Mplus 1c;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+}
+
+.form-check-label {
+  color: #333;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px; /* 221.429% */
+  letter-spacing: 0.28px;
+  text-transform: capitalize;
+}
+
+.Sign-up-box p {
+  color: #333;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 200% */
+  letter-spacing: 0.24px;
+  text-transform: capitalize;
+}
+
+.Sign-up-box a {
+  color: #333;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 200% */
+  letter-spacing: 0.32px;
+  text-decoration-line: underline;
+  text-transform: capitalize;
+}
+
+.line {
+  width: 179.003px;
+  height: 0.5px;
+  background: #999;
+}
+
+.or-divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.divider {
+  margin: 8px 0; /* Adjust the margin for spacing */
+}
+
+@media only screen and (max-width: 600px) {
+  .right {
+    display: none;
+  }
+
+  .form-reg {
+    position: relative;
+    left: 5px;
+  }
+
+  .form-control {
+    width: 320px;
+    height: 56px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    border: none;
+  }
+
+  .form-control-email {
+    width: 320px;
+  }
+
+  .Sign-up-box {
+    display: flex;
+    height: 123px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 40px;
+    position: relative;
+    right: 20px;
+  }
+
+  .auth-button {
+    display: block;
+    align-items: flex-start;
+    gap: 36px;
+    padding-top: 16px;
+    position: relative;
+    left: 45px;
+  }
+
+  .form-group .eye-image-1 {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    top: 645px;
+    left: 300px;
+    cursor: pointer;
+  }
+
+  .fb-button {
+    display: flex;
+    width: 214px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    color: #333;
+    text-align: center;
+    font-family: Rounded Mplus 1c;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px; /* 193.75% */
+    letter-spacing: 0.32px;
+    text-transform: capitalize;
+    border: none;
+    margin-bottom: 20px;
+  }
+  .signup-eyeimg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    top: 290px;
+    left: 280px;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 140.003px;
+    height: 0.5px;
+    background: #999;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .right {
+    display: none;
+  }
+
+  .form-reg {
+    position: relative;
+    left: 5px;
+  }
+
+  .form-control {
+    width: 320px;
+    height: 56px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    border: none;
+  }
+
+  .Sign-up-box {
+    display: flex;
+    height: 123px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 40px;
+    position: relative;
+    right: 20px;
+  }
+
+  .auth-button {
+    display: block;
+    align-items: flex-start;
+    gap: 36px;
+    padding-top: 16px;
+    position: relative;
+    left: 45px;
+  }
+
+  .fb-button {
+    display: flex;
+    width: 214px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    color: #333;
+    text-align: center;
+    font-family: Rounded Mplus 1c;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px; /* 193.75% */
+    letter-spacing: 0.32px;
+    text-transform: capitalize;
+    border: none;
+    margin-bottom: 20px;
+  }
+  .signup-eyeimg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    top: 290px;
+    left: 280px;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 140.003px;
+    height: 0.5px;
+    background: #999;
+  }
+}
