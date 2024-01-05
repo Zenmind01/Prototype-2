@@ -89,4 +89,9 @@
     position: relative;
     left: 21px;
   }
+
+  .landing-image-1 {
+    position: relative;
+    right: 1120px;
+  }
 }

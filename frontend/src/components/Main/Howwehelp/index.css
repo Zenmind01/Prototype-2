@@ -752,6 +752,20 @@
     font-size: 20px;
   }
 
+  .reviews {
+    margin-top: 88px;
+    width: 1225px;
+    height: 569px;
+    flex-shrink: 0;
+    padding-left: 150px;
+    border-radius: 20px;
+    border: white, white;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: none;
+
+    /* background-color: red; */
+  }
+
   .text {
     color: #666;
     font-family: Roboto;
@@ -802,6 +816,8 @@
     height: 358.655px;
     align-items: flex-start;
     gap: 21.627px;
+    position: relative;
+    left: -150px;
   }
 
   .pc-img {

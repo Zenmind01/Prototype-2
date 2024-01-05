@@ -893,6 +893,38 @@
     display: none;
   }
 
+  .dashboard-right-mb {
+    position: relative;
+    right: 5px;
+  }
+
+  .community-meeting-flex {
+    width: 380px;
+  }
+
+  .upcoming-session-mb-2-chat {
+    padding-top: 30px;
+  }
+
+  .upcoming-session-mb-comm2 {
+    position: relative;
+    left: 20px;
+  }
+
+  .dash-counsellor-banner-mb-d {
+    margin-bottom: 40px;
+  }
+
+  .upcoming-session-box-mb-flex-bot {
+    position: relative;
+    left: 110px;
+  }
+
+  .upcoming-session-mb-date-us {
+    position: relative;
+    left: 20px;
+  }
+
   .dashboard-card2 {
     width: 148px;
     height: 100px;

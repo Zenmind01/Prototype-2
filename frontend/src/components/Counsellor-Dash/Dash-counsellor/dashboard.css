@@ -247,6 +247,11 @@
     gap: 10px; /* Gap between items */
   }
 
+  .dash-right-mb-c {
+    position: relative;
+    left: 18px;
+  }
+
   .last-container-u {
     display: block;
   }

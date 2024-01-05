@@ -422,7 +422,7 @@ const session = () => {
               </div>
             </div>
 
-            <div className="prev-session-mb">
+            <div className="prev-session-mb prev-session-mb-1">
               <div className="mb-prev">
                 <div className="mb-prev-rl">
                   <div className="mb-profile">
@@ -726,7 +726,7 @@ const session = () => {
               <div class="view-more">View More</div>
             </div>
 
-            <div className="dash-counsellor-banner-mb">
+            <div className="dash-counsellor-banner-mb dash-counsellor-banner-mb-se">
               <img
                 className="dash-counsellor-banner-mb-imgl"
                 src={LeftCounBanner}

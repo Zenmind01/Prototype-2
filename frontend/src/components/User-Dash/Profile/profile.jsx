@@ -215,7 +215,7 @@ const Dashboard = () => {
 
           <div className="profile-ques-cont">
             <div className="profile-ques">
-              <div className="profile-ques-content">
+              <div className="profile-ques-content profile-ques-content-up">
                 What are you seeking help for?
               </div>
               <div className="profile-ques-input">
@@ -291,7 +291,10 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div onClick={_handleSubmit} className="profile-save-btn">
+          <div
+            onClick={_handleSubmit}
+            className="profile-save-btn profile-save-btn-mb"
+          >
             Save
           </div>
         </div>

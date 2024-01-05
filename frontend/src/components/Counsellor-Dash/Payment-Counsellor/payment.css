@@ -426,6 +426,14 @@
     line-height: normal;
   }
 
+  .payment-starter-right {
+    display: none;
+  }
+
+  .payment-starter {
+    width: 400px;
+  }
+
   .det-btn {
     display: flex;
     padding: 5px 8px;

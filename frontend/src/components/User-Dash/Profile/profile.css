@@ -211,6 +211,10 @@
 }
 
 @media only screen and (max-width: 720px) {
+  .profile-save-btn-mb {
+    position: relative;
+    bottom: 200px;
+  }
   .profile-left {
     display: none;
   }
@@ -249,6 +253,12 @@
     align-items: flex-start;
     gap: 105px;
     padding-left: 111.5px;
+  }
+
+  .profile-ques-cont {
+    transform: scale(0.85);
+    position: relative;
+    bottom: 200px;
   }
 
   .profile-form {
@@ -304,13 +314,24 @@
   .profile-ques-content {
     color: #333;
     font-family: Roboto;
-    font-size: 30px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.4px;
     padding-bottom: 24px;
     width: 300px;
+  }
+
+  .profile-img-merge {
+    transform: scale(0.9);
+    position: relative;
+    right: 800px;
+  }
+
+  .profile-save-btn-mb {
+    position: relative;
+    top: -320px;
   }
 
   .profile-ques-input {

@@ -395,6 +395,9 @@
     grid-template-columns: auto auto; /* Two columns */
     grid-template-rows: auto auto; /* Two rows */
     gap: 10px; /* Gap between grid items */
+    transform: scale(0.9);
+    position: relative;
+    bottom: 80px;
   }
 
   .comm-container {

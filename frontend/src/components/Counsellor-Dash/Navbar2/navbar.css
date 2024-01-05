@@ -58,7 +58,7 @@
 
 @media only screen and (max-width: 768px) {
   .nav-container {
-    width: 360px;
+    width: 400px;
     height: 56px;
     flex-shrink: 0;
     background: #fff;

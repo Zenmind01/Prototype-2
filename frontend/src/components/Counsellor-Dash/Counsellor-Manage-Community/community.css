@@ -9,7 +9,7 @@
   }
 
   .comm-grp-chats-container {
-    width: 312px;
+    width: 350px;
     height: 1119px;
     flex-shrink: 0;
     border-radius: 10px;
@@ -29,6 +29,11 @@
     width: 60px;
     position: relative;
     left: -610px;
+  }
+
+  .community2-starter-l-mb {
+    position: relative;
+    right: 15px;
   }
 
   .grp-cat-mn1 {

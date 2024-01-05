@@ -713,6 +713,17 @@
     display: none;
   }
 
+  .prev-session-mb-1 {
+    position: relative;
+    right: 18px;
+    margin-bottom: -80px;
+  }
+
+  .dash-counsellor-banner-mb-se {
+    margin-bottom: 40px;
+    margin-top: -40px;
+  }
+
   .questions-flex img {
     display: none;
   }

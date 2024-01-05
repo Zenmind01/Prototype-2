@@ -122,8 +122,13 @@
     padding: 0;
   }
 
+  .Sign-up-box {
+    position: relative;
+    left: 8px;
+  }
+
   .Navbar {
-    width: 360px;
+    width: 150px;
     height: 56px;
     flex-shrink: 0;
     background: #fff;

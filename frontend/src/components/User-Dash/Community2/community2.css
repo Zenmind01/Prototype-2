@@ -324,8 +324,14 @@
     flex-direction: column;
   }
 
+  .comm-grp-cats {
+    transform: scale(0.8);
+    position: relative;
+    right: 20px;
+  }
+
   .comm-grp-chats-container {
-    width: 312px;
+    width: 320px;
     height: 1119px;
     flex-shrink: 0;
     border-radius: 10px;
@@ -335,6 +341,11 @@
     padding-left: 31px;
     padding-top: 30px;
     margin-bottom: 43px;
+  }
+
+  .comm-grp-cat {
+    position: relative;
+    right: 15px;
   }
 
   .comm-grp-chats-p {
@@ -411,6 +422,11 @@
     padding: 0px 10px;
     align-items: flex-start;
     gap: 26px;
+  }
+
+  .comm-grp-chats-container {
+    position: relative;
+    right: 15px;
   }
 
   .comm-grp-chats-container {

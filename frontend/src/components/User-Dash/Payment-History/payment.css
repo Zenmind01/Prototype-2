@@ -394,6 +394,10 @@
     gap: 53px;
   }
 
+  .payment-starter-right {
+    display: none;
+  }
+
   .pay-his-c-p {
     display: flex;
     justify-content: center;

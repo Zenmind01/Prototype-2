@@ -41,4 +41,9 @@
   .prev-session-mb {
     display: flex;
   }
+
+  .prev-session-mb-sc {
+    position: relative;
+    right: 18px;
+  }
 }
