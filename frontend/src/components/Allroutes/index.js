@@ -47,7 +47,7 @@ export default function Allroutes() {
         <Route path="/about" element={<Aboutus />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/counsellors" element={<Counsellors />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         {/* <Route path='/' element={<Dashbaord2/>}/> */}
         <Route path="/dashboard2" element={<Dashbaord2 />} />
         <Route path="/session" element={<Session />} />
