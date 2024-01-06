@@ -288,3 +288,19 @@
     right: 45px;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .mission-content {
+    font-size: 18px;
+  }
+
+  .team-members {
+    width: 1250px;
+  }
+
+  .header-team {
+    position: relative;
+    left: 270px;
+    padding-bottom: 20px;
+  }
+}

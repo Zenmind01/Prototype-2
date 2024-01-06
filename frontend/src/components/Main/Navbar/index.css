@@ -291,4 +291,17 @@
   .options-1 {
     width: 150px;
   }
+
+  .Navbar {
+    width: 1540px;
+    height: 95px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 120px;
+    padding-right: 120px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+  }
 }
