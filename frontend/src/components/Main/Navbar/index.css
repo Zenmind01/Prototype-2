@@ -268,7 +268,7 @@
 
   .Navbar {
     z-index: 100;
-    position: sticky;
+    position: fixed;
   }
 }
 
