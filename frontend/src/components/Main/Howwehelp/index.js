@@ -13,6 +13,13 @@ import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
 
 function How() {
+  const openLink = () => {
+    // Replace 'your-link-here' with the desired URL
+    window.open(
+      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
+      "_blank"
+    );
+  };
   return (
     <>
       <div className="how-section">
@@ -35,7 +42,11 @@ function How() {
             </motion.div>
             <motion.div>
               <img className="blue-img" src={Blue}></img>
-              <motion.div whileHover={{ scale: 1.1 }} className="cwc-btn">
+              <motion.div
+                onClick={openLink}
+                whileHover={{ scale: 1.1 }}
+                className="cwc-btn"
+              >
                 Chat with chatbot
               </motion.div>
             </motion.div>

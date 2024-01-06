@@ -36,6 +36,13 @@ import Navbar from "../Navbar/navbar";
 import { Link } from "react-router-dom";
 
 const session = () => {
+  const openLink = () => {
+    // Replace 'your-link-here' with the desired URL
+    window.open(
+      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
+      "_blank"
+    );
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -62,7 +69,7 @@ const session = () => {
                 <div>Session</div>
               </a>
             </div>
-            <a className="admin-list">
+            <a onClick={openLink} className="admin-list">
               <img src={ChatbotIcon} alt="Chatbot" />
               <div>Chatbot</div>
             </a>

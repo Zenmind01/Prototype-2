@@ -85,7 +85,7 @@
 }
 
 .counsellor-form-control {
-  width: 498px;
+  width: 488px;
   height: 56px;
   flex-shrink: 0;
   border-radius: 8px;
@@ -127,7 +127,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 20px 446px 20px 16px;
+  /* padding: 20px 446px 20px 16px; */
+}
+
+.counsellor-form-control {
+  padding-left: 10px;
 }
 
 .counsellor-work-content {
@@ -294,4 +298,50 @@
   line-height: 31px; /* 155% */
   letter-spacing: 0.4px;
   text-transform: capitalize;
+}
+.cross-close {
+  position: relative;
+  left: 820px;
+  bottom: 10px;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup {
+    top: -875px;
+    height: 2900px;
+  }
+
+  .popup-content {
+    left: -309px;
+    height: 1100px;
+    width: 300px;
+  }
+
+  .counsellor-form-row1,
+  .counsellor-form-row2,
+  .counsellor-work-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .counsellor-form-control {
+    width: 300px;
+  }
+
+  .popup-close-btn {
+    position: relative;
+    right: 10px;
+  }
+
+  .cross-close {
+    position: relative;
+    left: 90px;
+    bottom: 10px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+  }
 }

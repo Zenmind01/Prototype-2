@@ -16,6 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const _handleSubmit = async function (e) {
+    navigate("/dashboard2");
     e.preventDefault();
 
     // const axios = require("axios");

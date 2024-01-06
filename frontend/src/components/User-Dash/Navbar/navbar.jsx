@@ -49,6 +49,14 @@ const Navbar = () => {
     setPopupVisible(false);
   };
 
+  const openLink = () => {
+    // Replace 'your-link-here' with the desired URL
+    window.open(
+      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
+      "_blank"
+    );
+  };
+
   return (
     <>
       <div className="nav-container">
@@ -104,7 +112,7 @@ const Navbar = () => {
                 <img src={SessionIcon} alt="Session" />
                 <div>Session</div>
               </a>
-              <a className="admin-list">
+              <a onClick={openLink} className="admin-list">
                 <img src={ChatbotIcon} alt="Chatbot" />
                 <div>Chatbot</div>
               </a>

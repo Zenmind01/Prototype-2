@@ -75,6 +75,10 @@
   border: none;
 }
 
+.form-control::placeholder {
+  padding-left: 5px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;

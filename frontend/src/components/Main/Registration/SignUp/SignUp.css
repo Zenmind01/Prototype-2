@@ -73,6 +73,10 @@ input {
   letter-spacing: 0.32px;
 }
 
+.form-control {
+  padding-left: 10px;
+}
+
 .left {
   flex: 1; /* Take up 50% of the available space */
   align-items: center;
