@@ -651,4 +651,14 @@
     position: relative;
     left: 290px;
   }
+
+  .counsellor-register {
+    left: -140px;
+    top: 120px;
+  }
+
+  .counsellor-footer-register {
+    left: 250px;
+    top: 2260px;
+  }
 }
