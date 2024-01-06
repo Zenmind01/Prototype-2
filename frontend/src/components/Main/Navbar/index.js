@@ -115,7 +115,7 @@ function Navbar() {
         </div>
       </div>
       {isPopupVisible && (
-        <Bounce left>
+        <Fade left>
           <div
             onClose={closePopup}
             className="dashboard2-left dashboard2-left-mb dashboard2-left-slide"
@@ -149,7 +149,7 @@ function Navbar() {
               </a>
             </div>
           </div>
-        </Bounce>
+        </Fade>
       )}
     </>
   );

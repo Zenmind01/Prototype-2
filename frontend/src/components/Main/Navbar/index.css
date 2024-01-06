@@ -276,6 +276,11 @@
   .admin-options-h {
     margin-top: 130px;
     gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    align-items: center;
   }
 }
 
