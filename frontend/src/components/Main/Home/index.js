@@ -3,7 +3,7 @@ import "./index.css";
 import doctor from "../Images/Mask_group.png";
 import How from "../Howwehelp";
 import Footer from "../Footer";
-import Navbar from "../Navbar";
+import Navbar from "../Navbar/index";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
 

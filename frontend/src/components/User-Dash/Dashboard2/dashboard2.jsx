@@ -33,7 +33,7 @@ const Dashboard = () => {
     <>
       <Navbar></Navbar>
       <div className="dashboard-main">
-        <div className="dashboard2-left">
+        <div className="dashboard2-left dashboard2-left-d">
           <div className="dashboard-profile">
             <img src={Profile} alt="Profile" />
             <div className="dash-profile-name">Martin Stanton</div>

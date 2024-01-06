@@ -14,6 +14,10 @@
   box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
 }
 
+.dashboard2-left-d {
+  height: 2000px;
+}
+
 .dashboard-profile {
   display: inline-flex;
   flex-direction: column;
@@ -30,7 +34,7 @@
   align-items: flex-start;
 }
 
-.admin-list {
+.dashboard2-left-d .admin-list {
   display: flex;
   justify-content: center;
   align-items: center;

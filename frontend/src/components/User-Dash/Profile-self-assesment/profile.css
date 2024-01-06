@@ -9,6 +9,10 @@
   flex-shrink: 0;
 }
 
+.dashboard1-left-sa {
+  height: -800px;
+}
+
 .profile-starter-h {
   color: #333;
   font-family: Roboto;

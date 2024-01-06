@@ -2,9 +2,9 @@ import React from "react";
 import "./session.css";
 
 import Profile from "../images/user-profile.png";
-import DashboardIcon from "../images/dashnboard-icon.png";
+import DashboardIcon from "../images/session-w.png";
 import ProfileIcon from "../images/profile-icon.png";
-import SessionIcon from "../images/session-icon.png";
+import SessionIcon from "../images/dash-b.png";
 import ChatbotIcon from "../images/chat-icon.png";
 import CommunityIcon from "../images/community-icon.png";
 import PackageIcon from "../images/package-icon.png";
