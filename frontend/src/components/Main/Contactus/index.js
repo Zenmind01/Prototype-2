@@ -13,7 +13,7 @@ function ContactUs() {
         intial={{ width: 0 }}
         animate={{ width: "85%" }}
         exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
-        className="main-content"
+        className="main-content main-content-con"
       >
         <div className="hero">
           <img
