@@ -330,6 +330,11 @@ input {
     left: 5px;
   }
 
+  .signup {
+    position: relative;
+    top: 70px;
+  }
+
   .form-control {
     width: 320px;
     height: 56px;

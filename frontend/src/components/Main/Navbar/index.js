@@ -8,6 +8,19 @@ import Home from "../Home/index";
 import Signup from "../Registration/SignUp/SignUp";
 import Login from "../Registration/Login/Login";
 import Fade from "react-reveal/Fade";
+import Navbar2 from "../Navbar2/navbar";
+import Bounce from "react-reveal/Bounce";
+import PerInfo from "../Images/online-business.png";
+import DashIcon from "../Images/home.png";
+import CommunityIcon from "../Images/add-user.png";
+import ProfileIcon from "../Images/group.png";
+import SessionIcon from "../Images/contact-us.png";
+import ChatbotIcon from "../Images/chat-icon.png";
+import Notification from "../Images/user.png";
+import Signout from "../Images/sign-out.png";
+import Hamburger from "../Images/hamburger.png";
+import Profile from "../Images/user-profile.png";
+import DashboardIcon from "../Images/dashnboard-icon.png";
 
 function Navbar() {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
@@ -36,6 +49,26 @@ function Navbar() {
   };
   const counsellor = () => {
     navigate("/counsellors");
+  };
+
+  const openLink = () => {
+    // Replace 'your-link-here' with the desired URL
+    window.open(
+      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
+      "_blank"
+    );
+  };
+
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  // Function to open the popup
+  const openPopup = () => {
+    setPopupVisible(true);
+  };
+
+  // Function to close the popup
+  const closePopup = () => {
+    setPopupVisible(false);
   };
   return (
     <>
@@ -74,14 +107,51 @@ function Navbar() {
             </div>
           </div>
           <div className="hamburger-menu">
-            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+            <a href="#">
               {/* <GiHamburgerMenu />  */}
-              <img src={Hambur}></img>
+              <img onClick={openPopup} src={Hambur}></img>
             </a>
           </div>
           {/* </Fade> */}
         </div>
       </div>
+      {isPopupVisible && (
+        <Bounce left>
+          <div
+            onClose={closePopup}
+            className="dashboard2-left dashboard2-left-mb dashboard2-left-slide"
+          >
+            <div className="admin-options">
+              <a href="/home" className="admin-list">
+                <img src={DashIcon} alt="Profile" />
+                <div>Home</div>
+              </a>
+              <a href="/about" className="admin-list">
+                <img src={ProfileIcon} alt="Profile" />
+                <div>About us</div>
+              </a>
+              <a href="/counsellors" className="admin-list">
+                <img className="comm-sub-img2-up" src={PerInfo}></img>
+                <div>Our Counsellor</div>
+              </a>
+
+              <a href="/contactus" className="admin-list">
+                <img src={SessionIcon} alt="Session" />
+                <div>Contact us</div>
+              </a>
+
+              <a href="/signup" className="admin-list">
+                <img src={CommunityIcon} alt="Community" />
+                <div>Sign Up</div>
+              </a>
+              <a href="/login" className="admin-list">
+                <img src={Notification}></img>
+                <div>Login</div>
+              </a>
+            </div>
+          </div>
+        </Bounce>
+      )}
     </>
   );
 }

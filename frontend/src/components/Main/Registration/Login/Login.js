@@ -131,7 +131,7 @@ const Login = () => {
                 ></input>
                 {/* Dynamically change the eye icon based on the show state */}
                 <img
-                  className="eye-image eye-image-1"
+                  className="eye-image eye-image-1 eye-login"
                   onClick={handleShow}
                   src={show ? close : open}
                   alt="Show/Hide Password"
