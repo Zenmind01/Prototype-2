@@ -43,7 +43,7 @@ function Navbar() {
         <div className="Navbar-content">
           <div className="logo">
             <a href="/home">
-              <img src={zenlogo} className="main-logo logo-res" />
+              <img src={zenlogo} className="main-logo logo-res logo-res-1" />
             </a>
           </div>
           {/* <Fade top> */}

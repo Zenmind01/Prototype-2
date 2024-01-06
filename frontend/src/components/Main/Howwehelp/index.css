@@ -884,3 +884,26 @@
     width: 300px;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .heading {
+    position: relative;
+    left: 260px;
+  }
+
+  .b-header {
+    position: relative;
+    left: 260px;
+  }
+
+  .text {
+    width: 600px;
+    text-align: left;
+    padding-right: 500px;
+  }
+
+  .register-business {
+    position: relative;
+    left: 500px;
+  }
+}

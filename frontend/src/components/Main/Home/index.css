@@ -95,3 +95,10 @@
     right: 1120px;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .free-assessment {
+    position: relative;
+    left: 100px;
+  }
+}

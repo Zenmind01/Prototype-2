@@ -271,3 +271,25 @@
     z-index: 100;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .logo-res-1 {
+    position: relative;
+    right: 80px;
+    transform: scale(0.9);
+  }
+
+  .nav-options {
+    transform: scale(0.8);
+    position: relative;
+    left: -130px;
+  }
+
+  .options {
+    width: 100px;
+  }
+
+  .options-1 {
+    width: 150px;
+  }
+}
