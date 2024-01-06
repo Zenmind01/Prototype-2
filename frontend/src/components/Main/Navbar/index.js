@@ -8,7 +8,6 @@ import Home from "../Home/index";
 import Signup from "../Registration/SignUp/SignUp";
 import Login from "../Registration/Login/Login";
 import Fade from "react-reveal/Fade";
-import Navbar2 from "../Navbar2/navbar";
 import Bounce from "react-reveal/Bounce";
 import PerInfo from "../Images/online-business.png";
 import DashIcon from "../Images/home.png";
@@ -121,7 +120,7 @@ function Navbar() {
             onClose={closePopup}
             className="dashboard2-left dashboard2-left-mb dashboard2-left-slide"
           >
-            <div className="admin-options">
+            <div className="admin-options-h">
               <a href="/home" className="admin-list">
                 <img src={DashIcon} alt="Profile" />
                 <div>Home</div>
