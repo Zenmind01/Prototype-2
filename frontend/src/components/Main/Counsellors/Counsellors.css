@@ -645,3 +645,10 @@
     /* right: 70px; */
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .counsellor-container {
+    position: relative;
+    left: 290px;
+  }
+}
