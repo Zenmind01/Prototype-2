@@ -5,14 +5,7 @@ import dashboard2 from "../Dashboard2/dashboard2.css";
 import { PiArrowCircleRightFill } from "react-icons/pi";
 import Cookies from "js-cookie";
 
-import Profile from "../images/user-profile.png";
-import DashboardIcon from "../images/dashnboard-icon.png";
-import ProfileIcon from "../images/profile-icon.png";
-import SessionIcon from "../images/session-icon.png";
-import ChatbotIcon from "../images/chat-icon.png";
-import CommunityIcon from "../images/community-icon.png";
-import PackageIcon from "../images/package-icon.png";
-import PaymentIcon from "../images/payment-icon.png";
+
 import Bot from "../images/bot-logo.png";
 import Back from "../images/back.png";
 import ZenBlue from "../images/zen-blue.png";
@@ -21,13 +14,17 @@ import Navbar from "../Navbar/navbar";
 
 import OpenAI from "openai";
 
+
+
 export const Chat = ({ id, name }) => {
   const [chats, setChats] = useState([]);
   const [loading, setloading] = useState(false);
   const [message, setMessage] = useState("");
-
+  //const [apiKey,setApiKey] = useState(process.env.API_SECRET);
+ 
+   
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "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",
     dangerouslyAllowBrowser: true,
   });
   const prompt = `
@@ -43,6 +40,7 @@ export const Chat = ({ id, name }) => {
 `;
 
   async function openAI(message) {
+    
     const completion = await openai.chat.completions.create({
       messages: [
         {
@@ -119,34 +117,34 @@ export const Chat = ({ id, name }) => {
     setMessage("");
     console.log(chats);
     setloading(true);
-    // await openAI(message).then((value) => {
-    //   //value = JSON.parse(value)
-    //   //console.log(value.response)
-    //   // value = value.message || value.error || value.response;
-    //   console.log(typeof value + "  --> " + value);
-    //   setMessages((prev) => [
-    //     ...prev,
-    //     {
-    //       text: value,
-    //       sender: "zen",
-    //       recipient: "user",
-    //       _id: Date.now(),
-    //     },
-    //   ]);
-    // });
-    setChats((prev) => [
-      ...prev,
-      {
-        text: "i am zen bot",
-        sender: "zen",
-        recipient: "user",
-        _id: Date.now(),
-      },
-    ]);
+    await openAI(message).then((value) => {
+      //value = JSON.parse(value)
+      //console.log(value.response)
+      // value = value.message || value.error || value.response;
+      //console.log(typeof value + "  --> " + value);
+      setChats((prev) => [
+        ...prev,
+        {
+          text: value,
+          sender: "zen",
+          recipient: "user",
+          _id: Date.now(),
+        },
+      ]);
+    });
+    // setChats((prev) => [
+    //   ...prev,
+    //   {
+    //     text: "i am zen bot",
+    //     sender: "zen",
+    //     recipient: "user",
+    //     _id: Date.now(),
+    //   },
+    // ]);
 
     setloading(false);
 
-    console.log(chats);
+   
   }
 
   return (
