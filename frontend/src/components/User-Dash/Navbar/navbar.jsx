@@ -112,7 +112,7 @@ const Navbar = () => {
                 <img src={SessionIcon} alt="Session" />
                 <div>Session</div>
               </a>
-              <a href="/chat" onClick={openLink} className="admin-list">
+              <a href="/chat" className="admin-list">
                 <img src={ChatbotIcon} alt="Chatbot" />
                 <div>Chatbot</div>
               </a>

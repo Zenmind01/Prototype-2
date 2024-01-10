@@ -49,7 +49,7 @@ const community2 = () => {
               <div>Session</div>
             </a>
 
-            <a onClick={openLink} className="admin-list">
+            <a href="/chat" className="admin-list">
               <img src={ChatbotIcon} alt="Chatbot" />
               <div>Chatbot</div>
             </a>

@@ -38,10 +38,11 @@ import { Link } from "react-router-dom";
 const session = () => {
   const openLink = () => {
     // Replace 'your-link-here' with the desired URL
-    window.open(
-      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
-      "_blank"
-    );
+    window
+      .open
+      // "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
+      // "_blank"
+      ();
   };
   return (
     <>
@@ -69,7 +70,7 @@ const session = () => {
                 <div>Session</div>
               </a>
             </div>
-            <a href="/chat" onClick={openLink} className="admin-list">
+            <a href="/chat" className="admin-list">
               <img src={ChatbotIcon} alt="Chatbot" />
               <div>Chatbot</div>
             </a>
