@@ -1,0 +1,223 @@
+.addpayment-starter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-bottom: 37px;
+}
+
+.addpayment-starter-u {
+  color: #333;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.addpayment-starter-l {
+  color: #555;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.addpayment-bank {
+  display: flex;
+  align-items: flex-start;
+  gap: 830px;
+}
+
+.addpayment-bank-h {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.addpayment-bank-btn {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #ffb800;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.addpayment-bank-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.addpayment-bank-col {
+  display: flex;
+  align-items: flex-start;
+  gap: 103px;
+}
+
+.addpayment-bank-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.addpayment-bank-row label {
+  color: #333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.addpayment-bank-row input {
+  display: flex;
+  width: 402px;
+  padding: 14px 26px 14px 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #eee;
+  border: none;
+}
+
+::placeholder {
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input[type="text"] {
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.oth-modes-div {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 63px;
+  cursor: pointer;
+}
+
+.oth-modes-btn {
+  display: inline-flex;
+  padding: 16px 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: #25ced1;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 63px;
+  margin-left: 478px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 769px) {
+  .addpayment-starter-u {
+    color: #333;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .addpayment-starter-l {
+    color: #555;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .addpayment-bank-h {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 300px;
+    padding-bottom: 37px;
+  }
+
+  .addpayment-bank-btn {
+    display: none;
+  }
+
+  .addpayment-bank-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .addpayment-bank-row input {
+    display: flex;
+    width: 280px;
+    padding: 14px 26px 14px 16px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #eee;
+    border: none;
+  }
+
+  .oth-modes-div {
+    display: none;
+  }
+
+  .oth-modes-btn {
+    display: inline-flex;
+    padding: 16px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: #25ced1;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 63px;
+    margin-left: 88px;
+    cursor: pointer;
+    transform: scale(0.7);
+  }
+}

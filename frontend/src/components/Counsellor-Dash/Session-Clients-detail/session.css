@@ -1,0 +1,331 @@
+.csess-dashboard-left-client {
+  width: 316px;
+  height: 1650px;
+  flex-shrink: 0;
+}
+
+.client-details-starter {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-bottom: 32px;
+}
+
+.client-details-starter-h {
+  color: #333;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.client-details-starter-p {
+  color: #555;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.user-info-flex {
+  display: flex;
+  align-items: center;
+  gap: 322px;
+}
+
+.user-info-l {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.session-btn-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-info-box-h {
+  color: #333;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.48px;
+}
+
+.user-info-box-p {
+  color: #555;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+.session-btn-join {
+  display: flex;
+  height: 44px;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  background: #25ced1;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 172.222% */
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.session-btn-res {
+  display: flex;
+  height: 44px;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #25ced1;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 10px;
+  border: 1px solid #25ced1;
+}
+
+.session-btn-cl {
+  display: flex;
+  height: 44px;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #ffa5a5;
+  color: #ff8080;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.session-more-info {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  padding-top: 28px;
+  padding-bottom: 56px;
+}
+
+.session-clients-booking-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 146px;
+  padding-bottom: 28px;
+}
+
+.session-clients-booking {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.session-client-booking-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.session-client-booking-box-h {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.4px;
+}
+
+.session-client-booking-box-p {
+  color: #666;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px; /* 172.222% */
+  letter-spacing: 0.36px;
+  width: 321px;
+}
+
+.session-clients-booking-l {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.client-report-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.client-report {
+  color: #566a95;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  padding-bottom: 56px;
+}
+
+.session-client-cont {
+  display: inline-flex;
+  align-items: center;
+  gap: 250px;
+}
+
+.prev-session-options-csess {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.prev-session-options-csess div {
+  color: #566a95;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cess-prev-session-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.community-meeting-csess {
+  gap: 480px;
+}
+
+@media only screen and (max-width: 769px) {
+  .client-details-starter-h {
+    color: #333;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .client-details-starter-p {
+    color: #555;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .user-info-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    right: 60px;
+    transform: scale(0.7);
+  }
+
+  .session-more-info {
+    color: #333;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    padding-top: 28px;
+    padding-bottom: 56px;
+    width: 280px;
+  }
+
+  .session-clients-booking-flex {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 32x;
+    padding-bottom: 28px;
+    transform: scale(0.7);
+    position: relative;
+    right: 55px;
+    bottom: 150px;
+  }
+
+  .session-clients-booking-l1 {
+    position: relative;
+    bottom: 120px;
+  }
+
+  .client-report-flex {
+    transform: scale(0.6);
+    position: relative;
+    right: 50px;
+    bottom: 370px;
+  }
+
+  .prev-session-mb-det {
+    transform: scale(0.9);
+    position: relative;
+    right: 35px;
+    bottom: 420px;
+  }
+
+  .upcoming-session-mb-det {
+    position: relative;
+    bottom: 400px;
+    transform: scale(0.8);
+    right: 40px;
+  }
+
+  .view-more-container-det {
+    right: 48px;
+    bottom: 480px;
+    transform: scale(0.8);
+  }
+}

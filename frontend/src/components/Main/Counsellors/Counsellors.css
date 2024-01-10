@@ -1,0 +1,664 @@
+.counsellor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+}
+
+.counsel-banner {
+  position: relative;
+}
+.counsellor-banner-img {
+  width: 1213px;
+  height: 466px;
+  border-radius: 10px;
+}
+
+.counsellor-banner-img-cou {
+  height: 50%;
+  width: 1545px;
+  margin: 0;
+  padding: 0;
+}
+
+.counsellor-register {
+  position: absolute;
+  /* bottom: 500px; */
+  top: 210px;
+  left: 190px;
+  right: 711.16px;
+  border-radius: 5px;
+  display: inline-flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  opacity: 0.88;
+  background: #fff;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  text-align: left;
+  width: 530px;
+  height: 300px;
+}
+
+.counsellor-btn {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background: #ffb800;
+  box-shadow: 0px 4px 20px 0px rgba(255, 184, 0, 0.2);
+  border: none;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.counsellor-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-left: 30px;
+  margin-top: 20px;
+}
+
+.counsellor-heading p {
+  width: 390px;
+  color: #444;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 200% */
+  letter-spacing: 0.32px;
+}
+
+.counsellor-heading h3 {
+  color: #222;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+.counsellor-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  width: 1224px;
+  height: 193px;
+  padding-top: 40px;
+}
+
+.counsellor-line {
+  width: 100px;
+  height: 8px;
+  background: #ffd200;
+}
+
+.counsellor-middle-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.counsellor-middle-heading h1 {
+  color: #333;
+  font-family: Roboto;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+}
+
+.counsellor-middle p {
+  width: 1224px;
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+
+.counsellor-middle-heading-1 {
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.counsellor-middle-heading-1 h1 {
+  color: #333;
+  font-family: Roboto;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+}
+
+.counsellor-comp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding-bottom: 72px;
+  padding-left: 40px;
+}
+
+.counsellor-content {
+  display: flex;
+  align-items: center;
+  gap: 191px;
+}
+.counsellor-culture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  padding-left: 130.5px;
+  padding-right: 130.5px;
+}
+
+.content-left-1,
+.content-right-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.content-left-1 h3,
+.content-right-2 h3 {
+  color: #333;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-transform: capitalize;
+}
+
+.content-left-1 p,
+.content-right-2 p {
+  width: 588px;
+  height: 114px;
+  color: #666;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-align: left;
+}
+
+.content-right-1,
+.content-left-2 {
+  width: 400px;
+  height: 248px;
+  border-radius: 10px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.counsellor-testimonies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.counsellor-testimonies-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.test-line {
+  width: 100px;
+  height: 8px;
+  background: #ffd200;
+}
+
+.counsellor-testimonies-heading h1 {
+  color: #333;
+  font-family: Roboto;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+}
+
+.testimonies-card-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.testimonies-card {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 5px;
+  background: #e5e5e5;
+  height: 300px;
+  width: 340px;
+}
+
+.counsellor-review {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.testimonies-card p {
+  color: #666;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px; /* 143.75% */
+  letter-spacing: 0.64px;
+  text-align: left;
+}
+
+.counsellor-footer-img {
+  width: 1600px;
+  height: 450.7px;
+  position: relative;
+  top: 20px;
+}
+
+.counsellor-review p {
+  color: #666;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.3px;
+}
+.counsellor-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.counsellor-footer-register {
+  width: 482px;
+  height: 289px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.89);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  left: 522.5px;
+  top: 2330px;
+}
+
+.counsellor-footer-heading img {
+  width: 108px;
+  height: 36px;
+}
+
+.counsellor-footer-heading p {
+  width: 414px;
+  color: #141414;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.counsellor-footer-btn {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background: #25ced1;
+  box-shadow: 0px 8px 20px 0px rgba(37, 206, 209, 0.15);
+  border: none;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  cursor: pointer;
+  position: relative;
+  left: 15px;
+}
+.counsellor-footer-heading-lower p {
+  color: #2d2d2d;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+}
+
+.counsellor-footer-heading-lower p span a {
+  color: #ffb800;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  text-decoration-line: underline;
+  text-transform: capitalize;
+}
+
+.counsellor-footer-heading-1 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 41px;
+  padding-bottom: 16px;
+  justify-content: center;
+}
+
+.counsellor-footer-heading-lower p {
+  padding-top: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .counsellor-register {
+    position: absolute;
+    /* bottom: 500px; */
+    top: 190px;
+    left: 10px;
+    right: 711.16px;
+    border-radius: 5px;
+    display: inline-flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    opacity: 0.88;
+    background: #fff;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    text-align: left;
+    width: 300px;
+    height: 300px;
+  }
+
+  .counsellor-heading p {
+    width: 280px;
+    color: #444;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 200% */
+    letter-spacing: 0.32px;
+  }
+  .counsellor-middle-heading h1 {
+    color: #333;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    text-transform: capitalize;
+    position: relative;
+    right: 25px;
+  }
+
+  .counsellor-middle {
+    padding-left: 40px;
+  }
+
+  .counsellor-line {
+    width: 100px;
+    height: 5px;
+    background: #ffd200;
+    position: relative;
+    right: 30px;
+    bottom: 10px;
+  }
+
+  .counsellor-middle p {
+    width: 1224px;
+    color: #333;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    text-align: justify;
+    position: relative;
+    left: -20px;
+    width: 300px;
+  }
+
+  .counsellor-middle {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  .counsellor-middle-heading-1 h1 {
+    color: #333;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    text-transform: capitalize;
+    position: relative;
+    right: 30px;
+  }
+
+  .counsellor-culture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    padding-left: 130.5px;
+    padding-right: 130.5px;
+    position: relative;
+    left: -15px;
+  }
+
+  .counsellor-content {
+    display: block;
+    align-items: center;
+    gap: 191px;
+  }
+
+  .content-left-1 p,
+  .content-right-2 p {
+    width: 588px;
+    height: 114px;
+    color: #666;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 31px; /* 193.75% */
+    letter-spacing: 0.32px;
+    text-align: justify;
+    width: 280px;
+  }
+
+  .content-right-1,
+  .content-left-2 {
+    width: 300px;
+    height: 180px;
+    border-radius: 10px;
+    background: lightgray 50% / cover no-repeat;
+  }
+
+  .content-right-1 img {
+    width: 300px;
+  }
+
+  .content-left-2 img {
+    width: 300px;
+  }
+
+  .content-left-1 p {
+    padding-bottom: 200px;
+  }
+
+  .content-right-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 150px;
+  }
+
+  .counsellor-testimonies-heading h1 {
+    color: #333;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    text-transform: capitalize;
+    position: relative;
+    right: 35px;
+  }
+
+  .counsellor-testimonies {
+    padding-left: 15px;
+  }
+
+  .test-line {
+    width: 100px;
+    height: 5px;
+    background: #ffd200;
+    position: relative;
+    bottom: 10px;
+    right: 30px;
+  }
+
+  .testimonies-card-container {
+    display: block;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .testimonies-card {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border-radius: 5px;
+    background: #e5e5e5;
+    height: 290px;
+    width: 280px;
+    margin-bottom: 40px;
+    position: relative;
+    right: 20px;
+  }
+
+  .testimonies-card p {
+    color: #666;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 143.75% */
+    letter-spacing: 0.64px;
+    text-align: justify;
+    width: 250px;
+  }
+
+  .testimonies-card img {
+    width: 100px;
+    margin-bottom: -10px;
+  }
+
+  .counsellor-footer-register {
+    width: 320px;
+    height: 295px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.89);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    left: 25px;
+    top: 3850px;
+  }
+
+  .counsellor-footer-heading p {
+    width: 200px;
+  }
+
+  .counsellor-footer-heading,
+  .counsellor-footer-heading-lower {
+    position: relative;
+    /* right: 70px; */
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .counsellor-container {
+    position: relative;
+    left: 290px;
+  }
+
+  .counsellor-register {
+    left: -140px;
+    top: 120px;
+  }
+
+  .counsellor-footer-register {
+    left: 250px;
+    top: 2260px;
+  }
+}

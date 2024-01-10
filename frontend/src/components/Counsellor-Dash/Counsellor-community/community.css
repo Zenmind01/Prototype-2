@@ -1,0 +1,234 @@
+.community-manage-starter {
+  gap: 560px;
+}
+
+.comm-my-comm-h {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.my-comm-search {
+  display: flex;
+  align-items: flex-start;
+  gap: 760px;
+  margin-top: 56px;
+  padding-bottom: 28px;
+}
+.my-comm-meeting-flex {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.rel-bg {
+  background: url(../images/relationship.png) no-repeat;
+  width: 392px;
+  height: 240px;
+}
+
+.ang-bg {
+  background: url(../images/anger.png) no-repeat;
+  width: 392px;
+  height: 240px;
+}
+
+.guilt-bg {
+  background: url(../images/guilt.png) no-repeat;
+  width: 241px;
+  height: 240px;
+}
+
+.comm-rel-btn {
+  display: inline-flex;
+  padding: 16px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #ffa5a5;
+  box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.56px;
+  text-transform: capitalize;
+  margin-top: 154px;
+  margin-left: 87px;
+  cursor: pointer;
+}
+
+.comm-ang-btn {
+  display: inline-flex;
+  padding: 16px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #25ced1;
+  box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.56px;
+  text-transform: capitalize;
+  margin-top: 154px;
+  margin-left: 130px;
+  cursor: pointer;
+}
+
+.comm-guilt-btn {
+  display: flex;
+  width: 102px;
+  padding: 16px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #ffd200;
+  box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.56px;
+  text-transform: capitalize;
+  margin-top: 154px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+.prev-comm-search {
+  display: flex;
+  align-items: center;
+  gap: 630px;
+  margin-top: 56px;
+  margin-bottom: 28px;
+}
+
+.comm-meeting-cont {
+  width: 1097px;
+  height: 571px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: #fff;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.comm-meeting-vm {
+  color: #566a95;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-top: 28px;
+  margin-left: 1000px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 720px) {
+  .community2-starter-h {
+    color: #333;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+    right: 235px;
+  }
+
+  .community2-starter-p {
+    color: #555;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    right: 34px;
+    margin-bottom: -20px;
+  }
+
+  .upcoming-session-mb-com {
+    gap: 40px;
+  }
+
+  .upcoming-session-mb-date-1 {
+    padding-left: 45px;
+  }
+
+  .my-comm-meeting-flex {
+    display: flex;
+    flex-direction: column;
+    gap: -30px;
+    align-items: start;
+    position: relative;
+    right: 35px;
+  }
+  .guilt-bg {
+    display: none;
+  }
+
+  .session-search-input {
+    display: none;
+  }
+
+  .comm-my-comm-h {
+    color: #333;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .rel-bg,
+  .ang-bg {
+    transform: scale(0.8);
+  }
+
+  .ang-bg {
+    position: relative;
+    bottom: 40px;
+  }
+
+  .comm-meeting-vm {
+    position: relative;
+    right: 900px;
+    width: 200px;
+    transform: scale(0.8);
+  }
+
+  .comm-start-btn {
+    transform: scale(0.7);
+    position: relative;
+    left: 1000px;
+    bottom: 8px;
+  }
+
+  .community-manage-starter {
+    position: relative;
+    right: 60px;
+  }
+
+  .community-manage-starter-mb2 {
+    right: 425px;
+    margin-bottom: -40px;
+  }
+}

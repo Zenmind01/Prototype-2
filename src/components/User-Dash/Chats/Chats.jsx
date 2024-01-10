@@ -24,7 +24,7 @@ export const Chat = ({ id, name }) => {
  
    
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: process.env.API_KEY,
     dangerouslyAllowBrowser: true,
   });
   const prompt = `
