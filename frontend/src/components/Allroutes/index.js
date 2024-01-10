@@ -34,6 +34,7 @@ import Aboutus from "../Main/Aboutus";
 import ContactUs from "../Main/Contactus";
 import Counsellors from "../Main/Counsellors/Counsellors";
 import { AnimatePresence } from "framer-motion";
+import Chat from "../User-Dash/Chats/Chats";
 
 export default function Allroutes() {
   const location = useLocation();
@@ -81,6 +82,7 @@ export default function Allroutes() {
         <Route path="/created" element={<Created />} />
         <Route path="/profile-counsellor" element={<Profilecounsellor />} />
         <Route path="/payment-counsellor" element={<PaymentCo />} />
+        <Route path="/chat" element={<Chat />} />
         <Route
           path="/add-payment-details-counsellor"
           element={<PaymentAddC />}

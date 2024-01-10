@@ -69,7 +69,7 @@ const session = () => {
                 <div>Session</div>
               </a>
             </div>
-            <a onClick={openLink} className="admin-list">
+            <a href="/chat" onClick={openLink} className="admin-list">
               <img src={ChatbotIcon} alt="Chatbot" />
               <div>Chatbot</div>
             </a>
