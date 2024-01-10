@@ -1,0 +1,347 @@
+/* Popup.css */
+
+/* Popup CSS */
+.popup {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.44); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  overflow: auto;
+}
+
+.popup-content {
+  position: relative;
+  top: 62px;
+  width: 1035px;
+  height: 690px;
+  padding: 32px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.popup-content h2 {
+  color: #444;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31px; /* 129.167% */
+  letter-spacing: 0.48px;
+  text-transform: capitalize;
+  text-align: left;
+  padding-bottom: 56px;
+}
+
+.popup-close-btn {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background: #25ced1;
+  mix-blend-mode: luminosity;
+  border: none;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.counsellor-form {
+  display: flex;
+  width: 1021px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.counsellor-form-row1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.counsellor-form-row2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.counsellor-form-control {
+  width: 488px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f2f2f2;
+  border: none;
+}
+
+.counsellor-fname,
+.counsellor-lname,
+.counsellor-phone,
+.counsellor-email {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.counsellor-fname label,
+.counsellor-lname label,
+.counsellor-phone label,
+.counsellor-email label {
+  color: #333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.counsellor-fname ::placeholder,
+.counsellor-lname ::placeholder,
+.counsellor-phone ::placeholder,
+.counsellor-email ::placeholder {
+  color: #aaa;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* padding: 20px 446px 20px 16px; */
+}
+
+.counsellor-form-control {
+  padding-left: 10px;
+}
+
+.counsellor-work-content {
+  padding-top: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.counsellor-workas {
+  display: flex;
+  width: 498px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  text-align: left;
+}
+
+.counsellor-workas-optional {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.counsellor-expert {
+  display: flex;
+  height: 40px;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: -21px;
+  border-radius: 50px;
+  background: #f2f2f2;
+  cursor: pointer;
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.counsellor-intern {
+  display: flex;
+  height: 40px;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: -21px;
+  border-radius: 50px;
+  background: #f0b522;
+  cursor: pointer;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.counsellor-resume {
+  display: flex;
+  width: 498px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.counsellor-resume p {
+  width: 373px;
+  height: 32px;
+  text-align: left;
+  color: #333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.counsellor-resume p span {
+  color: #666;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: lowercase;
+}
+
+.resume-upload-btn {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  background: #25ced1;
+  mix-blend-mode: luminosity;
+  box-shadow: 0px 8px 20px 0px rgba(37, 206, 209, 0.15);
+  border: none;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.work-heading {
+  width: 210px;
+  height: 32px;
+  color: #333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+}
+
+.work-heading span {
+  color: #666;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-transform: lowercase;
+}
+
+.popup-btn-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 64px;
+}
+
+.resume-upload-btn-uploaded {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  background: #f0b522;
+  box-shadow: 0px 8px 20px 0px rgba(37, 206, 209, 0.15);
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+.cross-close {
+  position: relative;
+  left: 820px;
+  bottom: 10px;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup {
+    top: -875px;
+    height: 2900px;
+  }
+
+  .popup-content {
+    left: -309px;
+    height: 1100px;
+    width: 300px;
+  }
+
+  .counsellor-form-row1,
+  .counsellor-form-row2,
+  .counsellor-work-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .counsellor-form-control {
+    width: 300px;
+  }
+
+  .popup-close-btn {
+    position: relative;
+    right: 10px;
+  }
+
+  .cross-close {
+    position: relative;
+    left: 90px;
+    bottom: 10px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+  }
+}

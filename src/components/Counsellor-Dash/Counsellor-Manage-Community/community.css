@@ -1,0 +1,231 @@
+.comm-start-btn-mb {
+  display: none;
+}
+
+@media only screen and (max-width: 720px) {
+  .comm-grp-mb {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comm-grp-chats-container {
+    width: 350px;
+    height: 1119px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+    padding-left: 31px;
+    padding-top: 30px;
+    margin-bottom: 43px;
+  }
+
+  .comm-start-btn {
+    display: none;
+  }
+  .comm-start-btn-mb {
+    display: flex;
+    width: 60px;
+    position: relative;
+    left: -610px;
+  }
+
+  .community2-starter-l-mb {
+    position: relative;
+    right: 15px;
+  }
+
+  .grp-cat-mn1 {
+    color: #333;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .grey-circ {
+    width: 40px;
+    height: 40px;
+  }
+
+  .community2-starter-mb {
+    position: relative;
+    left: 38px;
+  }
+
+  .comm-grp-lower-cont-mb1 {
+    position: relative;
+    bottom: 450px;
+  }
+
+  .comm-grp-chats-p {
+    width: 228px;
+    height: 147px;
+    flex-shrink: 0;
+    color: #444;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132.687%; /* 15.922px */
+    letter-spacing: 0.24px;
+  }
+
+  .gray-cirl {
+    width: 40px;
+    height: 40px;
+  }
+
+  .comm-grp-names-h {
+    color: #333;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.32px;
+  }
+
+  .comm-grp-names-p {
+    color: #333;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.24px;
+  }
+
+  .comm-grp-chats-h {
+    color: #333;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132.687%; /* 18.576px */
+    letter-spacing: 0.28px;
+    width: 179px;
+  }
+
+  .comm-dis-rxns-h1 {
+    color: #333;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.28px;
+  }
+
+  .comm-dis-rxns-h2 {
+    color: #333;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.28px;
+  }
+
+  .comm-grp-chats-container-u {
+    display: inline-flex;
+    padding: 0px 10px;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+  .comm-grp-chats-container {
+    padding-left: 1px;
+    padding-top: 10px;
+    margin-bottom: 43px;
+  }
+
+  .comm-grp-inner {
+    display: flex;
+    width: 871px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    right: 10px;
+  }
+
+  .grey-mini {
+    width: 40px;
+    height: 40px;
+  }
+  .comm-grp-chats-container-sub {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding-left: 60px;
+    padding-top: 35px;
+  }
+
+  .comm-grp-content-h {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.32px;
+  }
+
+  .comm-grp-content-h span {
+    color: #000;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.24px;
+  }
+
+  .comm-grp-content-p {
+    width: 186px;
+    height: 125.77px;
+    flex-shrink: 0;
+    color: #444;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132.687%; /* 15.922px */
+    letter-spacing: 0.24px;
+  }
+
+  .comm-grp-chats-container-m {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .comm-grp-chats-container-u-2 {
+    position: relative;
+    bottom: 430px;
+    right: -5px;
+  }
+
+  .comm-grp-lower-cont {
+    width: 0;
+    height: 0;
+    flex-shrink: 0;
+    border-radius: 0;
+    border: 0 solid #eee;
+    background: #fff;
+    box-shadow: 0;
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .comm-grp-lower-cont-0 {
+    display: none;
+  }
+}

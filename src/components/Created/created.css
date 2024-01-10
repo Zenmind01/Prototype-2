@@ -1,0 +1,44 @@
+.slot-book-banner-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: centre;
+}
+
+.booked-banner {
+  padding-left: 72px;
+}
+
+.slot-booked-h {
+  color: #1fa9ab;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding-left: 407px;
+  padding-top: 25px;
+  padding-bottom: 28px;
+}
+
+.go-back-btn {
+  display: inline-flex;
+  padding: 16px 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: #25ced1;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 112px;
+  margin-left: 380px;
+}
+
+.book-blue-line-chng {
+  position: relative;
+  bottom: 390px;
+}
