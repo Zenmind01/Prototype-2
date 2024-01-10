@@ -364,7 +364,7 @@ export const Chat = ({ id, name }) => {
                 <div className="chat-time">07:59 pm</div>
 
                 <div className="user-msg">
-                  <div className="user-msg-conti">
+                  <div className="user-msg-conti user-msg-conti-c">
                     Lorem ipsum dolor sit amet, consectetur adipisc ing
                     elitfsff.
                   </div>

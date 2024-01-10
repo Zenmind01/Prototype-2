@@ -394,6 +394,9 @@
   width: 60px;
   border-radius: 10px;
 }
+.user-msg-conti-c {
+  border-radius: 24px 40px 4px 24px;
+}
 .user-reep {
   height: 32px;
   position: relative;
