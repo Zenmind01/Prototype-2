@@ -65,9 +65,8 @@ export default function Allroutes() {
         console.log(error);
       });
     }
-    if(!Cookies.get("data")){
+    if(Cookies.get("data")!==null){
       getSession();
-      navigate("dashboard2")
     }
     
     
