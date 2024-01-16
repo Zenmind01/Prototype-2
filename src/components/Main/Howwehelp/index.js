@@ -47,7 +47,7 @@ function How() {
                 whileHover={{ scale: 1.1 }}
                 className="cwc-btn"
               >
-               <a href="/login" style={{textDecoration: "none", color:"white"}}>Chat with chatbot</a>
+               <a href="/chat" style={{textDecoration: "none", color:"white"}}>Chat with chatbot</a>
               </motion.div>
             </motion.div>
           </motion.div>
