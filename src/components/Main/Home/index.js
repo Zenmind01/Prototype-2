@@ -36,11 +36,11 @@ function Homecontent() {
                 <br /> Anytime, Anywhere, Any device.
               </div>
               <div className="button-free">
-                <Link to="/assessment">
+                
                 <motion.button whileHover={{ scale: 1.1 }}>
-                  New Assessment
+                 <a href="/login" style={{textDecoration: "none", color:"white"}}> Take Assessment </a>
                 </motion.button>
-                </Link>
+                
               </div>
             </div>
           </Fade>
