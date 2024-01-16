@@ -31,23 +31,23 @@ function How() {
             <motion.div>
               <img src={Pink}></img>
               <motion.div whileHover={{ scale: 1.1 }} className="cts-btn">
-                Counselling Therapy Session
+                <a href="/login" style={{textDecoration: "none", color:"white"}}>Counselling Therapy Session</a>
               </motion.div>
             </motion.div>
             <motion.div>
               <img className="pink-image" src={Yellow}></img>
               <motion.div whileHover={{ scale: 1.1 }} className="jc-btn">
-                Join Community
+                <a href="/login" style={{textDecoration: "none", color:"white"}}>Join Community</a>
               </motion.div>
             </motion.div>
             <motion.div>
               <img className="blue-img" src={Blue}></img>
               <motion.div
-                onClick={openLink}
+               
                 whileHover={{ scale: 1.1 }}
                 className="cwc-btn"
               >
-                Chat with chatbot
+               <a href="/login" style={{textDecoration: "none", color:"white"}}>Chat with chatbot</a>
               </motion.div>
             </motion.div>
           </motion.div>
