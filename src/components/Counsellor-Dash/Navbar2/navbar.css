@@ -10,10 +10,7 @@
 }
 
 .nav-logo {
-  width: 163.83px;
-  height: 56px;
   flex-shrink: 0;
-  padding-top: 16px;
   padding-left: 42px;
 }
 
@@ -116,9 +113,9 @@
 
   .nav-logo-mb {
     width: 81.914px;
-    height: 21.516px;
+    height: 27.516px;
     position: relative;
-    top: 10px;
+    top: 5px;
   }
 
   .noti-img-mb {

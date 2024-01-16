@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import zenlogo from "../images/ZENMIND.png";
+import zenlogo from "../images/zenlogo1.png";
 import Notification from "../images/notification.png";
 import Signout from "../images/sign-out.png";
 import Hamburger from "../images/hamburger.png";
@@ -35,6 +35,7 @@ import CommDisIcon from "../images/comm-dis.png";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Search from "../images/search-1.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -60,9 +61,9 @@ const Navbar = () => {
   return (
     <>
       <div className="nav-container">
-        <div className="nav-logo">
+        <Link to="/home" className="nav-logo">
           <img className="nav-logo-mb" src={zenlogo} alt="Zenmind Logo" />
-        </div>
+        </Link>
         <div className="nav-box">
           <div className="nav-search">
             <input

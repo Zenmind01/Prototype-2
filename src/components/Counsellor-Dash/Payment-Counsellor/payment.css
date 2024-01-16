@@ -434,6 +434,10 @@
     width: 400px;
   }
 
+  .dash-counsellor-banner {
+    display: none;
+  }
+
   .det-btn {
     display: flex;
     padding: 5px 8px;

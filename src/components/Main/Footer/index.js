@@ -5,6 +5,7 @@ import ig from "../Images/iglogo.png";
 import linkedin from "../Images/linkedin.png";
 import twitter from "../Images/twitter.png";
 import connect from "../Images/connect.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -73,7 +74,9 @@ function Footer() {
 
       <div className="footer-mb">
         <div className="footer-top-mb">
-          <img src={logo}></img>
+          <Link to="/home">
+            <img src={logo}></img>
+          </Link>
           <div className="follow-mb">Follow Our Social Media</div>
           <div className="social-logos">
             <img src={ig} />
