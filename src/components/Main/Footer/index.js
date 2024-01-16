@@ -70,6 +70,55 @@ function Footer() {
           Copyright @ 2023, All Right Reversed
         </div>
       </div>
+
+      <div className="footer-mb">
+        <div className="footer-top-mb">
+          <img src={logo}></img>
+          <div className="follow-mb">Follow Our Social Media</div>
+          <div className="social-logos">
+            <img src={ig} />
+            <img src={linkedin} />
+            <img src={twitter} />
+          </div>
+          <div className="footer-mb-cu">
+            <div>Contact Us</div>
+            <div>For Urgent Help Call</div>
+            <div>+91 XXXX8989XX</div>
+          </div>
+        </div>
+
+        <div className="footer-middle-mb">
+          <div>About Us</div>
+          <div>For Individual</div>
+          <div>For Corporate</div>
+          <div>Terms Of Service</div>
+          <div>Privacy Policy</div>
+        </div>
+
+        <div className="footer-bottom-mb">
+          <div className="footer-bottom-1">
+            <img src={connect}></img>
+            <div className="footer-mb-cwu">Connect With Us</div>
+          </div>
+          <div className="footer-mb-para">
+            <div>We’d like to get your valuable feedback to</div>
+            <div>give you an even better experience.</div>
+          </div>
+          <button
+            onClick={() => {
+              window.location.href =
+                "https://chat.whatsapp.com/FJVOl5miUzYFcpOOJLwL1N";
+            }}
+            className="rightmost-connect-button"
+          >
+            Connect
+          </button>
+        </div>
+
+        <div className="footer-mb-copyright">
+          Copyright @ 2024, All Right Reversed
+        </div>
+      </div>
     </>
   );
 }

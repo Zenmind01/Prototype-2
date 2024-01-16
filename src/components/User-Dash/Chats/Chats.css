@@ -9,15 +9,13 @@
   height: 700px;
 }
 
-.dashboard-left-1{
+.dashboard-left-1 {
   height: 800px;
 }
 
-.new-height{
-
+.new-height {
   height: 800px;
   overflow-y: hidden;
-  
 }
 
 .chat-land {
@@ -59,7 +57,7 @@
 }
 
 .back-logo {
-  transform: scale(0.25);
+  transform: scale(0.4);
   height: 10px;
 
   width: 9.4px;
@@ -128,7 +126,7 @@
   position: relative;
   top: -1px;
 }
-.message-section{
+.message-section {
   padding-bottom: 15px;
 }
 
@@ -532,7 +530,7 @@
 
   .message-section {
     width: 312px;
-    height: 556px;
+    height: 500px;
   }
 
   .mesaage-date {
@@ -545,9 +543,7 @@
     position: relative;
     right: 0;
     width: 40%;
-  
   }
-
 
   .user-msg {
     border-radius: 40%;
@@ -563,7 +559,13 @@
 
   .chat-main {
     margin-top: -30px;
-    transform: scale(1.1);
+    transform: scale(1.15);
+    transform: scale(1.2);
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .chat-con-cont {
