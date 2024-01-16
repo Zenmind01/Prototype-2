@@ -131,6 +131,7 @@ export const Chat = ({ id, name }) => {
         },
       ]);
     });
+
     // setChats((prev) => [
     //   ...prev,
     //   {

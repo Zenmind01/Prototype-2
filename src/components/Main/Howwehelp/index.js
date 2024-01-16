@@ -11,6 +11,7 @@ import Yellow from "../Images/yellow-1.png";
 import Pink from "../Images/pink-1.png";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
+import Boundary from "../Images/blue-review-b.png";
 
 function How() {
   const openLink = () => {
@@ -31,23 +32,34 @@ function How() {
             <motion.div>
               <img src={Pink}></img>
               <motion.div whileHover={{ scale: 1.1 }} className="cts-btn">
-                <a href="/login" style={{textDecoration: "none", color:"white"}}>Counselling Therapy Session</a>
+                <a
+                  href="/login"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Counselling Therapy Session
+                </a>
               </motion.div>
             </motion.div>
             <motion.div>
               <img className="pink-image" src={Yellow}></img>
               <motion.div whileHover={{ scale: 1.1 }} className="jc-btn">
-                <a href="/login" style={{textDecoration: "none", color:"white"}}>Join Community</a>
+                <a
+                  href="/login"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Join Community
+                </a>
               </motion.div>
             </motion.div>
             <motion.div>
               <img className="blue-img" src={Blue}></img>
-              <motion.div
-               
-                whileHover={{ scale: 1.1 }}
-                className="cwc-btn"
-              >
-               <a href="/chat" style={{textDecoration: "none", color:"white"}}>Chat with chatbot</a>
+              <motion.div whileHover={{ scale: 1.1 }} className="cwc-btn">
+                <a
+                  href="/chat"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Chat with chatbot
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -221,7 +233,7 @@ function How() {
                 aliqua.pisci ng elit, sed do eiusmod tempor incididuntdg ut
                 labore et dolore magna aliqua.
               </div>
-              <div className="user-details">User Name , Mumbai</div>
+              <div className="user-details-h">User Name , Mumbai</div>
               <div style={{ display: "flex", gap: "2px", fontSize: "24px" }}>
                 <AiFillStar />
                 <AiFillStar />
@@ -238,7 +250,7 @@ function How() {
                 aliqua.pisci ng elit, sed do eiusmod tempor incididuntdg ut
                 labore et dolore magna aliqua.
               </div>
-              <div className="user-details">User Name , Mumbai</div>
+              <div className="user-details-h">User Name , Mumbai</div>
               <div style={{ display: "flex", gap: "2px", fontSize: "24px" }}>
                 <AiFillStar />
                 <AiFillStar />
@@ -255,7 +267,7 @@ function How() {
                 aliqua.pisci ng elit, sed do eiusmod tempor incididuntdg ut
                 labore et dolore magna aliqua.
               </div>
-              <div className="user-details">User Name , Mumbai</div>
+              <div className="user-details-h">User Name , Mumbai</div>
               <div style={{ display: "flex", gap: "2px", fontSize: "24px" }}>
                 <AiFillStar />
                 <AiFillStar />
@@ -265,6 +277,7 @@ function How() {
               </div>
             </motion.div>
           </motion.div>
+          <img className="line-b" src={Boundary}></img>
         </Fade>
       </div>
     </>

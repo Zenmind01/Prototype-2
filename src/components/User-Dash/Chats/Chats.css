@@ -3,7 +3,7 @@
   margin-left: 16px;
   margin-top: 8px;
   margin-right: 16px;
-  width: 100vw;
+  width: 100;
   padding-right: 40px;
   font-family: "League Spartan";
   height: 700px;
@@ -58,9 +58,10 @@
 
 .back-logo {
   transform: scale(0.4);
-  height: 10px;
-
-  width: 9.4px;
+  height: 40px;
+  width: 32px;
+  position: relative;
+  top: 20px;
 }
 
 .chat-logo {
@@ -72,7 +73,8 @@
 .user-name {
   font-size: 24px;
 }
-.user-details img {
+
+.chat-logo {
   height: 80px;
   width: 80px;
   border-radius: 50%;
@@ -467,6 +469,11 @@
     height: calc(100vh - 160px);
   }
 
+  .back-logo {
+    position: relative;
+    top: 0px;
+  }
+
   .user-rep-time {
     position: relative;
     right: 360px;
@@ -490,7 +497,8 @@
     height: 300px;
   }
   .user-details {
-    height: 15%;
+    height: 12%;
+    margin-top: 20px;
   }
   .typer {
     height: 60%;
@@ -498,10 +506,11 @@
   .message-sender input::placeholder {
     font-size: 12px;
   }
-  .user-details img {
+  .chat-logo {
     height: 40px;
     width: 40px;
   }
+
   .message-section {
     height: 50%;
   }
@@ -549,7 +558,8 @@
     border-radius: 40%;
     display: flex;
     position: relative;
-    right: 0;
+    right: 620px;
+    width: 350px;
   }
   .user-reep {
     height: 32px;
