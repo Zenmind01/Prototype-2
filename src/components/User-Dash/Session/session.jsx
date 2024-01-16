@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./session.css";
 
 import Profile from "../images/user-profile.png";
@@ -34,16 +35,65 @@ import RightCounBanner from "../images/counsellor-right-banner.png";
 import LeftCounBanner from "../images/counsellor-left-banner.png";
 import Navbar from "../Navbar/navbar";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const session = () => {
-  const openLink = () => {
-    // Replace 'your-link-here' with the desired URL
-    window
-      .open
-      // "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
-      // "_blank"
-      ();
-  };
+const Session = () => {
+  const [clist, setClist] = useState([]);
+  const [dlist, setDlist] = useState([]);
+
+  useEffect(() => {
+    //console.log(Cookies.get("data"))
+
+    const getClist = async () => {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://back-zm-01.onrender.com/session/" + Cookies.get("data"),
+        headers: {},
+      };
+
+      await axios
+        .request(config)
+        .then((response) => {
+          console.log(response.data);
+          setClist(response.data.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    const getDoc = async (id)=>{
+
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'https://back-zm-01.onrender.com/doc/',
+        headers: { }
+      };
+      
+      await axios.request(config)
+      .then((response) => {
+        if (response.data.success) {
+          console.log(response.data);
+         setDlist(response.data.data)
+        }
+        else{
+          setDlist( [{name:"Councellor Name"}])
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  
+    }
+
+    getClist();
+    getDoc()
+  }, []);
+
+  
+
   return (
     <>
       <Navbar></Navbar>
@@ -113,83 +163,107 @@ const session = () => {
             </div>
 
             <div className="dash-counsellor-flex">
-              <div className="dash-counsellor-dash2">
-                <div className="dash-counsellor-left">
-                  <div className="counsellor-main">
-                    <div className="counsellor-details">
-                      <img src={Counsellor1}></img>
-                      <div className="counsellor-info">
-                        <div className="counsellor-name-dash2">
-                          Counsellor Name
+              {clist.map((us) => {
+                if (clist.length > 2) {
+                  if (clist.indexOf(us) >= clist.length - 3) {
+                    return (
+                      <>
+                        <div className="dash-counsellor-dash2">
+                          <div className="dash-counsellor-left">
+                            <div className="counsellor-main">
+                              <div className="counsellor-details">
+                                <img src={Counsellor1}></img>
+                                <div className="counsellor-info">
+                                  <div className="counsellor-name-dash2">
+                                  {dlist[dlist.findIndex(item => item._id === us.docId)].name??""}
+                                  </div>
+                                  <div className="anx-dp-dash2">
+                                    {us.title}
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="counsellor-schedule">
+                                <div className="schedule-date">
+                                  <img src={Minicalender}></img>
+                                  <div className="schedule-date-t-dash2">
+                                    {us.date}
+                                  </div>
+                                </div>
+                                <div className="schedule-date">
+                                  <img src={timeIcon}></img>
+                                  <div className="schedule-date-t-dash2">
+                                    {us.time}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="schedule-cancel-dash2">
+                              <img src={CancelIcon}></img>
+                              <div>Cancel the session</div>
+                            </div>
+                          </div>
+
+                          <div className="join-reschedule-dash2">
+                            <div className="join-btn-dash2">Join Now</div>
+                            <div className="reschedule-dash2">Reschedule</div>
+                            <div className="cancel-dash">Cancel</div>
+                          </div>
                         </div>
-                        <div className="anx-dp-dash2">Anxiety, Depression</div>
-                      </div>
-                    </div>
-                    <div className="counsellor-schedule">
-                      <div className="schedule-date">
-                        <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">20 Sep 2023</div>
-                      </div>
-                      <div className="schedule-date">
-                        <img src={timeIcon}></img>
-                        <div className="schedule-date-t-dash2">
-                          7:30 - 8:30 PM
+                      </>
+                    );
+                  }
+                } else {
+                  //console.log(dlist)
+                  //console.log(dlist.findIndex(item => item._id == us.docId))
+                  return (
+                    <>
+                      <div className="dash-counsellor-dash2">
+                        <div className="dash-counsellor-left">
+                          <div className="counsellor-main">
+                            <div className="counsellor-details">
+                              <img src={Counsellor1}></img>
+                              <div className="counsellor-info">
+                                <div className="counsellor-name-dash2">
+                                  {dlist[dlist.findIndex(item => item._id === us.docId)].name??""}
+                                </div>
+                                <div className="anx-dp-dash2">
+                                  {us.title}
+                                </div>
+                              </div>
+                            </div>
+                            <div className="counsellor-schedule">
+                              <div className="schedule-date">
+                                <img src={Minicalender}></img>
+                                <div className="schedule-date-t-dash2">
+                                  {us.date}
+                                </div>
+                              </div>
+                              <div className="schedule-date">
+                                <img src={timeIcon}></img>
+                                <div className="schedule-date-t-dash2">
+                                  {us.time}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="schedule-cancel-dash2">
+                            <img src={CancelIcon}></img>
+                            <div>Cancel the session</div>
+                          </div>
+                        </div>
+
+                        <div className="join-reschedule-dash2">
+                          <div className="join-btn-dash2">Join Now</div>
+                          <div className="reschedule-dash2">Reschedule</div>
+                          <div className="cancel-dash">Cancel</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  <div className="schedule-cancel-dash2">
-                    <img src={CancelIcon}></img>
-                    <div>Cancel the session</div>
-                  </div>
-                </div>
-
-                <div className="join-reschedule-dash2">
-                  <div className="join-btn-dash2">Join Now</div>
-                  <div className="reschedule-dash2">Reschedule</div>
-                  <div className="cancel-dash">Cancel</div>
-                </div>
-              </div>
-
-              <div className="dash-counsellor-dash2">
-                <div className="dash-counsellor-left">
-                  <div className="counsellor-main">
-                    <div className="counsellor-details">
-                      <img src={Counsellor2}></img>
-                      <div className="counsellor-info">
-                        <div className="counsellor-name-dash2">
-                          Counsellor Name
-                        </div>
-                        <div className="anx-dp-dash2">Anxiety, Depression</div>
-                      </div>
-                    </div>
-                    <div className="counsellor-schedule">
-                      <div className="schedule-date">
-                        <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">20 Sep 2023</div>
-                      </div>
-                      <div className="schedule-date">
-                        <img src={timeIcon}></img>
-                        <div className="schedule-date-t-dash2">
-                          7:30 - 8:30 PM
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="schedule-cancel-dash2">
-                    <img src={CancelIcon}></img>
-                    <div>Cancel the session</div>
-                  </div>
-                </div>
-
-                <div className="join-reschedule-dash2">
-                  <div className="join-btn-dash2">Join Now</div>
-                  <div className="reschedule-dash2">Reschedule</div>
-                  <div className="cancel-dash">Cancel</div>
-                </div>
-              </div>
+                    </>
+                  );
+                }
+              })}
             </div>
 
             <div className="question-container">
@@ -237,238 +311,90 @@ const session = () => {
             </div>
 
             <div className="previous-session">
-              <div className="prev-session-padding">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
+              {clist.map((se) => {
+                if (clist.indexOf(se) % 2 === 0) {
+                  return (
+                    <>
+                      <div className="prev-session-padding">
+                        <div className="previos-session-container">
+                          <div className="prev-session-flex">
+                            <img src={PrevSessionImg}></img>
+                            <div className="prev-session-counsellor">
+                              <div className="prev-session-counsellor-name">
+                              {dlist[dlist.findIndex(item => item._id === se.docId)].name??""}
+                              </div>
+                              <div className="prev-session-counsellor-topic">
+                                {se.title}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="prev-session-time">
+                          {se.time}  , {se.date} 
+                          </div>
+
+                          <div className="prev-session-options">
+                            <div>Prescription</div>
+                            <div>Feedbacks</div>
+                            <div>Session Notes</div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
+                    </>
+                  );
+                } else {
+                  return (
+                    <>
+                      <div className="prev-session-padding prev-session-padding-gray">
+                        <div className="previos-session-container">
+                          <div className="prev-session-flex">
+                            <img src={PrevSessionImg}></img>
+                            <div className="prev-session-counsellor">
+                              <div className="prev-session-counsellor-name">
+                              {dlist[dlist.findIndex(item => item._id === se.docId)].name??""}
+                              </div>
+                              <div className="prev-session-counsellor-topic">
+                                Topic
+                              </div>
+                            </div>
+                          </div>
 
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
+                          <div className="prev-session-time">
+                            20 Sep 2023 7:30 - 8:30 PM
+                          </div>
 
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding prev-session-padding-gray">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
+                          <div className="prev-session-options">
+                            <div>Prescription</div>
+                            <div>Feedbacks</div>
+                            <div>Session Notes</div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
-                      </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding prev-session-padding-gray">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
-                      </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
-                      </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding prev-session-padding-gray">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
-                      </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
-                      </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prev-session-padding prev-session-padding-gray">
-                <div className="previos-session-container">
-                  <div className="prev-session-flex">
-                    <img src={PrevSessionImg}></img>
-                    <div className="prev-session-counsellor">
-                      <div className="prev-session-counsellor-name">
-                        Counsellor Name
-                      </div>
-                      <div className="prev-session-counsellor-topic">Topic</div>
-                    </div>
-                  </div>
-
-                  <div className="prev-session-time">
-                    20 Sep 2023 7:30 - 8:30 PM
-                  </div>
-
-                  <div className="prev-session-options">
-                    <div>Prescription</div>
-                    <div>Prescription</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
+                    </>
+                  );
+                }
+              })}
             </div>
 
             <div className="prev-session-mb prev-session-mb-1">
-              <div className="mb-prev">
-                <div className="mb-prev-rl">
-                  <div className="mb-profile">
-                    <img src={MiniProfile}></img>
-                    <div className="mb-profile-cont">
-                      <div className="mb-profile-cont-u">Counsellor Name</div>
-                      <div className="mb-profile-cont-l">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <img src={MbDown}></img>
-                </div>
-                <div className="mb-more">
-                  <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
-                  <div className="mb-more-l">
-                    <div>Prescription</div>
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
 
+              {clist.map((se)=>{
+                return(<>
               <div className="mb-prev">
                 <div className="mb-prev-rl">
                   <div className="mb-profile">
                     <img src={MiniProfile}></img>
                     <div className="mb-profile-cont">
-                      <div className="mb-profile-cont-u">Counsellor Name</div>
+                      <div className="mb-profile-cont-u">{dlist[dlist.findIndex(item => item._id === se.docId)].name??""}</div>
                       <div className="mb-profile-cont-l">
-                        Anxiety, Depression
+                        {se.title}
                       </div>
                     </div>
                   </div>
                   <img src={MbDown}></img>
                 </div>
                 <div className="mb-more">
-                  <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
+                  <div className="mb-more-u"> {se.date}  {se.time}</div>
                   <div className="mb-more-l">
                     <div>Prescription</div>
                     <div>Feedbacks</div>
@@ -476,56 +402,16 @@ const session = () => {
                   </div>
                 </div>
               </div>
+                
+                </>)
+              })}
 
-              <div className="mb-prev">
-                <div className="mb-prev-rl">
-                  <div className="mb-profile">
-                    <img src={MiniProfile}></img>
-                    <div className="mb-profile-cont">
-                      <div className="mb-profile-cont-u">Counsellor Name</div>
-                      <div className="mb-profile-cont-l">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <img src={MbDown}></img>
-                </div>
-                <div className="mb-more">
-                  <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
-                  <div className="mb-more-l">
-                    <div>Prescription</div>
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
 
-              <div className="mb-prev">
-                <div className="mb-prev-rl">
-                  <div className="mb-profile">
-                    <img src={MiniProfile}></img>
-                    <div className="mb-profile-cont">
-                      <div className="mb-profile-cont-u">Counsellor Name</div>
-                      <div className="mb-profile-cont-l">
-                        Anxiety, Depression
-                      </div>
-                    </div>
-                  </div>
-                  <img src={MbDown}></img>
-                </div>
-                <div className="mb-more">
-                  <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
-                  <div className="mb-more-l">
-                    <div>Prescription</div>
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
-            <div class="view-more-container">
-              <div class="view-more">View More</div>
+            <div className="view-more-container">
+              <div className="view-more">View More</div>
             </div>
 
             <div className="recommended-counsellor">
@@ -537,17 +423,17 @@ const session = () => {
                 <div className="recommended-filter-cont">
                   <div className="recommended-filter-h">Available Date</div>
                   <div className="recommended-filter-h">
-                    <div class="recommended-text">Select a Slot</div>
+                    <div className="recommended-text">Select a Slot</div>
                     <img src={DownbarIcon}></img>
                   </div>
 
-                  <div class="recommended-filter-h">
-                    <div class="recommended-text">Specialization</div>
+                  <div className="recommended-filter-h">
+                    <div className="recommended-text">Specialization</div>
                     <img src={DownbarIcon} alt="Down Icon" />
                   </div>
 
                   <div className="recommended-filter-h">
-                    <div class="recommended-text">language</div>
+                    <div className="recommended-text">language</div>
                     <img src={DownbarIcon}></img>
                   </div>
                 </div>
@@ -563,12 +449,16 @@ const session = () => {
             </div>
 
             <div className="recom-profile-container">
+              
+              {dlist.map((d)=>{
+                return(<>
+                
               <div className="Recom-Profile">
                 <div className="recom-profile-upper">
                   <div className="recom-counsellor-profile">
                     <img src={RecomProfile1}></img>
                     <div>
-                      <div className="recom-profile-name">John Doe</div>
+                      <div className="recom-profile-name">{d.name??""}</div>
                       <div className="recom-profile-desc">
                         PHD, MSc. in Applies Psychology (RCI Licensed)
                       </div>
@@ -588,8 +478,7 @@ const session = () => {
                     <img className="spec-icon" src={SpecIcon}></img>
                     <div className="counsellor-spec-h">Specialization :</div>
                     <div className="counsellor-spec-p">
-                      Anxiety, Depression, Stress, Relationship Issues, Couple
-                      Counseling <span>Show More..</span>
+                      {d.about??""}    <span>Show More..</span>
                     </div>
                   </div>
 
@@ -597,141 +486,40 @@ const session = () => {
                     <img className="tick-icon" src={TickIcon}></img>
                     <div className="counsellor-spec-h">Available Slots :</div>
                     <div className="counsellor-spec-p1">
-                      Sep 8, 2023 11:00 PM
+                      custom slots
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div className="Recom-Profile">
-                <div className="recom-profile-upper">
-                  <div className="recom-counsellor-profile">
-                    <img src={RecomProfile2}></img>
-                    <div>
-                      <div className="recom-profile-name">John Doe</div>
-                      <div className="recom-profile-desc">
-                        PHD, MSc. in Applies Psychology (RCI Licensed)
-                      </div>
-                      <img src={Star}></img>
-                    </div>
-                  </div>
-                  <div className="recom-profile-l">
-                    <div className="recom-view">View Profile</div>
-                    <Link to="/book-session" className="recom-book">
-                      Book Session
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="counsellor-spec-cont">
-                  <div className="counsellor-spec">
-                    <img className="spec-icon" src={SpecIcon}></img>
-                    <div className="counsellor-spec-h">Specialization :</div>
-                    <div className="counsellor-spec-p">
-                      Anxiety, Depression, Stress, Relationship Issues, Couple
-                      Counseling <span>Show More..</span>
-                    </div>
-                  </div>
-
-                  <div className="counsellor-spec">
-                    <img className="tick-icon" src={TickIcon}></img>
-                    <div className="counsellor-spec-h">Available Slots :</div>
-                    <div className="counsellor-spec-p1">
-                      Sep 8, 2023 11:00 PM
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="Recom-Profile">
-                <div className="recom-profile-upper">
-                  <div className="recom-counsellor-profile">
-                    <img src={RecomProfile3}></img>
-                    <div>
-                      <div className="recom-profile-name">John Doe</div>
-                      <div className="recom-profile-desc">
-                        PHD, MSc. in Applies Psychology (RCI Licensed)
-                      </div>
-                      <img src={Star}></img>
-                    </div>
-                  </div>
-                  <div className="recom-profile-l">
-                    <div className="recom-view">View Profile</div>
-                    <Link to="/book-session" className="recom-book">
-                      Book Session
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="counsellor-spec-cont">
-                  <div className="counsellor-spec">
-                    <img className="spec-icon" src={SpecIcon}></img>
-                    <div className="counsellor-spec-h">Specialization :</div>
-                    <div className="counsellor-spec-p">
-                      Anxiety, Depression, Stress, Relationship Issues, Couple
-                      Counseling <span>Show More..</span>
-                    </div>
-                  </div>
-
-                  <div className="counsellor-spec">
-                    <img className="tick-icon" src={TickIcon}></img>
-                    <div className="counsellor-spec-h">Available Slots :</div>
-                    <div className="counsellor-spec-p1">
-                      Sep 8, 2023 11:00 PM
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </>)
+              })}
+              
             </div>
 
             <div className="mb-recom-cont">
-              <div className="mb-recom">
-                <div className="mb-recom-profile">
-                  <img src={MiniProfile}></img>
-                  <div className="mb-recom-pro">
-                    <div className="mb-recom-pro-u">Counsellor Name</div>
-                    <div className="mb-recom-pro-l">Anxiety, Depression</div>
-                  </div>
-                </div>
-                <div className="mb-recom-btn">Book</div>
-              </div>
 
+            {dlist.map((d)=>{
+                return(<>
+                
               <div className="mb-recom">
                 <div className="mb-recom-profile">
                   <img src={MiniProfile}></img>
                   <div className="mb-recom-pro">
-                    <div className="mb-recom-pro-u">Counsellor Name</div>
-                    <div className="mb-recom-pro-l">Anxiety, Depression</div>
+                    <div className="mb-recom-pro-u">{d.name??""}</div>
+                    <div className="mb-recom-pro-l">{d.about??""}</div>
                   </div>
                 </div>
                 <div className="mb-recom-btn">Book</div>
               </div>
+              
+                </>)
+              })}
 
-              <div className="mb-recom">
-                <div className="mb-recom-profile">
-                  <img src={MiniProfile}></img>
-                  <div className="mb-recom-pro">
-                    <div className="mb-recom-pro-u">Counsellor Name</div>
-                    <div className="mb-recom-pro-l">Anxiety, Depression</div>
-                  </div>
-                </div>
-                <div className="mb-recom-btn">Book</div>
-              </div>
-
-              <div className="mb-recom">
-                <div className="mb-recom-profile">
-                  <img src={MiniProfile}></img>
-                  <div className="mb-recom-pro">
-                    <div className="mb-recom-pro-u">Counsellor Name</div>
-                    <div className="mb-recom-pro-l">Anxiety, Depression</div>
-                  </div>
-                </div>
-                <div className="mb-recom-btn">Book</div>
-              </div>
+              
             </div>
 
-            <div class="view-more-container">
-              <div class="view-more">View More</div>
+            <div className="view-more-container">
+              <div className="view-more">View More</div>
             </div>
 
             <div className="dash-counsellor-banner-mb dash-counsellor-banner-mb-se">
@@ -761,4 +549,4 @@ const session = () => {
   );
 };
 
-export default session;
+export default Session;

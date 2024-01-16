@@ -1,5 +1,6 @@
-import React from "react";
+import React , {useState,useEffect}from "react";
 import "./community2.css";
+import axios from 'axios'
 
 import Profile from "../images/user-profile.png";
 import DashboardIcon from "../images/community-w.png";
@@ -17,14 +18,36 @@ import ReplyIcon from "../images/reply.png";
 import DownbarIcon from "../images/downbar.png";
 import Navbar from "../Navbar/navbar";
 
-const community2 = () => {
-  const openLink = () => {
-    // Replace 'your-link-here' with the desired URL
-    window.open(
-      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
-      "_blank"
-    );
-  };
+const Community2 = () => {
+  
+    const [posts, setPost] = useState([]);
+
+    useEffect(() => {
+
+      const getPosts = async () => {
+        
+  
+        let config = {
+          method: "get",
+          maxBodyLength: Infinity,
+          url: "https://back-zm-01.onrender.com/post",
+          headers: {},
+        };
+  
+        await axios
+          .request(config)
+          .then((response) => {
+            setPost(response.data.data);
+            // setPost(response.data)
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+  
+      getPosts();
+    }, []);
+
   return (
     <>
       <Navbar></Navbar>
@@ -114,151 +137,84 @@ const community2 = () => {
               </div>
             </div>
 
-            <div className="comm-grp-chats-container">
-              <div className="comm-grp-chats-container-u">
+              {posts.map((post)=>{
+                return (
+                  <>
+                  <div className="comm-grp-chats-container">
+                                <div className="comm-grp-chats-container-u">
                 <img className="gray-cirl" src={GreyCircleIcon}></img>
                 <div className="comm-grp-inner">
                   <div className="comm-grp-names">
-                    <div className="comm-grp-names-h">Erin Arcand</div>
-                    <div className="comm-grp-names-p">11 Sep 2023</div>
+                    <div className="comm-grp-names-h">{"anynomus"+posts.indexOf(post)}</div>
+                    <div className="comm-grp-names-p">{post.createdOn}</div>
                   </div>
 
                   <div className="comm-grp-chats">
                     <div className="comm-grp-chats-h">
-                      Lorem ipsum dolor sit amet, consectetur
+                      {post.title}
                     </div>
                     <div className="comm-grp-chats-p">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Curabitur quis nisi eleifend, pulvinar imperdiet felis.
-                      Suspendisse mollis euismod sapien, quis varius dolor
-                      hendrerit quis. Suspendisse a condimentum mauris. Duis id
-                      turpis auctor, pretium est eu, ornare risus. Praesent
-                      pretium sapien sit amet justo.
+                      {post.desc}
                     </div>
                   </div>
 
                   <div className="comm-dis-rxn">
                     <div className="comm-dis-rxns">
                       <img src={HeartIcon}></img>
-                      <div className="comm-dis-rxns-h1">20 Felt Same</div>
+                      <div className="comm-dis-rxns-h1">{post.likes.length} Felt Same</div>
                     </div>
                     <div className="comm-dis-rxns">
                       <img src={ReplyIcon}></img>
-                      <div className="comm-dis-rxns-h2">2 Replies</div>
+                      <div className="comm-dis-rxns-h2">{post.replies.length} Replies</div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="comm-grp-chats-container-sub">
-                <div className="comm-grp-chats-container-m">
+                {post.replies.map((reply)=>{
+                  return(
+                    <>
+                    <div className="comm-grp-chats-container-m">
                   <img className="grey-mini" src={GreyCircleIcon}></img>
                   <div className="comm-grp-content">
                     <div className="comm-grp-content-h">
-                      Jane,<span> 11 Sep 2023</span>
+                      <span> {reply.createdAt}</span>
                     </div>
                     <div className="comm-grp-content-p">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Curabitur quis nisi eleifend, pulv inar mi a, imperdiet
-                      felis. Suspendisse mollis euismod sapien, quis varius
-                      dolor hendrerit quis. Suspendisse a condimentum mauris.
+                      {reply.replyText}
+                      
                     </div>
                   </div>
                 </div>
+                    </>
+                  )
+                })
+                  
+                }
 
-                <div className="comm-grp-chats-container-m">
-                  <img className="grey-mini" src={GreyCircleIcon}></img>
-                  <div className="comm-grp-content">
-                    <div className="comm-grp-content-h">
-                      Jane,<span> 11 Sep 2023</span>
-                    </div>
-                    <div className="comm-grp-content-p">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Curabitur quis nisi eleifend, pulv inar mi a, imperdiet
-                      felis. Suspendisse mollis euismod sapien, quis varius
-                      dolor hendrerit quis. Suspendisse a condimentum mauris.
-                    </div>
-                  </div>
+          
+               {post.replies.length>2 ? (<>
+                <div className="show-less-comm">
+                  <div className="show-less-h">Show More</div>
+                  <img src={DownbarIcon}></img>
                 </div>
+               </>):(<>
                 <div className="show-less-comm">
                   <div className="show-less-h">Show less</div>
                   <img src={DownbarIcon}></img>
                 </div>
+               </>)}
+               
               </div>
             </div>
-            <div className="comm-grp-lower-cont">
-              <div className="comm-grp-chats-container-u comm-grp-chats-container-u-2">
-                <img className="grey-mini" src={GreyCircleIcon}></img>
-                <div className="comm-grp-inner comm-grp-inner-2">
-                  <div className="comm-grp-names">
-                    <div className="comm-grp-names-h">Erin Arcand</div>
-                    <div className="comm-grp-names-p">11 Sep 2023</div>
-                  </div>
+                  </>
+                )
+              })}
 
-                  <div className="comm-grp-chats">
-                    <div className="comm-grp-chats-h">
-                      Lorem ipsum dolor sit amet, consectetur
-                    </div>
-                    <div className="comm-grp-chats-p">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Curabitur quis nisi eleifend, pulvinar imperdiet felis.
-                      Suspendisse mollis euismod sapien, quis varius dolor
-                      hendrerit quis. Suspendisse a condimentum mauris. Duis id
-                      turpis auctor, pretium est eu, ornare risus. Praesent
-                      pretium sapien sit amet justo.
-                    </div>
-                  </div>
+            
 
-                  <div className="comm-dis-rxn">
-                    <div className="comm-dis-rxns">
-                      <img src={HeartIcon}></img>
-                      <div className="comm-dis-rxns-h1">20 Felt Same</div>
-                    </div>
-                    <div className="comm-dis-rxns">
-                      <img src={ReplyIcon}></img>
-                      <div className="comm-dis-rxns-h2">2 Replies</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="comm-grp-lower-cont comm-grp-lower-cont-0">
-              <div className="comm-grp-chats-container-u">
-                <img src={GreyCircleIcon}></img>
-                <div className="comm-grp-inner">
-                  <div className="comm-grp-names">
-                    <div className="comm-grp-names-h">Erin Arcand</div>
-                    <div className="comm-grp-names-p">11 Sep 2023</div>
-                  </div>
-
-                  <div className="comm-grp-chats">
-                    <div className="comm-grp-chats-h">
-                      Lorem ipsum dolor sit amet, consectetur
-                    </div>
-                    <div className="comm-grp-chats-p">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Curabitur quis nisi eleifend, pulvinar imperdiet felis.
-                      Suspendisse mollis euismod sapien, quis varius dolor
-                      hendrerit quis. Suspendisse a condimentum mauris. Duis id
-                      turpis auctor, pretium est eu, ornare risus. Praesent
-                      pretium sapien sit amet justo.
-                    </div>
-                  </div>
-
-                  <div className="comm-dis-rxn">
-                    <div className="comm-dis-rxns">
-                      <img src={HeartIcon}></img>
-                      <div className="comm-dis-rxns-h1">20 Felt Same</div>
-                    </div>
-                    <div className="comm-dis-rxns">
-                      <img src={ReplyIcon}></img>
-                      <div className="comm-dis-rxns-h2">2 Replies</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -266,4 +222,4 @@ const community2 = () => {
   );
 };
 
-export default community2;
+export default Community2;

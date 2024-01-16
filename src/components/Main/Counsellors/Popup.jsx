@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Popup.css"; // Import your CSS file for styling
 import upload from "../assets/images/upload.png";
 import Cross from "../Images/cross.png";
+import { Link } from "react-router-dom";
 
 function Popup({ onClose }) {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -99,9 +100,11 @@ function Popup({ onClose }) {
           </div>
         </div>
         <div className="popup-btn-div">
+          <Link to="/dashboard-counsellor">
           <button className="popup-close-btn" onClick={onClose}>
             Submit
           </button>
+          </Link>
         </div>
       </div>
     </div>

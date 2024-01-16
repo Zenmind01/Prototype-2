@@ -20,6 +20,7 @@ import UpcomingIcon from "../images/upcoming-icon.png";
 import CommaIcon from "../images/comma.png";
 import FourstarIcon from "../images/4star.png";
 import Navbar from "../Navbar2/navbar";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -151,7 +152,9 @@ const Dashboard = () => {
                 </div>
 
                 <div className="join-reschedule-dash2">
+                  <Link to="https://meet.google.com/zza-eoye-vvu">
                   <div className="join-btn-dash2">Join Now</div>
+                  </Link>
                   <div className="reschedule-dash2">Reschedule</div>
                   <div className="cancel-dash">Cancel</div>
                 </div>
@@ -190,8 +193,9 @@ const Dashboard = () => {
                 </div>
 
                 <div className="join-reschedule-dash2">
+                <Link to="https://meet.google.com/zza-eoye-vvu">
                   <div className="join-btn-dash2">Join Now</div>
-                  <div className="reschedule-dash2">Reschedule</div>
+                  </Link>                  <div className="reschedule-dash2">Reschedule</div>
                   <div className="cancel-dash">Cancel</div>
                 </div>
               </div>
@@ -221,7 +225,9 @@ const Dashboard = () => {
                     20 Sep 2023, 7:30 - 8:30 PM
                   </div>
                   <div className="btn-gap">
+                  <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -240,7 +246,9 @@ const Dashboard = () => {
                     20 Sep 2023, 7:30 - 8:30 PM
                   </div>
                   <div className="btn-gap">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -259,7 +267,9 @@ const Dashboard = () => {
                     20 Sep 2023, 7:30 - 8:30 PM
                   </div>
                   <div className="btn-gap">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -308,7 +318,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="client-flex">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="client-btn">Join</div>
+                    </Link>
                     <div className="client-reschedule">Reschedule</div>
                   </div>
                 </div>
@@ -324,7 +336,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="client-flex">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="client-btn">Join</div>
+                    </Link>
                     <div className="client-reschedule">Reschedule</div>
                   </div>
                 </div>
@@ -340,7 +354,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="client-flex">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="client-btn">Join</div>
+                    </Link>
                     <div className="client-reschedule">Reschedule</div>
                   </div>
                 </div>
@@ -356,8 +372,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="client-flex">
+                  <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="client-btn">Join</div>
-                    <div className="client-reschedule">Reschedule</div>
+                    </Link>                    <div className="client-reschedule">Reschedule</div>
                   </div>
                 </div>
               </div>
@@ -403,7 +420,9 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -428,7 +447,9 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -453,7 +474,9 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -480,7 +503,9 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+                    <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -502,7 +527,9 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+                  <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -524,7 +551,10 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+
+                  <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>
@@ -546,7 +576,9 @@ const Dashboard = () => {
                   </div>
                   <div className="already-join">4+ Members already joined</div>
                   <div className="btn-gap">
+                  <Link to="https://meet.google.com/zza-eoye-vvu">
                     <div className="last-cont-btn">Join</div>
+                    </Link>
                     <div className="last-cont-btn-r">Reschedule</div>
                     <div className="last-cont-btn-r">Cancel</div>
                   </div>

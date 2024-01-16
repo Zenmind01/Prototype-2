@@ -17,42 +17,77 @@ import PerInfo from "../images/profile-info.png";
 import Assess from "../images/profile-assess.png";
 import Navbar from "../Navbar/navbar";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const Dashboard = () => {
   const [phone, setPhone] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
 
-  useEffect(() => {}, []);
+  const [user, setUser] = useState({
+    name:"",
+    email:"",
+    phone: phone,
+    dob: dob,
+    gender: gender,
+    p1: [],
+    p2: [],
+    p3: [],
+    p4: [],
+    p5: [],
+    p6: [],
+    bankDetail: {
+      bank_name: "",
+      ac_no: "",
+      ifsc_code: "",
+      branch_name: "",
+      upi: "",
+      card_no: "",
+    },
+  });
+
+  useEffect(() => {
+
+    const gu = async () => {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://back-zm-01.onrender.com/users/" + Cookies.get("data"),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        //data: data,
+      };
+
+      await axios
+        .request(config)
+        .then((response) => {
+          if(response.data.success){
+            console.log(response.data.data);
+            setUser(response.data.data);
+          }else{
+            console.log(response.data);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    gu();
+
+  }, []);
+
   const _handleSubmit = async function (e) {
     e.preventDefault();
 
     // const axios = require("axios");
 
-    let data = JSON.stringify({
-      phone: phone,
-      dob: dob,
-      gender: gender,
-      p1: [],
-      p2: [],
-      p3: [],
-      p4: [],
-      p5: [],
-      p6: [],
-      bankDetail: {
-        bank_name: "",
-        ac_no: "",
-        ifsc_code: "",
-        branch_name: "",
-        upi: "",
-        card_no: "",
-      },
-    });
+    let data = user;
 
     let config = {
-      method: "get",
+      method: "PATCH",
       maxBodyLength: Infinity,
-      url: "http://localhost:2626/users/658fedac8d4ee0484d4a37e7",
+      url: "https://back-zm-01.onrender.com/users/" + user["_id"],
       headers: {
         "Content-Type": "application/json",
       },
@@ -62,7 +97,13 @@ const Dashboard = () => {
     await axios
       .request(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        if (response.data.success) {
+          console.log(JSON.stringify(response.data.data));
+          setUser(response.data.data)
+          
+        } else {
+          console.log(JSON.stringify(response.data));
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -169,14 +210,14 @@ const Dashboard = () => {
                 <label for="fname">
                   Full name<span>*</span>
                 </label>
-                <input type="name" placeholder="John Doe"></input>
+                <input type="name" placeholder="John Doe" value={user.name}></input>
               </div>
 
               <div className="profile-form-info profile-form-info-mb">
                 <label for="email">
                   Email<span>*</span>
                 </label>
-                <input type="email" placeholder="name@domain.com"></input>
+                <input type="email" placeholder="name@domain.com" value={user.email}></input>
               </div>
             </div>
             <div className="profile-form-cont">
@@ -185,7 +226,7 @@ const Dashboard = () => {
                 <input
                   id="phone"
                   name="phone"
-                  value={phone}
+                  value={user.phone}
                   onChange={handleChange}
                   type="text"
                   placeholder="+91 9500950095"
@@ -195,10 +236,10 @@ const Dashboard = () => {
               <div className="profile-form-info profile-form-info-mb-dob">
                 <label for="dob">Date of birth</label>
                 <input
-                  type="date"
+                  type="text"
                   id="dob"
                   name="dob"
-                  value={dob}
+                  value={user.dob}
                   onChange={handleChange}
                   placeholder="20/September/2000"
                 ></input>
@@ -210,7 +251,7 @@ const Dashboard = () => {
                 <select
                   id="gender"
                   name="gender"
-                  value={gender}
+                  value={user.gender}
                   onChange={handleChange}
                 >
                   <option value="option1">Male</option>

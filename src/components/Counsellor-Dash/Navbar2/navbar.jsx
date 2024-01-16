@@ -35,6 +35,7 @@ import CommDisIcon from "../images/comm-dis.png";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import Search from "../images/search-1.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -53,7 +54,9 @@ const Navbar = () => {
     <>
       <div className="nav-container">
         <div className="nav-logo ">
+          <Link to="/home"> 
           <img className="nav-logo-mb" src={zenlogo} alt="Zenmind Logo" />
+          </Link>
         </div>
         <div className="nav-box">
           <div className="nav-search">
@@ -69,7 +72,9 @@ const Navbar = () => {
               src={Notification}
               alt="Notification"
             />
+            <Link to="/home">
             <img className="sign-img" src={Signout}></img>
+            </Link>
             <img className="sign-search" src={Search}></img>
             <img className="ham-img" onClick={openPopup} src={Hamburger}></img>
           </div>

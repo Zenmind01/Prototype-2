@@ -8,6 +8,7 @@ import register from "../../assets/images/register-img.png";
 import Navbar from "../../Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const SignUp = () => {
   // Define the show/hide state outside the function so it persists between renders.
@@ -33,7 +34,7 @@ const SignUp = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:2626/users/signup",
+      url: "https://back-zm-01.onrender.com/users/signup",
       headers: {
         "Content-Type": "application/json",
       },
@@ -44,7 +45,13 @@ const SignUp = () => {
       .request(config)
       .then((response) => {
         // console.log(JSON.stringify(response.data));
-        navigate("/login");
+        if(response.data.status){
+          Cookies.set('data', response.data.message._id, { expires: 7 });
+          navigate("/dashboard2");}
+        else{
+
+        }
+
       })
       .catch((error) => {
         console.log(error);

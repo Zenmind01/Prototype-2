@@ -214,7 +214,7 @@
 
 .upcoming-left-container-dash {
   padding-top: 34px;
-
+ width: 50%;
   align-items: center;
   justify-content: center;
 }
@@ -669,6 +669,7 @@
 
   .upcoming-left-dash {
     display: flex;
+    width: 600px;
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid #f2f2f2;

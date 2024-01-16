@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   useLocation,
+  useNavigate
 } from "react-router-dom";
+
 import Dashboard from "../User-Dash/Dashboard/dashboard";
 import Dashbaord2 from "../User-Dash/Dashboard2/dashboard2";
 import Session from "../User-Dash/Session/session";
@@ -35,9 +37,47 @@ import ContactUs from "../Main/Contactus";
 import Counsellors from "../Main/Counsellors/Counsellors";
 import { AnimatePresence } from "framer-motion";
 import Chat from "../User-Dash/Chats/Chats";
+import Assessment from "../Main/Assesment/assesment";
+import Cookies from "js-cookie";
+import axios from "axios";
+import Dashboard2 from "../User-Dash/Dashboard2/dashboard2";
 
 export default function Allroutes() {
   const location = useLocation();
+  const [session, setSession] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    const getSession = async ()=>{
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'https://back-zm-01.onrender.com/session/'+Cookies.get("data"),
+        headers: { }
+      };
+      
+      await axios.request(config)
+      .then((response) => {
+       setSession(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+    if(!Cookies.get("data")){
+      getSession();
+      navigate("dashboard2")
+    }
+    
+    
+  }, [])
+  
+
+
+
+
+
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
@@ -48,11 +88,11 @@ export default function Allroutes() {
         <Route path="/about" element={<Aboutus />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/counsellors" element={<Counsellors />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path='/' element={<Dashbaord2/>}/> */}
-        <Route path="/dashboard2" element={<Dashbaord2 />} />
+        <Route path="/dashboard2" element={session.length>0?<Dashbaord2 data={session} />:<Dashboard />} />
         <Route path="/session" element={<Session />} />
-        <Route path="/community" element={<Community />} />
+        <Route path="/community" element={<Community2 />} />
         <Route path="/community2" element={<Community2 />} />
         <Route path="/community3" element={<Community3 />} />
         <Route path="/dashboard-counsellor" element={<CounsellorDashboard />} />
@@ -83,6 +123,7 @@ export default function Allroutes() {
         <Route path="/profile-counsellor" element={<Profilecounsellor />} />
         <Route path="/payment-counsellor" element={<PaymentCo />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/assessment" element={<Assessment />} />
         <Route
           path="/add-payment-details-counsellor"
           element={<PaymentAddC />}

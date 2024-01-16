@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./dashboard2.css";
 
 import Profile from "../images/user-profile.png";
@@ -27,15 +27,46 @@ import RightIcon from "../images/right-b-img.png";
 import RightCounBanner from "../images/counsellor-right-banner.png";
 import LeftCounBanner from "../images/counsellor-left-banner.png";
 import Navbar from "../Navbar/navbar";
+import session from "../Session/session";
+import axios from "axios";
 
-const Dashboard = () => {
-  const openLink = () => {
-    // Replace 'your-link-here' with the desired URL
-    window.open(
-      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
-      "_blank"
-    );
-  };
+const Dashboard2 = ({data}) => {
+
+  const [sessions, getSessions] = useState(data);
+  const [clist,setClist] = useState([]);
+  
+
+  useEffect(() => {
+
+    const getClist = async ()=>{
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'https://back-zm-01.onrender.com/doc/',
+        headers: { }
+      };
+      
+      axios.request(config)
+      .then((response) => {
+       // console.log(response.data.data)
+        setClist(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+
+    getClist();
+    
+  }, [])
+
+  const name = (id)=>{
+    const n = clist.find(item=>item._id===id)
+    console.log(n)
+    if(!n) return "unkown";
+    return n.name
+  }
+ 
   return (
     <>
       <Navbar></Navbar>
@@ -141,27 +172,30 @@ const Dashboard = () => {
             </div>
 
             <div className="dash-counsellor-flex">
-              <div className="dash-counsellor-dash2">
+              {sessions.map((session)=>{
+                    return(
+                      <>
+                      <div className="dash-counsellor-dash2">
                 <div className="dash-counsellor-left">
                   <div className="counsellor-main">
                     <div className="counsellor-details">
                       <img src={Counsellor1}></img>
                       <div className="counsellor-info">
                         <div className="counsellor-name-dash2">
-                          Counsellor Name
+                           {name(session.docId)}
                         </div>
-                        <div className="anx-dp-dash2">Anxiety, Depression</div>
+                        <div className="anx-dp-dash2">{session.title}</div>
                       </div>
                     </div>
                     <div className="counsellor-schedule">
                       <div className="schedule-date">
                         <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">20 Sep 2023</div>
+                        <div className="schedule-date-t-dash2">{session.date}</div>
                       </div>
                       <div className="schedule-date">
                         <img src={timeIcon}></img>
                         <div className="schedule-date-t-dash2">
-                          7:30 - 8:30 PM
+                        {session.time}
                         </div>
                       </div>
                     </div>
@@ -179,45 +213,11 @@ const Dashboard = () => {
                   <div className="cancel-dash">Cancel</div>
                 </div>
               </div>
+                      </>
+                    )
+              })}
 
-              <div className="dash-counsellor-dash2">
-                <div className="dash-counsellor-left">
-                  <div className="counsellor-main">
-                    <div className="counsellor-details">
-                      <img src={Counsellor2}></img>
-                      <div className="counsellor-info">
-                        <div className="counsellor-name-dash2">
-                          Counsellor Name
-                        </div>
-                        <div className="anx-dp-dash2">Anxiety, Depression</div>
-                      </div>
-                    </div>
-                    <div className="counsellor-schedule">
-                      <div className="schedule-date">
-                        <img src={Minicalender}></img>
-                        <div className="schedule-date-t-dash2">20 Sep 2023</div>
-                      </div>
-                      <div className="schedule-date">
-                        <img src={timeIcon}></img>
-                        <div className="schedule-date-t-dash2">
-                          7:30 - 8:30 PM
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="schedule-cancel-dash2">
-                    <img src={CancelIcon}></img>
-                    <div>Cancel the session</div>
-                  </div>
-                </div>
-
-                <div className="join-reschedule-dash2">
-                  <div className="join-btn-dash2">Join Now</div>
-                  <div className="reschedule-dash2">Reschedule</div>
-                  <div className="cancel-dash">Cancel</div>
-                </div>
-              </div>
+           
             </div>
 
             <div className="upcoming-session">
@@ -254,14 +254,17 @@ const Dashboard = () => {
             <div className="client-container">
               <div className="upcoming-left-dash2">
                 <div className="upcoming-left-container">
-                  <div className="left-content-2">
+
+                  {clist.map((co)=>{
+                    return(<>
+                    <div className="left-content-2">
                     <div className="upcoming-container">
                       <img src={UpcomingIcon}></img>
                       <div className="client-info">
-                        <div className="client-name-h1">Client name</div>
-                        <div className="client-desc">Anxiety, Depression</div>
+                        <div className="client-name-h1">{co.name}</div>
+                        <div className="client-desc">{co.about}</div>
                         <div className="client-desc">
-                          20 Sep 2023, 7:30 - 8:30 PM
+                          {co.edu.institution_name}
                         </div>
                       </div>
                     </div>
@@ -270,54 +273,9 @@ const Dashboard = () => {
                       <div className="client-reschedule">Reschedule</div>
                     </div>
                   </div>
-                  <div className="left-content-1">
-                    <div className="upcoming-container">
-                      <img src={UpcomingIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Client name</div>
-                        <div className="client-desc">Anxiety, Depression</div>
-                        <div className="client-desc">
-                          20 Sep 2023, 7:30 - 8:30 PM
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-btn">Join</div>
-                      <div className="client-reschedule">Reschedule</div>
-                    </div>
-                  </div>
-                  <div className="left-content">
-                    <div className="upcoming-container">
-                      <img src={UpcomingIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Client name</div>
-                        <div className="client-desc">Anxiety, Depression</div>
-                        <div className="client-desc">
-                          20 Sep 2023, 7:30 - 8:30 PM
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-btn">Join</div>
-                      <div className="client-reschedule">Reschedule</div>
-                    </div>
-                  </div>
-                  <div className="left-content-1">
-                    <div className="upcoming-container">
-                      <img src={UpcomingIcon}></img>
-                      <div className="client-info">
-                        <div className="client-name-h1">Client name</div>
-                        <div className="client-desc">Anxiety, Depression</div>
-                        <div className="client-desc">
-                          20 Sep 2023, 7:30 - 8:30 PM
-                        </div>
-                      </div>
-                    </div>
-                    <div className="client-flex">
-                      <div className="client-btn">Join</div>
-                      <div className="client-reschedule">Reschedule</div>
-                    </div>
-                  </div>
+                    </>)
+                  })}
+   
                 </div>
               </div>
               <div className="upcoming-session-mb upcoming-session-mb-2 upcoming-session-mb-2-chat">
@@ -388,100 +346,8 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="upcoming-session-mb upcoming-session-mb-comm ">
-              <div className="upcoming-session-mb-p">Community Meeting</div>
-              <div className="upcoming-session-box-mb-flex upcoming-session-mb-comm2">
-                <div className="upcoming-session-mb-date">01/09 - 30/09</div>
-                <img src={CalenderIcon}></img>
-              </div>
-            </div>
-            <div className="community-meeting">
-              <div className="community-meeting-p1">Your Community Meeting</div>
-              <div className="community-date">
-                <div className="community-date-p">01/09/2023 - 30/09/2023</div>
-                <img src={CalenderIcon}></img>
-              </div>
-            </div>
+           
 
-            <div className="last-container">
-              <div className="last-box">
-                <div className="community-meeting-flex">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                      <div className="res-time-schedule">
-                        20 Sep 2023, 7:30 - 8:30 PM
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                    <div className="last-cont-btn">Join</div>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex gray">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                      <div className="res-time-schedule">
-                        20 Sep 2023, 7:30 - 8:30 PM
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                    <div className="last-cont-btn">Join</div>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-                <div className="community-meeting-flex">
-                  <div className="community-meeting-info">
-                    <img src={UpcomingIcon}></img>
-                    <div className="info-content">
-                      <div className="community-meeting-h">
-                        Community Meeting
-                      </div>
-                      <div className="community-meeting-p">
-                        Anxiety, Depression
-                      </div>
-                      <div className="res-time-schedule">
-                        20 Sep 2023, 7:30 - 8:30 PM
-                      </div>
-                    </div>
-                  </div>
-                  <div className="community-meeting-time-p1">
-                    20 Sep 2023, 7:30 - 8:30 PM
-                  </div>
-                  <div className="already-join">4+ Members already joined</div>
-                  <div className="btn-gap">
-                    <div className="last-cont-btn">Join</div>
-                    <div className="last-cont-btn-r">Reschedule</div>
-                    <div className="last-cont-btn-r">Cancel</div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div className="assessment-banner">
               <div className="assessment-container">
@@ -527,4 +393,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard2;

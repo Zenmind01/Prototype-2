@@ -209,9 +209,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -233,9 +241,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -257,9 +273,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -281,9 +305,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -305,9 +337,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -329,9 +369,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -353,9 +401,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -377,9 +433,17 @@ const session = () => {
                   </div>
 
                   <div className="prev-session-options">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -402,9 +466,17 @@ const session = () => {
                 <div className="mb-more">
                   <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
                   <div className="mb-more-l">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -425,9 +497,17 @@ const session = () => {
                 <div className="mb-more">
                   <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
                   <div className="mb-more-l">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -448,9 +528,17 @@ const session = () => {
                 <div className="mb-more">
                   <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
                   <div className="mb-more-l">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>
@@ -471,9 +559,17 @@ const session = () => {
                 <div className="mb-more">
                   <div className="mb-more-u"> 20 Sep 2023 7:30 - 8:30 PM</div>
                   <div className="mb-more-l">
-                    <div>Feedbacks</div>
-                    <div>Session Notes</div>
-                    <div>Session Videos</div>
+                    <div>
+                      <a
+                        href="https://drive.google.com/file/d/1u_qpFU3QbYKApv3zEp30yUBJf-vwCsaZ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        Feedbacks
+                      </a>
+                    </div>
+                    <div>Report</div>
                   </div>
                 </div>
               </div>

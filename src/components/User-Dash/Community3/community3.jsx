@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./community3.css";
+import { useNavigate } from "react-router-dom";
 
 import Profile from "../images/user-profile.png";
 import DashboardIcon from "../images/community-w.png";
@@ -13,12 +14,17 @@ import CommManIconBlack from "../images/CommManIconBlack.png";
 import CommDisIconblue from "../images/CommDisIconblue.png";
 import Navbar from "../Navbar/navbar";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const Community3 = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+  const [id, setId] = useState("");
+  const navigate = useNavigate();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+        setId(Cookies.get("data"))
+  }, []);
 
   const _handleSubmit = async function (e) {
     e.preventDefault();
@@ -26,6 +32,7 @@ const Community3 = () => {
     // const axios = require("axios");
 
     let data = JSON.stringify({
+      userId:id,
       title: title,
       desc: desc,
     });
@@ -33,7 +40,7 @@ const Community3 = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:2626/post",
+      url: "https://back-zm-01.onrender.com/post",
       headers: {
         "Content-Type": "application/json",
       },
@@ -43,7 +50,8 @@ const Community3 = () => {
     await axios
       .request(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        //console.log(JSON.stringify(response.data));
+        navigate("/community2")
       })
       .catch((error) => {
         console.log(error);

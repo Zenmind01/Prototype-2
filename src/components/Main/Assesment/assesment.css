@@ -1,0 +1,117 @@
+.asses-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  width: 650px;
+  height: 40px;
+  border-radius: 8px;
+  background: #f2f2f2;
+
+  text-align: center; 
+  margin-top: 40px;
+}
+
+.untit-form {
+  color: #333;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+  right: 230px;
+  bottom: 30px;
+}
+
+.ques-opt-a {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.input-des-a {
+  border: none;
+  display: flex;
+  width: 428px;
+  padding: 14px 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #f2f2f2;
+}
+
+.select-que {
+  border: none;
+  display: flex;
+  width: 150px;
+  padding: 14px 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  z-index: 1000;
+}
+
+.select-que option {
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.assess-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-option {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+.add-option-u {
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.add-option-l {
+  color: #555;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-weight: 400;
+}
+
+.side-bar-a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  right: 390px;
+  bottom: 420px;
+  z-index: 1;
+}
+
+.check-gap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}

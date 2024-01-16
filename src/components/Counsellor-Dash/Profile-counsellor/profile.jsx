@@ -71,7 +71,7 @@ const Dashboard = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "'http://localhost:2626/doc/658ff144f5321292d2728a15'",
+      url: "'https://back-zm-01.onrender.com/doc/658ff144f5321292d2728a15'",
       headers: {
         "Content-Type": "application/json",
       },

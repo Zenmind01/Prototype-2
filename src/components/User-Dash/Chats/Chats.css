@@ -126,7 +126,10 @@
 .blu-logo {
   height: 32px;
   position: relative;
-  top: 23px;
+  top: -1px;
+}
+.message-section{
+  padding-bottom: 15px;
 }
 
 .chat-con-cont {
@@ -154,11 +157,11 @@
   line-height: 16px; /* 160% */
   letter-spacing: 0.4px;
   position: relative;
-  left: 839px;
+  left: 83px;
 }
 
 .user-msg {
-  margin-left: 70vw;
+  margin-left: 70%;
   margin-top: 30px;
   gap: 20px;
 }
@@ -175,7 +178,7 @@
   font-weight: 400;
   line-height: 16px; /* 160% */
   letter-spacing: 0.4px;
-  margin-left: 550px;
+  margin-left: 1390px;
 }
 
 /* YourComponent.css */
@@ -540,8 +543,8 @@
   .user-msg-conti,
   .user-msg {
     position: relative;
-    right: 500px;
-    width: 165px;
+    right: 0;
+    width: 40%;
   
   }
 
@@ -550,7 +553,7 @@
     border-radius: 40%;
     display: flex;
     position: relative;
-    right: 550px;
+    right: 0;
   }
   .user-reep {
     height: 32px;

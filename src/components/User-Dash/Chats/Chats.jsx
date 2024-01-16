@@ -13,6 +13,7 @@ import ZenBlue from "../images/zen-blue.png";
 import Navbar from "../Navbar/navbar";
 
 import OpenAI from "openai";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,11 +21,12 @@ export const Chat = ({ id, name }) => {
   const [chats, setChats] = useState([]);
   const [loading, setloading] = useState(false);
   const [message, setMessage] = useState("");
+  
   //const [apiKey,setApiKey] = useState(process.env.API_SECRET);
  
    
   const openai = new OpenAI({
-    apiKey: process.env.API_KEY,
+    apiKey: "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",
     dangerouslyAllowBrowser: true,
   });
   const prompt = `
@@ -39,23 +41,27 @@ export const Chat = ({ id, name }) => {
   <context> Everything that involves a healthy and engaging conversation <context>
 `;
 
+const [messages, setMessages] = useState([prompt]);
+
   async function openAI(message) {
     
     const completion = await openai.chat.completions.create({
       messages: [
-        {
-          role: "system",
-          content: prompt,
-        },
-        { role: "user", content: message },
-      ],
+          {
+            role: "system",
+            content: messages.toString()
+          },
+          { role: "user", content: message },],
+        
+      
       temperature: 0.7,
       max_tokens: 48,
       frequency_penalty: 0.2,
       model: "gpt-3.5-turbo-1106",
       response_format: { type: "text" },
     });
-    console.log("--->" + completion.choices[0].message.content);
+    //console.log(completion.choices[0].message.content);
+    setMessages((p)=>[message,...p]);
     return completion.choices[0].message.content;
   }
 
@@ -147,6 +153,25 @@ export const Chat = ({ id, name }) => {
    
   }
 
+  const [currentTime, setCurrentTime] = useState(getFormattedTime());
+
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(getFormattedTime());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  function getFormattedTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${hours}:${minutes}`;
+  }
+
+
   return (
     <>
       
@@ -155,7 +180,9 @@ export const Chat = ({ id, name }) => {
         
       <div className="chat-main">
               <div className="user-details">
+                <Link to="/dashboard">
                 <img className="back-logo" src={Back}></img>
+                </Link>
                 <img className="chat-logo" src={Bot}></img>
 
                 <div className="user-name">ZenChat</div>
@@ -194,7 +221,7 @@ export const Chat = ({ id, name }) => {
                           isReceivedMessage ? "chat-time" : "user-rep-time"
                         }
                       >
-                        07:59 pm
+                        {currentTime}
                       </div>
                   
                      

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./community.css";
 
 import Profile from "../images/user-profile.png";
@@ -28,14 +28,39 @@ import RightCounBanner from "../images/counsellor-right-banner.png";
 import Filter from "../images/filter.png";
 import Navbar from "../Navbar/navbar";
 
-const community = () => {
-  const openLink = () => {
-    // Replace 'your-link-here' with the desired URL
-    window.open(
-      "https://app-chatbot-fxvebwyjixxoh26r8q7s33.streamlit.app/",
-      "_blank"
-    );
-  };
+import axios from "axios";
+
+
+
+
+const Community = () => {
+  const [posts, setPost] = useState([]);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const axios = require("axios");
+
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://back-zm-01.onrender.com/post",
+        headers: {},
+      };
+
+      await axios
+        .request(config)
+        .then((response) => {
+          console.log(response.data);
+          // setPost(response.data)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    getPosts();
+  }, []);
+
   return (
     <>
       <Navbar></Navbar>
@@ -551,4 +576,4 @@ const community = () => {
   );
 };
 
-export default community;
+export default Community;

@@ -8,6 +8,7 @@ import register from "../../assets/images/register-img.png";
 import Navbar from "../../Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const Login = () => {
   // Define the show/hide state outside the function so it persists between renders.
@@ -16,7 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const _handleSubmit = async function (e) {
-    navigate("/dashboard2");
+    
     e.preventDefault();
 
     // const axios = require("axios");
@@ -29,7 +30,7 @@ const Login = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:2626/users/login",
+      url: "https://back-zm-01.onrender.com/users/login",
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,11 +40,12 @@ const Login = () => {
     await axios
       .request(config)
       .then((response) => {
-        // console.log(JSON.stringify(response.data));
-        if (response.ok) {
+        console.log(JSON.stringify(response.data));
+        if (response.data.status) {
           // Assuming the response contains a "success" flag for a successful login
           // Redirect the user to the home page upon successful login
-          navigate("/home"); // You might need to change '/home' to the appropriate route
+          Cookies.set('data', response.data.success._id, { expires: 7 });
+          navigate("/dashboard2"); // You might need to change '/home' to the appropriate route
         } else {
           console.log("Login failed. Please check your credentials.");
           // Handle unsuccessful login - show an error message, etc.

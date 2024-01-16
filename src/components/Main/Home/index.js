@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import Navbar from "../Navbar/index";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 function Homecontent() {
   return (
@@ -35,9 +36,11 @@ function Homecontent() {
                 <br /> Anytime, Anywhere, Any device.
               </div>
               <div className="button-free">
+                <Link to="/assessment">
                 <motion.button whileHover={{ scale: 1.1 }}>
-                  Take Free Assessment
+                  New Assessment
                 </motion.button>
+                </Link>
               </div>
             </div>
           </Fade>
