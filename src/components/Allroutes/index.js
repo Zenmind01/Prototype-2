@@ -65,7 +65,7 @@ export default function Allroutes() {
         console.log(error);
       });
     }
-    if(Cookies.get("data")!==null){
+    if(Cookies.get("data")!==undefined){
       getSession();
     }
     
