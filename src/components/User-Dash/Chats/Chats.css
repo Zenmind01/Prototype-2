@@ -14,7 +14,6 @@
 }
 
 .new-height {
-  height: 800px;
   overflow-y: hidden;
 }
 
@@ -242,8 +241,10 @@
 }
 
 .user-msg-conti {
-  width: 365.995px;
-  height: 71.99px;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
   flex-shrink: 0;
   background-color: #25ced1;
   border-radius: 8px;
@@ -261,6 +262,8 @@
   text-align: left;
   display: flex;
   padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 465px;
 }
 
 .loading-logo {
@@ -294,7 +297,7 @@
 
 .message-section {
   width: 97vw;
-  height: 600px;
+  height: 540px;
   flex-shrink: 0;
   border: 1px solid #d9d9d9;
   background: #fff;
@@ -476,7 +479,7 @@
 
   .user-rep-time {
     position: relative;
-    right: 360px;
+    right: 1150px;
     width: 100px;
     padding-top: 5px;
   }
@@ -544,14 +547,14 @@
 
   .mesaage-date {
     position: relative;
-    right: 360px;
+    right: 30px;
   }
 
   .user-msg-conti,
   .user-msg {
     position: relative;
     right: 0;
-    width: 40%;
+    width: 50%;
   }
 
   .user-msg {
