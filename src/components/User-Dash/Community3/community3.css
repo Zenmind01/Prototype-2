@@ -126,7 +126,10 @@
   border-radius: 8px;
   border: 1px solid #555;
 }
-
+.comm-grp-cats-2-u {
+  display: flex;
+  gap: 25px;
+}
 .new-topic-form-l input::placeholder {
   color: #666;
   font-family: Roboto;
@@ -170,4 +173,29 @@
 .new-dis-checkbox input {
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 720px) {
+  .Create-new-dis-cont {
+    position: relative;
+    left: -60px;
+    bottom: 70px;
+    transform: scale(0.8);
+  }
+
+  .comm-grp-cats-2-u {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .community3-starter1 {
+    position: relative;
+    left: 87px;
+    margin-left: -100px;
+  }
+  .grp-cat {
+    font-size: 18px;
+  }
 }

@@ -479,14 +479,14 @@
 
   .user-rep-time {
     position: relative;
-    right: 1150px;
+    right: 1123px;
     width: 100px;
     padding-top: 5px;
   }
 
   .chat-time {
-    left: 250px;
-    top: 30px;
+    left: 80px;
+    bottom: 20px;
     padding-bottom: 20px;
     padding-top: 5px;
   }
@@ -547,13 +547,13 @@
 
   .mesaage-date {
     position: relative;
-    right: 30px;
+    right: 45px;
   }
 
   .user-msg-conti,
   .user-msg {
     position: relative;
-    right: 0;
+    right: -30px;
     width: 50%;
   }
 
@@ -583,7 +583,7 @@
 
   .chat-con-cont {
     position: relative;
-    bottom: 30px;
+    top: 20px;
   }
 
   .con-det {

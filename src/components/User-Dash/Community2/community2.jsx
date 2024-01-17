@@ -1,6 +1,6 @@
-import React , {useState,useEffect}from "react";
+import React, { useState, useEffect } from "react";
 import "./community2.css";
-import axios from 'axios'
+import axios from "axios";
 
 import Profile from "../images/user-profile.png";
 import DashboardIcon from "../images/community-w.png";
@@ -19,34 +19,30 @@ import DownbarIcon from "../images/downbar.png";
 import Navbar from "../Navbar/navbar";
 
 const Community2 = () => {
-  
-    const [posts, setPost] = useState([]);
+  const [posts, setPost] = useState([]);
 
-    useEffect(() => {
-
-      const getPosts = async () => {
-        
-  
-        let config = {
-          method: "get",
-          maxBodyLength: Infinity,
-          url: "https://back-zm-01.onrender.com/post",
-          headers: {},
-        };
-  
-        await axios
-          .request(config)
-          .then((response) => {
-            setPost(response.data.data);
-            // setPost(response.data)
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+  useEffect(() => {
+    const getPosts = async () => {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://back-zm-01.onrender.com/post",
+        headers: {},
       };
-  
-      getPosts();
-    }, []);
+
+      await axios
+        .request(config)
+        .then((response) => {
+          setPost(response.data.data);
+          // setPost(response.data)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    getPosts();
+  }, []);
 
   return (
     <>
@@ -109,7 +105,7 @@ const Community2 = () => {
         <div className="dashboard-right">
           <div className="dashboard-right-container">
             <div className="community2-starter">
-              <div className="community2-starter-l">
+              <div className="community2-starter-l community2-starter-l2">
                 <div className="community2-starter-h">Community</div>
                 <div className="community2-starter-p">
                   Community/Community discussion
@@ -117,6 +113,9 @@ const Community2 = () => {
               </div>
               <a href="/community3" className="comm-start-btn">
                 + Create new Discussion
+              </a>
+              <a href="/community3" className="comm-start-btn1">
+                +
               </a>
             </div>
 
@@ -137,84 +136,86 @@ const Community2 = () => {
               </div>
             </div>
 
-              {posts.map((post)=>{
-                return (
-                  <>
+            {posts.map((post) => {
+              return (
+                <>
                   <div className="comm-grp-chats-container">
-                                <div className="comm-grp-chats-container-u">
-                <img className="gray-cirl" src={GreyCircleIcon}></img>
-                <div className="comm-grp-inner">
-                  <div className="comm-grp-names">
-                    <div className="comm-grp-names-h">{"anynomus"+posts.indexOf(post)}</div>
-                    <div className="comm-grp-names-p">{post.createdOn}</div>
+                    <div className="comm-grp-chats-container-u">
+                      <img className="gray-cirl" src={GreyCircleIcon}></img>
+                      <div className="comm-grp-inner">
+                        <div className="comm-grp-names">
+                          <div className="comm-grp-names-h">
+                            {"anynomus" + posts.indexOf(post)}
+                          </div>
+                          <div className="comm-grp-names-p">
+                            {post.createdOn}
+                          </div>
+                        </div>
+
+                        <div className="comm-grp-chats">
+                          <div className="comm-grp-chats-h">{post.title}</div>
+                          <div className="comm-grp-chats-p">{post.desc}</div>
+                        </div>
+
+                        <div className="comm-dis-rxn">
+                          <div className="comm-dis-rxns">
+                            <img src={HeartIcon}></img>
+                            <div className="comm-dis-rxns-h1">
+                              {post.likes.length} Felt Same
+                            </div>
+                          </div>
+                          <div className="comm-dis-rxns">
+                            <img src={ReplyIcon}></img>
+                            <div className="comm-dis-rxns-h2">
+                              {post.replies.length} Replies
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="comm-grp-chats-container-sub">
+                      {post.replies.map((reply) => {
+                        return (
+                          <>
+                            <div className="comm-grp-chats-container-m">
+                              <img
+                                className="grey-mini"
+                                src={GreyCircleIcon}
+                              ></img>
+                              <div className="comm-grp-content">
+                                <div className="comm-grp-content-h">
+                                  <span> {reply.createdAt}</span>
+                                </div>
+                                <div className="comm-grp-content-p">
+                                  {reply.replyText}
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })}
+
+                      {post.replies.length > 2 ? (
+                        <>
+                          <div className="show-less-comm">
+                            <div className="show-less-h">Show More</div>
+                            <img src={DownbarIcon}></img>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="show-less-comm">
+                            <div className="show-less-h">Show less</div>
+                            <img src={DownbarIcon}></img>
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
-
-                  <div className="comm-grp-chats">
-                    <div className="comm-grp-chats-h">
-                      {post.title}
-                    </div>
-                    <div className="comm-grp-chats-p">
-                      {post.desc}
-                    </div>
-                  </div>
-
-                  <div className="comm-dis-rxn">
-                    <div className="comm-dis-rxns">
-                      <img src={HeartIcon}></img>
-                      <div className="comm-dis-rxns-h1">{post.likes.length} Felt Same</div>
-                    </div>
-                    <div className="comm-dis-rxns">
-                      <img src={ReplyIcon}></img>
-                      <div className="comm-dis-rxns-h2">{post.replies.length} Replies</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="comm-grp-chats-container-sub">
-                {post.replies.map((reply)=>{
-                  return(
-                    <>
-                    <div className="comm-grp-chats-container-m">
-                  <img className="grey-mini" src={GreyCircleIcon}></img>
-                  <div className="comm-grp-content">
-                    <div className="comm-grp-content-h">
-                      <span> {reply.createdAt}</span>
-                    </div>
-                    <div className="comm-grp-content-p">
-                      {reply.replyText}
-                      
-                    </div>
-                  </div>
-                </div>
-                    </>
-                  )
-                })
-                  
-                }
-
-          
-               {post.replies.length>2 ? (<>
-                <div className="show-less-comm">
-                  <div className="show-less-h">Show More</div>
-                  <img src={DownbarIcon}></img>
-                </div>
-               </>):(<>
-                <div className="show-less-comm">
-                  <div className="show-less-h">Show less</div>
-                  <img src={DownbarIcon}></img>
-                </div>
-               </>)}
-               
-              </div>
-            </div>
-                  </>
-                )
-              })}
-
-            
-
-            
+                </>
+              );
+            })}
           </div>
         </div>
       </div>

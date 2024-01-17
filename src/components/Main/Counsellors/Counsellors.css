@@ -428,6 +428,10 @@
     height: 300px;
   }
 
+  .counsellor-footer-img {
+    margin-bottom: -800px;
+  }
+
   .counsellor-heading p {
     width: 280px;
     color: #444;
@@ -632,7 +636,7 @@
     gap: 16px;
     position: absolute;
     left: 25px;
-    top: 3850px;
+    top: 3785px;
   }
 
   .counsellor-footer-heading p {

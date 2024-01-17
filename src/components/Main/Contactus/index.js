@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import "./index.css";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
+import Footer from "../Footer";
 
 function ContactUs() {
   return (
@@ -79,6 +80,7 @@ function ContactUs() {
           </Fade>
         </div>
       </motion.div>
+      <Footer />
     </>
   );
 }

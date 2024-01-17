@@ -5,6 +5,7 @@ import Navbar from "../Navbar/index";
 import How from "../Howwehelp";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
+import Footer from "../Footer";
 
 function Aboutus() {
   return (
@@ -93,6 +94,7 @@ function Aboutus() {
           </Fade>
         </div>
       </motion.div>
+      <Footer className="footer-au"></Footer>
     </>
   );
 }

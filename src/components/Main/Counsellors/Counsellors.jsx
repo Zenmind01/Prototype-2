@@ -13,6 +13,7 @@ import logo from "../assets/images/logo.png";
 import footerbanner from "../assets/images/Counsellors-img3.png";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
+import Footer from "../Footer";
 
 const Counsellors = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -224,6 +225,7 @@ const Counsellors = () => {
       </motion.div>
       {/* Render the Popup component if isPopupVisible is true */}
       {isPopupVisible && <Popup onClose={closePopup} />}
+      <Footer />
     </>
   );
 };

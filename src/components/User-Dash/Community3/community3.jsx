@@ -23,7 +23,7 @@ const Community3 = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-        setId(Cookies.get("data"))
+    setId(Cookies.get("data"));
   }, []);
 
   const _handleSubmit = async function (e) {
@@ -32,7 +32,7 @@ const Community3 = () => {
     // const axios = require("axios");
 
     let data = JSON.stringify({
-      userId:id,
+      userId: id,
       title: title,
       desc: desc,
     });
@@ -51,7 +51,7 @@ const Community3 = () => {
       .request(config)
       .then((response) => {
         //console.log(JSON.stringify(response.data));
-        navigate("/community2")
+        navigate("/community2");
       })
       .catch((error) => {
         console.log(error);
@@ -135,7 +135,7 @@ const Community3 = () => {
 
         <div className="dashboard-right">
           <div className="dashboard-right-container">
-            <div className="community3-starter">
+            <div className="community3-starter community3-starter1">
               <div className="community3-starter-l">
                 <div className="community3-starter-h">
                   Create New Discussion
@@ -148,18 +148,21 @@ const Community3 = () => {
 
             <div className="comm-grp-cat">
               <div className="grp-cat">Group Categories</div>
-              <div className="comm-grp-cats">
-                <div className="comm-anx">Anxiety</div>
-                <div className="comm-other">Depression</div>
-                <div className="comm-other">Relationship</div>
-                <div className="comm-other">Anger</div>
-                <div className="comm-other">Guilt</div>
-                <div className="comm-other">Sad</div>
-                <div className="comm-other">Selfcare</div>
+              <div className="comm-grp-cats comm-grp-cats-2">
+                <div className="comm-grp-cats-2-u">
+                  <div className="comm-anx">Anxiety</div>
+                  <div className="comm-other">Depression</div>
+                  <div className="comm-other">Relationship</div>
+                </div>
+                <div className="comm-grp-cats-2-u">
+                  <div className="comm-other">Anger</div>
+                  <div className="comm-other">Guilt</div>
+                  <div className="comm-other">Sad</div>
+                </div>
               </div>
             </div>
 
-            <div className="Create-new-dis-cont">
+            <div className="Create-new-dis-cont Create-new-dis-cont1">
               <div className="new-dis-form">
                 <div className="new-topic-form">
                   <div>Topic?</div>
