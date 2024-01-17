@@ -10,7 +10,7 @@
 
   .comm-grp-chats-container {
     width: 350px;
-    height: 1119px;
+    height: 100%;
     flex-shrink: 0;
     border-radius: 10px;
     border: 1px solid #eee;
@@ -63,7 +63,7 @@
 
   .comm-grp-chats-p {
     width: 228px;
-    height: 147px;
+    height: 100%;
     flex-shrink: 0;
     color: #444;
     font-family: Roboto;
