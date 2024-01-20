@@ -4,7 +4,8 @@
 
 .dashboard1-left {
   width: 316px;
-  height: 1924px;
+  height: 300vh;
+
   text-align: center;
   display: flex;
   flex-direction: column; /* Set the direction to column */

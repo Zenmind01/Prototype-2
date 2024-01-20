@@ -102,7 +102,9 @@
   .sign-img {
     display: none;
   }
-
+  .noti-img-mb {
+    height: 21px;
+  }
   .nav-icons-mb {
     position: relative;
     right: 15px;

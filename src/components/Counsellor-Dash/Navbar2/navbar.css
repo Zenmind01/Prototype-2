@@ -118,8 +118,10 @@
     top: 5px;
   }
 
-  .noti-img-mb {
+  .noti-img-mb-1 {
     height: 21px;
+    position: relative;
+    left: 30px;
   }
 
   .sign-search {

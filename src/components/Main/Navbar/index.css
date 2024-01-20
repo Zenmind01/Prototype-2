@@ -48,7 +48,33 @@
 }
 
 .auth2 {
+  display: flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50px;
+  border: 2px solid #25ced1;
   color: #1fa9ab;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 193.75% */
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+}
+
+.auth2:hover {
+  display: flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #25ced1;
+  border-radius: 50px;
+  border: solid #25ced1;
+  color: #fff;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -64,6 +90,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.options:hover {
+  color: #24b8bb;
+  transform: scale(1.05);
 }
 
 .nav-options div {

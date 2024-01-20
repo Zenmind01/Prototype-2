@@ -13,6 +13,8 @@ import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
 import Boundary from "../Images/blue-review-b.png";
 import CounsellorL from "../Images/counsellor-l.png";
+import { Link } from "react-router-dom";
+
 function How() {
   const openLink = () => {
     // Replace 'your-link-here' with the desired URL
@@ -288,12 +290,14 @@ function How() {
             <div className="home-counsellor-2">
               you can make a positive impact on the lives of your clients
             </div>
-            <motion.div
-              className="home-counsellor-3"
-              whileHover={{ scale: 1.1 }}
-            >
-              Join Now
-            </motion.div>
+            <Link to="/dashboard-counsellor">
+              <motion.div
+                className="home-counsellor-3"
+                whileHover={{ scale: 1.1 }}
+              >
+                Join Now
+              </motion.div>
+            </Link>
           </div>
         </div>
       </Fade>
@@ -306,9 +310,14 @@ function How() {
           <div className="home-counsellor-2-mb home-counsellor-2">
             you can make a positive impact on the lives of your clients
           </div>
-          <motion.div className="home-counsellor-3" whileHover={{ scale: 1.1 }}>
-            Join Now
-          </motion.div>
+          <Link to="/dashboard-counsellor">
+            <motion.div
+              className="home-counsellor-3"
+              whileHover={{ scale: 1.1 }}
+            >
+              Join Now
+            </motion.div>
+          </Link>
         </div>
       </div>
     </>

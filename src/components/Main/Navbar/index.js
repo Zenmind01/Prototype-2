@@ -98,11 +98,8 @@ function Navbar() {
               Contact Us{" "}
             </div>
 
-            <div className="auth1" onClick={gosignup}>
-              Sign Up{" "}
-            </div>
             <div className="auth2" onClick={gologin}>
-              Login
+              Sign Up / Login
             </div>
           </div>
           <div className="hamburger-menu">
