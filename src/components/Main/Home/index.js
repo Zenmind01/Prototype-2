@@ -35,15 +35,25 @@ function Homecontent() {
                 Online Counselling therapy with top psychologists
                 <br /> Anytime, Anywhere, Any device.
               </div>
-              <a href="/login" style={{textDecoration: "none", color:"white"}}>
-              <div className="button-free">
-                
-                <motion.button whileHover={{ scale: 1.1 }}>
-                  Take Assessment 
-                </motion.button>
-                
+              <a
+                href="/login"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <div className="button-free">
+                  <motion.button whileHover={{ scale: 1.1 }}>
+                    Take Assessment
+                  </motion.button>
+                </div>
+              </a>
+            </div>
+
+            <div className="free-assessment-mb">
+              <div className="free-assessment-mb-1">Consult. Talk. Heal.</div>
+              <div className="free-assessment-mb-2">
+                Online Counselling therapy with top psychologists Anytime,
+                Anywhere, Any device.
               </div>
-                    </a>
+              <div className="free-assessment-mb-3">Take Assessment</div>
             </div>
           </Fade>
         </div>
