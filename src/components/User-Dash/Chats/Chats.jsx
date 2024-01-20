@@ -172,7 +172,7 @@ export const Chat = ({ id, name }) => {
             </Link>
             <img className="chat-logo" src={Bot}></img>
 
-            <div className="user-name">ZenChat</div>
+            <div className="user-name-c">ZenChat</div>
           </div>
           <div className="message-section">
             <div className="mesaage-date">
@@ -243,21 +243,22 @@ export const Chat = ({ id, name }) => {
 
           {
             <div className="message-sender">
-              <div className="typer">
+              <div className="typer-cont">
                 <input
+                  className="typer"
                   type="text"
                   placeholder="Enter Your Message Here......"
                   value={message}
                   onChange={handleInputChange}
                   onKeyDown={handleKeyDown}
                 />
-                <div onClick={sendMessage}>Send</div>
+                {/* <div onClick={sendMessage}>Send</div> */}
                 {/* Or use PiArrowCircleRightFill icon */}
+                <PiArrowCircleRightFill
+                  style={{ fontSize: "48px", color: "rgba(38, 215, 218, 1)" }}
+                  onClick={sendMessage}
+                />
               </div>
-              <PiArrowCircleRightFill
-                style={{ fontSize: "48px", color: "rgba(38, 215, 218, 1)" }}
-                onClick={sendMessage}
-              />
             </div>
           }
         </div>

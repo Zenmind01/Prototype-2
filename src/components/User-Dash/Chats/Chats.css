@@ -17,6 +17,14 @@
   overflow-y: hidden;
 }
 
+.input-chat {
+  border: none;
+}
+
+.input-chat:focus {
+  border: solid 2px black;
+}
+
 .chat-land {
   position: relative;
   height: 100vh;
@@ -44,7 +52,7 @@
   display: flex;
 }
 
-.user-name {
+.user-name-c {
   color: #fff;
   font-family: Roboto;
   font-size: 20px;
@@ -69,7 +77,7 @@
   top: 5px;
 }
 
-.user-name {
+.user-name-c {
   font-size: 24px;
 }
 
@@ -346,7 +354,7 @@
   justify-content: space-around;
 }
 .typer {
-  width: 80%;
+  width: 80vw;
   color: rgb(255, 255, 255);
   border-radius: 32px;
   border: none;
@@ -356,6 +364,11 @@
   height: 20px;
   padding: 24px;
   box-shadow: 0px 0px 5px rgb(194, 194, 194);
+}
+.typer-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .typer input {
   width: 90%;
@@ -535,7 +548,7 @@
     top: -1px;
   }
 
-  .user-name {
+  .user-name-c {
     position: relative;
     top: -1px;
   }
