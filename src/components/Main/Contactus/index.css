@@ -134,6 +134,11 @@
   background: rgba(242, 242, 242, 1);
   border-radius: 4px;
   border: none;
+  outline: none;
+}
+
+.question:focus {
+  border: 1px solid #25ced1;
 }
 
 .submit-btn button {

@@ -37,6 +37,14 @@ input[type="email"] {
   letter-spacing: 0.32px;
 }
 
+input {
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid #25ced1;
+}
+
 .form-group-check {
   display: flex;
   align-items: center;

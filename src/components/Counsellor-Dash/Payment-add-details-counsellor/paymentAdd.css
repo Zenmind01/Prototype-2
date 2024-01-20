@@ -113,6 +113,15 @@ input[type="text"] {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  outline: none;
+}
+
+input[type="text"] {
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #25ced1;
 }
 
 .oth-modes-div {
