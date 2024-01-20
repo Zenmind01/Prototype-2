@@ -101,9 +101,9 @@ function Popup({ onClose }) {
         </div>
         <div className="popup-btn-div">
           <Link to="/dashboard-counsellor">
-          <button className="popup-close-btn" onClick={onClose}>
-            Submit
-          </button>
+            <button className="popup-close-btn" onClick={onClose}>
+              Submit
+            </button>
           </Link>
         </div>
       </div>

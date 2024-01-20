@@ -47,7 +47,7 @@ function Homecontent() {
               </a>
             </div>
 
-            <div className="free-assessment-mb">
+            <div className="free-assessment-mb free-assessment-mb-c">
               <div className="free-assessment-mb-1">Consult. Talk. Heal.</div>
               <div className="free-assessment-mb-2">
                 Online Counselling therapy with top psychologists Anytime,

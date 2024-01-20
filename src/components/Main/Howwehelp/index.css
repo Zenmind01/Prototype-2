@@ -646,6 +646,18 @@
     display: none;
   }
 
+  .how-section {
+    margin-left: -15px;
+  }
+
+  .mid-container {
+    margin-left: -10px;
+  }
+
+  .business {
+    margin-left: -20px;
+  }
+
   .heading {
     color: #333;
     width: 400px;
@@ -824,6 +836,14 @@
     right: 60px;
   }
 
+  .register-btn {
+    margin-left: 20px;
+  }
+
+  .reviews {
+    margin-left: -15px;
+  }
+
   .reviews-list {
     display: block;
     height: 358.655px;
@@ -850,7 +870,7 @@
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
-    line-height: 23px; /* 54.762% */
+    line-height: 30px; /* 54.762% */
     letter-spacing: 1.68px;
   }
 
