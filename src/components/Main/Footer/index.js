@@ -1,6 +1,6 @@
 import React from "react";
 import index from "./index.css";
-import logo from "../Images/pink_zen 1.png";
+import logo from "../Images/zen-new.png";
 import ig from "../Images/iglogo.png";
 import linkedin from "../Images/linkedin.png";
 import twitter from "../Images/twitter.png";
@@ -58,18 +58,7 @@ function Footer() {
             </button>
           </div>
         </div>
-        <div
-          className="copyright-1"
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "80px",
-            fontSize: "24px",
-          }}
-        >
-          Copyright @ 2024, All Right Reversed
-        </div>
+        <div className="copyright-1">Copyright @ 2024, All Right Reversed</div>
       </div>
 
       <div className="footer-mb">
