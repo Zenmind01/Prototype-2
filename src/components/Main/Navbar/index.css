@@ -55,7 +55,7 @@
   gap: 8px;
   border-radius: 50px;
   border: 2px solid #25ced1;
-  color: #1fa9ab;
+  color: #25ced1;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -73,7 +73,7 @@
   gap: 8px;
   background: #25ced1;
   border-radius: 50px;
-  border: solid #25ced1;
+  border: 2px solid #25ced1;
   color: #fff;
   font-family: Roboto;
   font-size: 16px;
@@ -93,7 +93,7 @@
 }
 
 .options:hover {
-  color: #24b8bb;
+  color: #25ced1;
   transform: scale(1.05);
 }
 
