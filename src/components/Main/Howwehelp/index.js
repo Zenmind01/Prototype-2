@@ -301,7 +301,7 @@ function How() {
       <div className="Counsellor-landing-mb">
         <div className="counsellor-home-cont">
           <div className="home-counsellor-1-mb home-counsellor-1">
-            Join As A Counsellor
+            Join As A <span>Counsellor</span>
           </div>
           <div className="home-counsellor-2-mb home-counsellor-2">
             you can make a positive impact on the lives of your clients

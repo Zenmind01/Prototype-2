@@ -724,10 +724,15 @@
   }
 
   .home-counsellor-1-mb {
-    color: #333;
+    color: #25ced1;
     text-align: center;
     justify-content: center;
     align-items: center;
+  }
+
+  .home-counsellor-1-mb span {
+    color: #ffd200;
+    text-decoration: underline;
   }
 
   .home-counsellor-2-mb {
