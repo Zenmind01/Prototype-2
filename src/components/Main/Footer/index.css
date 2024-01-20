@@ -14,8 +14,7 @@
   height: calc(100% -100px);
   width: calc(100% - 250px);
   text-align: left;
-  padding-top: 100px;
-  padding-left: 250px;
+  padding-left: 15%;
   display: flex;
   align-items: flex-end;
   gap: 200px;
