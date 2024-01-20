@@ -469,6 +469,70 @@
   gap: 8px;
 }
 
+.home-counsellor {
+  width: 100vw;
+}
+
+.counsellor-home-cont {
+  position: relative;
+  bottom: 400px;
+  left: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Counsellor-landing {
+  margin-top: 60px;
+  margin-bottom: -250px;
+}
+
+.home-counsellor-1 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.84px;
+  text-transform: capitalize;
+  width: 190px;
+}
+
+.home-counsellor-2 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 150% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  text-align: left;
+  width: 300px;
+  margin-bottom: 24px;
+}
+
+.home-counsellor-3 {
+  display: flex;
+  width: 175px;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background: #ffb800;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px; /* 155% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
 .counselor-specialisation-content p {
   width: 228px;
   height: 28px;
@@ -619,6 +683,10 @@
   cursor: pointer;
 }
 
+.Counsellor-landing-mb {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   /* .heading {
     color: #333;
@@ -641,6 +709,40 @@
     margin-right: auto;
     margin-top: 10px;
   } */
+
+  .Counsellor-landing-mb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    top: 910px;
+    right: 760px;
+    transform: scale(0.8);
+    background-color: #20b5be;
+  }
+
+  .home-counsellor-1-mb {
+    color: #333;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-counsellor-2-mb {
+    color: #444;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 45px;
+  }
+
+  .home-counsellor-3 {
+    position: relative;
+    right: 15px;
+  }
 
   .line-b {
     display: none;
@@ -857,6 +959,9 @@
     display: none;
   }
 
+  .Counsellor-landing {
+    display: none;
+  }
   .r-header {
     font-size: 42px;
     font-weight: 600;
