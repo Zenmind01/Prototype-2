@@ -31,9 +31,9 @@
   align-items: center;
   position: absolute;
   right: 0;
-  gap: 36px;
-  font-size: 20px;
-  font-weight: 400;
+  gap: 32px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .auth1 {
@@ -67,7 +67,7 @@
 
 .auth2:hover {
   display: flex;
-  padding: 8px 24px;
+  padding: 2px 16px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -86,15 +86,15 @@
 .options {
   color: #333;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
 }
 
 .options:hover {
   color: #25ced1;
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .nav-options div {
