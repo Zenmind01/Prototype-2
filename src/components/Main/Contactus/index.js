@@ -42,13 +42,13 @@ function ContactUs() {
           </Fade>
           <div className="name-email">
             <Fade bottom>
-              <div className="user-name">
+              <div className=" user-name-c">
                 <label for="fname">Full Name</label>
                 <input
                   type="text"
                   name="name"
                   id="fname"
-                  className="fname"
+                  className="fname-1"
                   placeholder="Enter your Full Name"
                 />
               </div>

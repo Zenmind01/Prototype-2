@@ -65,6 +65,22 @@ const Counsellors = () => {
             </div>
           </motion.div>
         </div>
+        <div className="free-assessment-mb">
+          <div className="free-assessment-mb-1">Counsellors</div>
+          <div className="free-assessment-mb-2 free-assessment-mb-2-u">
+            Grow your counselling practice from the comfort of your home at zero
+            operating cost.
+          </div>
+          <div>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="counsellor-btn"
+              onClick={openPopup}
+            >
+              Register For Free
+            </motion.button>
+          </div>
+        </div>
         <Fade bottom>
           <div className="counsellor-middle">
             <div className="counsellor-middle-heading">
@@ -219,6 +235,33 @@ const Counsellors = () => {
                   </span>
                 </p>
               </div>
+            </div>
+          </Fade>
+        </div>
+
+        <div className="counsellor-footer-mb">
+          <Fade bottom>
+            <div className="counsellor-footer-heading">
+              <div className="counsellor-footer-heading-1">
+                <h1>Join </h1>
+                <img src={logo}></img>
+              </div>
+              <p>Help us make the world happier, one life at a time.</p>
+            </div>
+            <div className="counsellor-footer-heading-lower">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="counsellor-footer-btn"
+                onClick={openPopup}
+              >
+                Register For Free
+              </motion.button>
+              <p>
+                Already have an account ?{" "}
+                <span>
+                  <a>Log In</a>
+                </span>
+              </p>
             </div>
           </Fade>
         </div>

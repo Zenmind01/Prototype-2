@@ -219,10 +219,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 27px */
-    text-align: left;
+    text-align: inherit;
     width: 300px;
     position: relative;
     right: 75px;
+  }
+
+  .main-content {
+    margin-left: 10px;
   }
 
   .our-mission {
@@ -253,7 +257,7 @@
 
   .mission-content {
     color: #333;
-    text-align: left;
+    text-align: inherit;
     font-family: Roboto;
     font-size: 18px;
     font-style: normal;

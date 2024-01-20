@@ -53,7 +53,9 @@ function Homecontent() {
                 Online Counselling therapy with top psychologists Anytime,
                 Anywhere, Any device.
               </div>
-              <div className="free-assessment-mb-3">Take Assessment</div>
+              <div className="free-assessment-mb-3 free-assessment-mb-3-u">
+                Take Assessment
+              </div>
             </div>
           </Fade>
         </div>
