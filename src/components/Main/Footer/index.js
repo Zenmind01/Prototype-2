@@ -68,7 +68,7 @@ function Footer() {
             fontSize: "24px",
           }}
         >
-          Copyright @ 2023, All Right Reversed
+          Copyright @ 2024, All Right Reversed
         </div>
       </div>
 
