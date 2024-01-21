@@ -24,7 +24,7 @@ function Homecontent() {
             <div
               className="free-assessment"
               animate={{ y: 0, scale: 1, opacity: 0.85,transition: { duration: 0.5 } }}
-              initial={{ scale: 0 }}
+              initial={{ scale: 0, opacity: 0 }}
             >
               <div className="choices">
                 <div>Consult.</div>
@@ -40,7 +40,7 @@ function Homecontent() {
                 style={{ textDecoration: "none", color: "white" }}
               >
                 <div className="button-free">
-                  <motion.button whileHover={{ scale: 1.1 }}>
+                  <motion.button whileHover={{ scale: 1.05 }}>
                     Take Free Assessment
                   </motion.button>
                 </div>
