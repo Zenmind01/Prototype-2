@@ -32,8 +32,8 @@ function Homecontent() {
                 <div>Heal.</div>
               </div>
               <div className="description">
-                Online Counselling therapy with top psychologists
-                <br /> Anytime, Anywhere, Any device.
+                <div className="descp2">Online Counselling therapy with top psychologists</div>
+                Anytime, Anywhere, Any device.
               </div>
               <a
                 href="/login"
