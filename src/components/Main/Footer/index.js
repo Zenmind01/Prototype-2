@@ -14,28 +14,54 @@ function Footer() {
         <div className="footer-div">
           <div className="footer-content-left">
             <img src={logo} style={{ height: "60px" }} />
-            <div>Follow Our Social Media</div>
             <div className="social-logos">
               <img src={ig} />
               <img src={linkedin} />
               <img src={twitter} />
             </div>
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "2px" }}
-            >
-              <div style={{ fontSize: "18px", fontWeight: "bold" }}>
-                Contact Us
-              </div>
-              <div>For Urgent Help Call</div>
-              <div>+91 XXXX8989XX</div>
+            <div className="copyright-1">
+              Copyright @ 2024, All Right Reversed
             </div>
           </div>
           <div className="footer-content-right">
-            <div>About Us</div>
-            <div>For Individual</div>
-            <div>For Corporate</div>
-            <div>Terms Of Service</div>
-            <div>Privacy Policy</div>
+            <div className="link-heads">Links</div>
+            <Link to="/home" className="footer-links">
+              Home
+            </Link>
+            <Link to="/about" className="footer-links">
+              About
+            </Link>
+            <Link to="/" className="footer-links">
+              Community
+            </Link>
+            <Link to="/counsellors" className="footer-links">
+              For Counsellors
+            </Link>
+            <Link to="/" className="footer-links">
+              Pricing
+            </Link>
+          </div>
+
+          <div>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "2px" }}
+            >
+              <div
+                className="footer-c-cu"
+                style={{ fontSize: "18px", fontWeight: "bold" }}
+              >
+                Contact Us
+              </div>
+              <div>+91 8699427745</div>
+              <div>info@email.com</div>
+              <div
+                className="location-f"
+                style={{ fontSize: "18px", fontWeight: "bold" }}
+              >
+                Location
+              </div>
+              <div>New Delhi, India</div>
+            </div>
           </div>
 
           <div className="footer-content-rightmost">
@@ -58,7 +84,6 @@ function Footer() {
             </button>
           </div>
         </div>
-        <div className="copyright-1">Copyright @ 2024, All Right Reversed</div>
       </div>
 
       <div className="footer-mb">
