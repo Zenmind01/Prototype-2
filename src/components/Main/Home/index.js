@@ -41,7 +41,7 @@ function Homecontent() {
               >
                 <div className="button-free">
                   <motion.button whileHover={{ scale: 1.1 }}>
-                    Take Assessment
+                    Take Free Assessment
                   </motion.button>
                 </div>
               </a>
@@ -54,7 +54,7 @@ function Homecontent() {
                 Anywhere, Any device.
               </div>
               <div className="free-assessment-mb-3 free-assessment-mb-3-u">
-                Take Assessment
+                Take Free Assessment
               </div>
             </div>
           </Fade>
