@@ -23,8 +23,8 @@ function Homecontent() {
           <Fade left>
             <div
               className="free-assessment"
-              animate={{ y: 0, scale: 1, transition: { duration: 0.5 } }}
-              initial={{ scale: 0 }}
+              animate={{ y: 0, scale: 1, opacity: 0.85,transition: { duration: 0.5 } }}
+              initial={{ scale: 0, opacity: 0 }}
             >
               <div className="choices">
                 <div>Consult.</div>
@@ -32,16 +32,16 @@ function Homecontent() {
                 <div>Heal.</div>
               </div>
               <div className="description">
-                Online Counselling therapy with top psychologists
-                <br /> Anytime, Anywhere, Any device.
+                <div className="descp2">Online Counselling therapy with top psychologists</div>
+                Anytime, Anywhere, Any device.
               </div>
               <a
                 href="/login"
                 style={{ textDecoration: "none", color: "white" }}
               >
                 <div className="button-free">
-                  <motion.button whileHover={{ scale: 1.1 }}>
-                    Take Assessment
+                  <motion.button whileHover={{ scale: 1.05 }}>
+                    Take Free Assessment
                   </motion.button>
                 </div>
               </a>
@@ -54,7 +54,7 @@ function Homecontent() {
                 Anywhere, Any device.
               </div>
               <div className="free-assessment-mb-3 free-assessment-mb-3-u">
-                Take Assessment
+                Take Free Assessment
               </div>
             </div>
           </Fade>
