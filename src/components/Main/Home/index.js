@@ -23,7 +23,7 @@ function Homecontent() {
           <Fade left>
             <div
               className="free-assessment"
-              animate={{ y: 0, scale: 1, transition: { duration: 0.5 } }}
+              animate={{ y: 0, scale: 1, opacity: 0.85,transition: { duration: 0.5 } }}
               initial={{ scale: 0 }}
             >
               <div className="choices">
