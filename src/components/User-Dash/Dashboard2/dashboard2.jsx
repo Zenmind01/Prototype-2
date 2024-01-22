@@ -74,7 +74,7 @@ const Dashboard2 = ({data}) => {
         <div className="dashboard2-left dashboard2-left-d">
           <div className="dashboard-profile">
             <img src={Profile} alt="Profile" />
-            <div className="dash-profile-name">{data[1].name}</div>
+            <div className="dash-profile-name">Your Name</div>
           </div>
 
           <div className="admin-options">
