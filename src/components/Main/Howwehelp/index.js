@@ -266,7 +266,7 @@ function How() {
             <div className="home-counsellor-2">
               you can make a positive impact on the lives of your clients
             </div>
-            <a to="/counsellors" style={{ textDecoration: "none", color: "white" }}>
+            <a href="/counsellors" style={{ textDecoration: "none", color: "white" }}>
               <motion.div
                 className="home-counsellor-3"
                 whileHover={{ scale: 1.1 }}
@@ -286,7 +286,7 @@ function How() {
           <div className="home-counsellor-2-mb home-counsellor-2">
             you can make a positive impact on the lives of your clients
           </div>
-          <a to="/counsellors" style={{ textDecoration: "none", color: "white" }}>
+          <a href="/counsellors" style={{ textDecoration: "none", color: "white" }}>
             <motion.div
               className="home-counsellor-3"
               whileHover={{ scale: 1.1 }}
