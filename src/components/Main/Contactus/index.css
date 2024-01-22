@@ -139,6 +139,11 @@
 
 .question:focus {
   border: 1px solid #25ced1;
+  background: white;
+}
+
+input:focus {
+  background: white;
 }
 
 .submit-btn button {
