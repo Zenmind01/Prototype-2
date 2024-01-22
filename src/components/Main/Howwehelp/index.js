@@ -194,32 +194,8 @@ function How() {
         </Fade>
       </div>
       <div className="business">
-        <Fade bottom>
-          <div className="b-header">For Business</div>
-        </Fade>
-        <div className="b-content">
-          <Fade left>
-            <div className="register-business">
-              <div className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod emporincididunt ut labore et dolore magna aliqua Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod emporincididunt ut labore et dolore magna
-                aliqua Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip.
-              </div>
-              <div className="register-btn">
-                <motion.button whileHover={{ scale: 1.1 }}>
-                  Register For Free
-                </motion.button>
-              </div>
-            </div>
-          </Fade>
-          <Fade right>
-            <img className="pc-img" src={pc} />
-          </Fade>
-        </div>
+        
+        
       </div>
       <div className="reviews">
         <Fade bottom>
