@@ -56,7 +56,7 @@ const Dashboard = ({user}) => {
         <div className="dashboard1-left">
           <div className="dashboard-profile">
             <img src={Profile} alt="Profile" />
-            <div className="dash-profile-name">{user.name}</div>
+            <div className="dash-profile-name">Your Name</div>
           </div>
 
           <div className="admin-options">
@@ -97,7 +97,7 @@ const Dashboard = ({user}) => {
           <div className="dashboard1-right-container">
             <div className="dashboard1-right-starter">
               <div className="dashboard1-right-starter-h1">
-                Good Morning, {user?.name}
+                Good Morning, 
               </div>
               <div className="dashboard1-right-starter-p">
                 Monday, {Date().split(" ")[1] + " " + Date().split(" ")[2]+" "+Date().split(" ")[3]}
