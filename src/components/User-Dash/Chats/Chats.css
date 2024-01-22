@@ -1,20 +1,14 @@
 .chat-main {
-  position: absolute;
   margin-left: 16px;
   margin-top: 8px;
   margin-right: 16px;
-  width: 100;
-  padding-right: 40px;
+  width: 100vw;
   font-family: "League Spartan";
-  height: 700px;
+  height: 75vh;
 }
 
 .dashboard-left-1 {
   height: 800px;
-}
-
-.new-height {
-  overflow-y: hidden;
 }
 
 .input-chat {
@@ -43,7 +37,7 @@
 }
 
 .user-details {
-  width: 97vw;
+  width: 100%;
   height: 87px;
   flex-shrink: 0;
   border-radius: 10px 10px 0px 0px;
@@ -52,15 +46,20 @@
   display: flex;
 }
 
-.user-name-c {
+.zenchat {
   color: #fff;
   font-family: Roboto;
   font-size: 20px;
+  justify-content: center;
+  align-items: center;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   position: relative;
   bottom: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .back-logo {
@@ -77,8 +76,11 @@
   top: 5px;
 }
 
-.user-name-c {
+.zenchat {
   font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .chat-logo {
@@ -304,8 +306,8 @@
 }
 
 .message-section {
-  width: 97vw;
-  height: 540px;
+  width: 100%;
+  height: 100%;
   flex-shrink: 0;
   border: 1px solid #d9d9d9;
   background: #fff;
@@ -346,15 +348,15 @@
   border-radius: 25px 25px 0px 25px;
 }
 .message-sender {
-  width: 80%;
+  width: 100%;
   height: 10%;
-  background-color: rgb(248, 248, 248);
   display: flex;
   align-items: center;
+  margin-top: 8px;
   justify-content: center;
 }
 .typer {
-  width: 78vw;
+  width: 70vw;
   color: rgb(255, 255, 255);
   border-radius: 32px;
   border: none;
@@ -362,7 +364,6 @@
   align-items: center;
   justify-content: center;
   height: 20px;
-  margin-left: 32px;
   padding: 24px;
   box-shadow: 0px 0px 5px rgb(194, 194, 194);
 }
@@ -371,8 +372,7 @@
   justify-content: center;
   align-items: center;
 }
-.typer input {
-  width: 90%;
+.typer {
   color: rgb(25, 25, 25);
   outline: none;
   font-size: 18px;
@@ -471,14 +471,9 @@
     transform: translateX(350px);
     transition: 0.4s;
   }
-  .user-details {
-    height: 90px;
-  }
+
   .message-section {
     height: 100%;
-  }
-  .message-sender {
-    height: 140px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -518,7 +513,6 @@
     margin-top: 20px;
   }
   .typer {
-    height: 60%;
   }
   .message-sender input::placeholder {
     font-size: 12px;
@@ -537,7 +531,7 @@
 
   .user-details {
     display: flex;
-    width: 312px;
+    width: 100%;
     align-items: center;
     gap: 16px;
     border-radius: 10px 10px 0px 0px;
@@ -549,7 +543,7 @@
     top: -1px;
   }
 
-  .user-name-c {
+  .zenchat {
     position: relative;
     top: -1px;
   }

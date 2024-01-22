@@ -172,7 +172,7 @@ export const Chat = ({ id, name }) => {
             </Link>
             <img className="chat-logo" src={Bot}></img>
 
-            <div className="user-name-c">ZenChat</div>
+            <div className="zenchat">ZenChat</div>
           </div>
           <div className="message-section">
             <div className="mesaage-date">
