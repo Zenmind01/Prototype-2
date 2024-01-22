@@ -32,7 +32,7 @@ import axios from "axios";
 
 const Dashboard2 = ({data}) => {
 
-  const [sessions, getSessions] = useState(data[0);
+  const [sessions, getSessions] = useState(data[0]);
   const [clist,setClist] = useState([]);
   
 
