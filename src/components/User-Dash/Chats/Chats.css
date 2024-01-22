@@ -1,14 +1,20 @@
 .chat-main {
+  position: absolute;
   margin-left: 16px;
   margin-top: 8px;
   margin-right: 16px;
-  width: 100vw;
+  width: 100;
+  padding-right: 40px;
   font-family: "League Spartan";
-  height: 75vh;
+  height: 700px;
 }
 
 .dashboard-left-1 {
   height: 800px;
+}
+
+.new-height {
+  overflow-y: hidden;
 }
 
 .input-chat {
@@ -37,6 +43,7 @@
 }
 
 .user-details {
+  width: 97vw;
   height: 87px;
   flex-shrink: 0;
   border-radius: 10px 10px 0px 0px;
@@ -49,16 +56,13 @@
   color: #fff;
   font-family: Roboto;
   font-size: 20px;
-  justify-content: center;
-  align-items: center;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  position: relative;
-  bottom: 5px;
+
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
 }
 
 .back-logo {
@@ -77,9 +81,6 @@
 
 .zenchat {
   font-size: 24px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .chat-logo {
@@ -305,7 +306,8 @@
 }
 
 .message-section {
-  height: 100%;
+  width: 97vw;
+  height: 540px;
   flex-shrink: 0;
   border: 1px solid #d9d9d9;
   background: #fff;
@@ -346,21 +348,21 @@
   border-radius: 25px 25px 0px 25px;
 }
 .message-sender {
-  width: 100%;
+  width: 97vw;
   height: 10%;
+  background-color: rgb(248, 248, 248);
   display: flex;
   align-items: center;
-  margin-top: 8px;
-  justify-content: center;
+  justify-content: space-around;
 }
 .typer {
-  width: 70vw;
+  width: 80vw;
   color: rgb(255, 255, 255);
   border-radius: 32px;
   border: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 20px;
   padding: 24px;
   box-shadow: 0px 0px 5px rgb(194, 194, 194);
@@ -370,7 +372,8 @@
   justify-content: center;
   align-items: center;
 }
-.typer {
+.typer input {
+  width: 90%;
   color: rgb(25, 25, 25);
   outline: none;
   font-size: 18px;
@@ -469,9 +472,14 @@
     transform: translateX(350px);
     transition: 0.4s;
   }
-
+  .user-details {
+    height: 90px;
+  }
   .message-section {
-    height: 100%;
+    height: 500px;
+  }
+  .message-sender {
+    height: 140px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -511,6 +519,7 @@
     margin-top: 20px;
   }
   .typer {
+    height: 60%;
   }
   .message-sender input::placeholder {
     font-size: 12px;
@@ -529,18 +538,14 @@
 
   .user-details {
     display: flex;
-    width: 30px;
+    width: 312px;
     align-items: center;
     gap: 16px;
     border-radius: 10px 10px 0px 0px;
+    background: #24b8bb;
   }
   .chat-logo {
     transform: scale(1.2);
-    position: relative;
-    top: -1px;
-  }
-
-  .zenchat {
     position: relative;
     top: -1px;
   }
