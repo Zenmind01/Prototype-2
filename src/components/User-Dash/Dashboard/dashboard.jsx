@@ -56,7 +56,7 @@ const Dashboard = ({user}) => {
         <div className="dashboard1-left">
           <div className="dashboard-profile">
             <img src={Profile} alt="Profile" />
-            <div className="dash-profile-name">Martin Stanton</div>
+            <div className="dash-profile-name">{user.name}</div>
           </div>
 
           <div className="admin-options">
