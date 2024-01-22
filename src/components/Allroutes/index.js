@@ -80,7 +80,7 @@ export default function Allroutes() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Homecontent />} />
         <Route path="/home" element={<Homecontent />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
