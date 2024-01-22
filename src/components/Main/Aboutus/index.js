@@ -65,29 +65,29 @@ function Aboutus() {
               <div className="member">
                 <div className="photo-mem"></div>
                 <div className="mem-info">
-                  <div className="name-mem">Name Last Name</div>
-                  <div className="desig-mem">Designing Head</div>
+                  <div className="name-mem">Yash Kumar</div>
+                  <div className="desig-mem">CEO</div>
                 </div>
               </div>
               <div className="member">
                 <div className="photo-mem"></div>
                 <div className="mem-info">
-                  <div className="name-mem">Name Last Name</div>
-                  <div className="desig-mem">Designing Head</div>
+                  <div className="name-mem">Vishnu Singh Poonia</div>
+                  <div className="desig-mem">CTO</div>
                 </div>
               </div>
               <div className="member">
                 <div className="photo-mem"></div>
                 <div className="mem-info">
-                  <div className="name-mem">Name Last Name</div>
-                  <div className="desig-mem">Designing Head</div>
+                  <div className="name-mem">Kunal</div>
+                  <div className="desig-mem">Frontend Dev</div>
                 </div>
               </div>
               <div className="member">
                 <div className="photo-mem"></div>
                 <div className="mem-info">
-                  <div className="name-mem">Name Last Name</div>
-                  <div className="desig-mem">Designing Head</div>
+                  <div className="name-mem">Rupesh Kumar</div>
+                  <div className="desig-mem">AI/ML Dev</div>
                 </div>
               </div>
             </div>
