@@ -530,7 +530,7 @@
 
   .user-details {
     display: flex;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     gap: 16px;
     border-radius: 10px 10px 0px 0px;
