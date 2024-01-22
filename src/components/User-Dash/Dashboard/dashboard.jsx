@@ -23,7 +23,7 @@ import ChatMid from "../images/chat-mid.png";
 import Navbar from "../Navbar/navbar";
 import { Link } from "react-router-dom";
 
-const Dashboard = () => {
+const Dashboard = ({user}) => {
   const [clist, setClist] = useState([]);
 
   useEffect(() => {
@@ -97,10 +97,10 @@ const Dashboard = () => {
           <div className="dashboard1-right-container">
             <div className="dashboard1-right-starter">
               <div className="dashboard1-right-starter-h1">
-                Good Morning, John doe
+                Good Morning, {user?.name}
               </div>
               <div className="dashboard1-right-starter-p">
-                Monday, 20 Sep 2023
+                Monday, {Date().split(" ")[1] + " " + Date().split(" ")[2]+" "+Date().split(" ")[3]}
               </div>
             </div>
 
