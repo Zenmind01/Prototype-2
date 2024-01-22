@@ -37,7 +37,7 @@
 }
 
 .user-details {
-  width: 100%;
+  width: 100vw;
   height: 87px;
   flex-shrink: 0;
   border-radius: 10px 10px 0px 0px;
