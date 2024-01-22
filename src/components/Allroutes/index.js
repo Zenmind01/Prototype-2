@@ -139,7 +139,7 @@ export default function Allroutes() {
         <Route path="/counsellors" element={<Counsellors />} />
         <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path='/' element={<Dashbaord2/>}/> */}
-        <Route path="/dashboard2" element={session.length>0?<Dashbaord2 data={session, user} />:<Dashboard data={user}/>} />
+        <Route path="/dashboard2" element={session.length>0?<Dashbaord2 data={[session, user]} />:<Dashboard data={user}/>} />
         <Route path="/session" element={<Session />} />
         <Route path="/community" element={<Community2 />} />
         <Route path="/community2" element={<Community2 />} />
