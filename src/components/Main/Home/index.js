@@ -7,6 +7,7 @@ import Navbar from "../Navbar/index";
 import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Homecontent() {
   return (
@@ -36,7 +37,7 @@ function Homecontent() {
                 Anytime, Anywhere, Any device.
               </div>
               <a
-                href="/login"
+                href={Cookies.get("data")?"/profile-self-assessment":"/login"}
                 style={{ textDecoration: "none", color: "white" }}
               >
                 <div className="button-free">
@@ -53,9 +54,13 @@ function Homecontent() {
                 Online Counselling therapy with top psychologists Anytime,
                 Anywhere, Any device.
               </div>
+              <a
+                href={Cookies.get("data")?"/profile-self-assessment":"/login"}
+                style={{ textDecoration: "none", color: "white" }}>
               <div className="free-assessment-mb-3 free-assessment-mb-3-u">
                 Take Free Assessment
               </div>
+                </a>
             </div>
           </Fade>
         </div>
