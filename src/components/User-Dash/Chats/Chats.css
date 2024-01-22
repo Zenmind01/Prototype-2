@@ -346,22 +346,23 @@
   border-radius: 25px 25px 0px 25px;
 }
 .message-sender {
-  width: 97vw;
+  width: 80%;
   height: 10%;
   background-color: rgb(248, 248, 248);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .typer {
-  width: 80vw;
+  width: 78vw;
   color: rgb(255, 255, 255);
   border-radius: 32px;
   border: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 20px;
+  margin-left: 32px;
   padding: 24px;
   box-shadow: 0px 0px 5px rgb(194, 194, 194);
 }
@@ -474,7 +475,7 @@
     height: 90px;
   }
   .message-section {
-    height: 500px;
+    height: 100%;
   }
   .message-sender {
     height: 140px;

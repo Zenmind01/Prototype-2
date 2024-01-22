@@ -42,7 +42,7 @@ function ContactUs() {
           </Fade>
           <div className="name-email">
             <Fade bottom>
-              <div className=" user-name-c">
+              <div className=" user-name-c-1">
                 <label for="fname">Full Name</label>
                 <input
                   type="text"
