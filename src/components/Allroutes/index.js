@@ -46,6 +46,27 @@ export default function Allroutes() {
   const location = useLocation();
   const [session, setSession] = useState([]);
   const navigate = useNavigate();
+  const [user, setUser] = useState({
+    name:"",
+    email:"",
+    phone: "",
+    dob: "",
+    gender: "",
+    p1: [],
+    p2: [],
+    p3: [],
+    p4: [],
+    p5: [],
+    p6: [],
+    bankDetail: {
+      bank_name: "",
+      ac_no: "",
+      ifsc_code: "",
+      branch_name: "",
+      upi: "",
+      card_no: "",
+    },
+  });
 
   useEffect(() => {
 
@@ -65,9 +86,38 @@ export default function Allroutes() {
         console.log(error);
       });
     }
+    const gu = async () => {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://back-zm-01.onrender.com/users/" + Cookies.get("data"),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        //data: data,
+      };
+
+      await axios
+        .request(config)
+        .then((response) => {
+          if(response.data.success){
+            //console.log(response.data.data);
+            setUser(response.data.data);
+          }else{
+            //console.log(response.data);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+   
+
     if(Cookies.get("data")!==undefined){
       getSession();
+      gu();
     }
+    
     
     
   }, [])
@@ -89,7 +139,7 @@ export default function Allroutes() {
         <Route path="/counsellors" element={<Counsellors />} />
         <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path='/' element={<Dashbaord2/>}/> */}
-        <Route path="/dashboard2" element={session.length>0?<Dashbaord2 data={session} />:<Dashboard />} />
+        <Route path="/dashboard2" element={session.length>0?<Dashbaord2 data={session, user} />:<Dashboard data={user}/>} />
         <Route path="/session" element={<Session />} />
         <Route path="/community" element={<Community2 />} />
         <Route path="/community2" element={<Community2 />} />
