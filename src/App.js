@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Allroutes from './components/Allroutes';
 import { BrowserRouter as Router} from "react-router-dom";
+import dotenv from 'dotenv';
+dotenv.config();
 
 function App() {
   return (
