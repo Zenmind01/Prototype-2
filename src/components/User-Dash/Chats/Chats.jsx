@@ -20,10 +20,13 @@ export const Chat = ({ id, name }) => {
   const [loading, setloading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const apiKey_OAI = config.apiKey;
+  
+
   //const [apiKey,setApiKey] = useState(process.env.API_SECRET);
 
   const openai = new OpenAI({
-    apiKey: config.apiKey,
+    apiKey: apiKey_OAI,
     dangerouslyAllowBrowser: true,
   });
   const prompt = `
