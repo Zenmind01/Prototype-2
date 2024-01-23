@@ -91,14 +91,7 @@ const SignUp = () => {
               </p>
             </div>
             <div className="auth-button">
-              <button type="button" className="fb-button">
-                <img className="fb-icon" src={fb} alt="fb-icon"></img>
-                Use Facebook
-              </button>
-              <button type="button" className="fb-button">
-                <img className="google-icon" src={google} alt="fb-icon"></img>
-                Use Google
-              </button>
+              
             </div>
             <div className="or-divider">
               <div className="line"></div>
