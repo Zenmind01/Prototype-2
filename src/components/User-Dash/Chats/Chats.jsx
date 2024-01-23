@@ -13,6 +13,7 @@ import Navbar from "../Navbar/navbar";
 
 import OpenAI from "openai";
 import { Link } from "react-router-dom";
+import config from './config';
 
 export const Chat = ({ id, name }) => {
   const [chats, setChats] = useState([]);
@@ -22,7 +23,7 @@ export const Chat = ({ id, name }) => {
   //const [apiKey,setApiKey] = useState(process.env.API_SECRET);
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: config.apiKey,
     dangerouslyAllowBrowser: true,
   });
   const prompt = `
