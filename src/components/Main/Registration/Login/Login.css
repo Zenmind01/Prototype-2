@@ -124,7 +124,7 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  top: 643px;
+  top: 612px;
   left: 575px;
   cursor: pointer;
 }
@@ -312,8 +312,8 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    top: 590px;
-    left: 300px;
+    top: 64%;
+    left: 79%;
     cursor: pointer;
   }
 

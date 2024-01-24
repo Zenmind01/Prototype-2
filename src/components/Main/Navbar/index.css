@@ -159,7 +159,7 @@
   }
 
   .Navbar {
-    width: 150px;
+    width: 100%;
     height: 56px;
     flex-shrink: 0;
     background: #fff;
