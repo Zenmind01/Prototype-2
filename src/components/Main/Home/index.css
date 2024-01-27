@@ -97,8 +97,17 @@
   .free-assessment {
     position: relative;
     left: 21px;
+    width: 100%;
   }
-
+  .hero {
+    width: 100%;
+  }
+  .free-assessment-mb {
+    width: 100%;
+  }
+  .main-content {
+    width: 100%;
+  }
   .free-assessment {
     display: none;
   }

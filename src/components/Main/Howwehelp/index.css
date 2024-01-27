@@ -370,12 +370,11 @@
 
 .mid-container {
   display: flex;
-  width: 1440px;
+  width: 100%;
   padding: 48px 107px 48px 108px;
   align-items: center;
   gap: 96px;
   background: rgba(255, 165, 165, 0.5);
-  margin-right: 100px;
 }
 
 .mid-conatiner-content-1 {
@@ -395,7 +394,7 @@
   letter-spacing: 0.36px;
   text-transform: capitalize;
   height: 63px;
-  width: 386px;
+  width: 100%;
   text-align: left;
 }
 
@@ -718,9 +717,10 @@
     position: relative;
     text-align: center;
     top: 910px;
-    right: 760px;
+    right: 740px;
     transform: scale(0.8);
     background-color: #20b5be;
+    width: 100%;
   }
 
   .home-counsellor-1-mb {
@@ -754,20 +754,24 @@
   }
 
   .how-section {
-    margin-left: -55px;
+    width: 100%;
+  }
+
+  .heading {
+    width: 100%;
   }
 
   .mid-container {
-    margin-left: -10px;
+    width: 100%;
   }
 
   .business {
-    margin-left: -20px;
+    width: 100%;
   }
 
   .heading {
     color: #333;
-    width: 400px;
+    width: 100%;
     font-family: Roboto;
     font-size: 37.848px;
     font-style: normal;
@@ -776,7 +780,7 @@
     letter-spacing: 0.757px;
     text-transform: capitalize;
     position: relative;
-    right: 120px;
+    right: 140px;
   }
 
   .heading:after {
@@ -790,25 +794,28 @@
     margin-top: 10px;
   }
   .home-mid-opt {
-    display: block;
+    display: flex;
+    flex-direction: column;
     gap: 26px;
     padding-top: 48px;
     padding-bottom: 88px;
+    justify-content: left;
+    align-items: center;
     position: relative;
-    right: 100px;
-    bottom: 150px;
+    right: 135px;
+    bottom: 100px;
     transform: scale(0.8);
     margin-bottom: -300px;
   }
 
   .mid-container {
     display: block;
-    width: 350px;
+    width: 100%;
     padding: 48px 50px 50px 20px;
     align-items: center;
     gap: 96px;
     background: rgba(255, 165, 165, 0.5);
-    margin-right: 100px;
+    margin-left: -10px;
   }
 
   .mid-conatiner-content-2 {
@@ -847,7 +854,6 @@
     letter-spacing: 0.36px;
     text-transform: capitalize;
     height: 63px;
-    width: 386px;
     text-align: left;
     width: 300px;
   }
@@ -865,7 +871,7 @@
 
   .b-header {
     color: #333;
-    width: 300px;
+    width: 100%;
     font-family: Roboto;
     font-size: 42px;
     font-style: normal;
@@ -886,7 +892,7 @@
 
   .reviews {
     margin-top: 88px;
-    width: 1225px;
+    width: 100%;
     height: 569px;
     flex-shrink: 0;
     padding-left: 150px;
@@ -894,7 +900,6 @@
     border: white, white;
     background: rgba(0, 0, 0, 0);
     backdrop-filter: none;
-
     /* background-color: red; */
   }
 
@@ -907,7 +912,7 @@
     line-height: 31px; /* 172.222% */
     letter-spacing: 0.36px;
     text-align: inherit;
-    width: 300px;
+    width: 100%;
     position: relative;
     right: 90px;
   }
@@ -945,10 +950,6 @@
 
   .register-btn {
     margin-left: 20px;
-  }
-
-  .reviews {
-    margin-left: -15px;
   }
 
   .reviews-list {
@@ -1008,7 +1009,7 @@
   .review-3,
   .review-4 {
     display: flex;
-    width: 353.248px;
+    width: 100%;
     padding: 21.627px;
     flex-direction: column;
     align-items: center;

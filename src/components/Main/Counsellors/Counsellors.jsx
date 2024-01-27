@@ -65,22 +65,24 @@ const Counsellors = () => {
             </div>
           </motion.div>
         </div>
-        <div className="free-assessment-mb">
-          <div className="free-assessment-mb-1">Counsellors</div>
-          <div className="free-assessment-mb-2 free-assessment-mb-2-u">
-            Grow your counselling practice from the comfort of your home at zero
-            operating cost.
+        <Fade bottom>
+          <div className="free-assessment-mb">
+            <div className="free-assessment-mb-1">Counsellors</div>
+            <div className="free-assessment-mb-2 free-assessment-mb-2-u">
+              Grow your counselling practice from the comfort of your home at
+              zero operating cost.
+            </div>
+            <div>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="counsellor-btn"
+                onClick={openPopup}
+              >
+                Register For Free
+              </motion.button>
+            </div>
           </div>
-          <div>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              className="counsellor-btn"
-              onClick={openPopup}
-            >
-              Register For Free
-            </motion.button>
-          </div>
-        </div>
+        </Fade>
         <Fade bottom>
           <div className="counsellor-middle">
             <div className="counsellor-middle-heading">

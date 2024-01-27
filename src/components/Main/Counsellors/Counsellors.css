@@ -463,6 +463,7 @@
     transform: scale(0.9);
     margin-left: 4px;
     margin-bottom: 50px;
+    box-shadow: 1px 10px 30px -10px #ffb800;
   }
   .counsellor-middle-heading h1 {
     color: #333;
