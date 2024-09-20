@@ -1,5 +1,5 @@
 const config = {
-  apiKey: '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'
+  apiKey: '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'
 };
 
 export default config;
