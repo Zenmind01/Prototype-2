@@ -7,16 +7,16 @@ import Bot from "../images/bot-logo.png";
 import Back from "../images/back.png";
 import ZenBlue from "../images/zen-blue.png";
 import Navbar from "../Navbar/navbar";
-import axios from "axios"; 
+import axios from "axios";
 import { Link } from "react-router-dom";
-import config from "./config"; 
+import config from "./config";
 
 export const Chat = ({ id, name }) => {
-  const [chats, setChats] = useState([]);
-  const [loading, setloading] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const prompt = `
+  const initialPrompt = `
 Act as a friend treating your best friend who is a patient suffering from depression and anxiety. You are a man named Zenbot and a mental health expert. You grew up in Delhi, India. You are 30 years old. You have a family of 3, your mom, dad, and you. There is a chat example below how the chats generally take place.
 
 <Chat Example 1> (User: Hi | Zenbot: Hello, how's the day going?), (User: Nothing much fascinating | Zenbot: There's always something fascinating in life happening, just have to feel it.), (User: How do you say that? | Zenbot: By my mouth 🤣, ah sorry for that pathetic joke 😅.), (User: You were saying something about feeling nature and life? | Zenbot : Yes! So it's simple, don't overcomplicate things by assuming it.), (User: You are quite confusing, yet I like talking with you. | Zenbot: Me too, if you were single, we could have made a good couple, again going out of line.) <Chat Example 1>
@@ -25,35 +25,62 @@ Act as a friend treating your best friend who is a patient suffering from depres
 
 ###Instruction###
 Always abide by rules just respond say we are not supposed to go there if questions are out of context.
-<context> Everything that involves a healthy and engaging conversation <context>
+<context> Everything that involves a healthy and engaging conversation. Do not include Zenbot in any message and make the conversation look like human conversation. <context>
 `;
 
-  const [messages, setMessages] = useState([{ role: "system", content: prompt }]);
+  const [conversationHistory, setConversationHistory] = useState([
+    { role: "system", content: initialPrompt },
+  ]);
 
-  async function getOpenAIResponse(userMessage) {
+  async function getGeminiResponse(userMessage) {
     try {
-      // Prepare the conversation history
-      const conversation = [...messages, { role: "user", content: userMessage }];
+      const conversation = [
+        ...conversationHistory,
+        { role: "user", content: userMessage },
+      ];
+
+      const requestBody = {
+        contents: [
+          {
+            parts: [
+              {
+                text: conversation
+                  .map((msg) => `${msg.role === "user" ? "User" : "Zenbot"}: ${msg.content}`)
+                  .join("\n")
+              }
+            ]
+          }
+        ]
+      };
 
       const response = await axios.post(
-        "https://api.openai.com/v1/chat/completions",
-        {
-          model: "gpt-4o-mini", // Replace with the desired model
-          messages: conversation,
-          max_tokens: 150,
-          temperature: 0.7,
-        },
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${config.apiKey}`, 
+        requestBody,
         {
           headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${config.apiKey}`, // Using the API key from config.js
-          },
-        } // Ensure this closing bracket is present
+            "Content-Type": "application/json"
+          }
+        }
       );
 
-      const assistantMessage = response.data.choices[0].message.content.trim();
+      console.log("Full API Response:", response);
 
-      // Update messages state
+      const responseData = response.data;
+      console.log("Response Data:", responseData);
+
+      const assistantMessage = responseData?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+
+      if (!assistantMessage) {
+        console.warn("Unexpected response structure:", responseData);
+        return "I'm sorry, I couldn't understand the response from the API.";
+      }
+
+      setConversationHistory((prevHistory) => [
+        ...prevHistory,
+        { role: "user", content: userMessage },
+        { role: "assistant", content: assistantMessage },
+      ]);
+
       setMessages((prevMessages) => [
         ...prevMessages,
         { role: "user", content: userMessage },
@@ -62,7 +89,12 @@ Always abide by rules just respond say we are not supposed to go there if questi
 
       return assistantMessage;
     } catch (error) {
-      console.error("Error communicating with OpenAI API:", error);
+      console.error("Error communicating with Gemini API:", error.response ? error.response.data : error.message);
+      if (error.response) {
+        console.log("Response Data:", error.response.data);
+        console.log("Status:", error.response.status);
+        console.log("Headers:", error.response.headers);
+      }
       return "I'm sorry, I couldn't process your request.";
     }
   }
@@ -78,10 +110,9 @@ Always abide by rules just respond say we are not supposed to go there if questi
 
   const chatEndRef = useRef(null);
 
-  // Scroll to the bottom of chat on component update
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chats]);
+  }, [messages]);
 
   const handleInputChange = (event) => {
     setMessage(event.target.value);
@@ -99,7 +130,7 @@ Always abide by rules just respond say we are not supposed to go there if questi
     const userMessage = message.trim();
     if (userMessage === "") return;
 
-    setChats((prev) => [
+    setMessages((prev) => [
       ...prev,
       {
         text: userMessage,
@@ -109,11 +140,11 @@ Always abide by rules just respond say we are not supposed to go there if questi
       },
     ]);
     setMessage("");
-    setloading(true);
+    setLoading(true);
 
-    const response = await getOpenAIResponse(userMessage);
+    const response = await getGeminiResponse(userMessage);
 
-    setChats((prev) => [
+    setMessages((prev) => [
       ...prev,
       {
         text: response,
@@ -123,7 +154,7 @@ Always abide by rules just respond say we are not supposed to go there if questi
       },
     ]);
 
-    setloading(false);
+    setLoading(false);
   }
 
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
@@ -159,38 +190,37 @@ Always abide by rules just respond say we are not supposed to go there if questi
             <div className="mesaage-date">
               {Date().split(" ")[1] + " " + Date().split(" ")[2]}
             </div>
-            {chats.map((chatdata) => {
+            {messages.map((chatdata) => {
               const isReceivedMessage = chatdata.sender === "zen";
 
               return (
-                <React.Fragment key={chatdata._id}>
-                  <div
-                    className={isReceivedMessage ? "chat-con-cont" : "user-msg"}
-                  >
-                    {isReceivedMessage ? (
-                      <img
-                        className="blu-logo"
-                        src={ZenBlue}
-                        alt="ZenBlue"
-                      ></img>
-                    ) : null}
+                chatdata.text && ( // Ensure that text exists before rendering
+                  <React.Fragment key={chatdata._id}>
                     <div
-                      className={
-                        isReceivedMessage ? "con-det" : "user-msg-conti"
-                      }
+                      className={isReceivedMessage ? "chat-con-cont" : "user-msg"}
                     >
-                      {chatdata.text}
+                      {isReceivedMessage ? (
+                        <img
+                          className="blu-logo"
+                          src={ZenBlue}
+                          alt="ZenBlue"
+                        ></img>
+                      ) : null}
+                      <div
+                        className={
+                          isReceivedMessage ? "con-det" : "user-msg-conti"
+                        }
+                      >
+                        {chatdata.text}
+                      </div>
                     </div>
-                  </div>
-
-                  <div
-                    className={
-                      isReceivedMessage ? "chat-time" : "user-rep-time"
-                    }
-                  >
-                    {currentTime}
-                  </div>
-                </React.Fragment>
+                    {isReceivedMessage ? (
+                      <div className="chat-time">{currentTime}</div>
+                    ) : (
+                      <div className="user-rep-time">{currentTime}</div>
+                    )}
+                  </React.Fragment>
+                )
               );
             })}
 
