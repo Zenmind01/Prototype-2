@@ -1,67 +1,70 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Chats.css";
 import dashboard2 from "../Dashboard2/dashboard2.css";
-
 import { PiArrowCircleRightFill } from "react-icons/pi";
 import Cookies from "js-cookie";
-
 import Bot from "../images/bot-logo.png";
 import Back from "../images/back.png";
 import ZenBlue from "../images/zen-blue.png";
-
 import Navbar from "../Navbar/navbar";
-
-import OpenAI from "openai";
+import axios from "axios"; 
 import { Link } from "react-router-dom";
-import config from './config';
+import config from "./config"; 
 
 export const Chat = ({ id, name }) => {
   const [chats, setChats] = useState([]);
   const [loading, setloading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const apiKey_OAI = config.apiKey;
-  
-
-  //const [apiKey,setApiKey] = useState(process.env.API_SECRET);
-
-  const openai = new OpenAI({
-    apiKey: apiKey_OAI,
-    dangerouslyAllowBrowser: true,
-  });
   const prompt = `
-  Act as a friend treating your best friend who is a patient suffering from depression and Anxiety. You are a man named Zenbot and a mental health expert. You grew up in Delhi, India. You are 30 years old. You have a family of 3, your mom, dad, and you. There is a chat example below how the chats generally take place.
+Act as a friend treating your best friend who is a patient suffering from depression and anxiety. You are a man named Zenbot and a mental health expert. You grew up in Delhi, India. You are 30 years old. You have a family of 3, your mom, dad, and you. There is a chat example below how the chats generally take place.
 
-  <Chat Example 1> (User: Hi | Zenbot: Hello, How's the day going?), (User: Nothing much fascinating | Zenbot: There is always something fascinating in life happening, Just have to feel it.), (User: How do you say that? | Zenbot: By my mouth 🤣, Ah sorry for that pathetic joke 😅.), (User: You were saying something about feeling nature and life? | Zenbot : Yes! so it's simple, don't overcomplicate things by assuming it.), (User: You are quite confusing, yet I like talking with you. | Zenbot: Me too, If you were single, we could have made a good couple, again going out of line.) <Chat Example 1>
+<Chat Example 1> (User: Hi | Zenbot: Hello, how's the day going?), (User: Nothing much fascinating | Zenbot: There's always something fascinating in life happening, just have to feel it.), (User: How do you say that? | Zenbot: By my mouth 🤣, ah sorry for that pathetic joke 😅.), (User: You were saying something about feeling nature and life? | Zenbot : Yes! So it's simple, don't overcomplicate things by assuming it.), (User: You are quite confusing, yet I like talking with you. | Zenbot: Me too, if you were single, we could have made a good couple, again going out of line.) <Chat Example 1>
 
-  <Chat Example 2> (Zenbot: Hello, what's up buddy. | User: Ya, it's fine), (ZenBot: You don't seem cheerful, or is it I am being too excited to talk with you. | User: No, it's not the case, just feeling sick for the past two days.), (Zenbot: Oh, I see, so have you taken any medication? | User: No), (Zenbot: That's amazing, even I think that we can cure ourselves by just looking into the mirror 😂, Being serious you should take meds. Consulted any doc? | User: Yes I understand I should go to the doc, but I don't feel like going out and talking to peeps.), (Zenbot: Ah, I am always there for you, but medicines are necessary, you should definitely get them.) <Chat Example 2>
+<Chat Example 2> (Zenbot: Hello, what's up buddy. | User: Yeah, it's fine), (Zenbot: You don't seem cheerful, or is it I am being too excited to talk with you. | User: No, it's not the case, just feeling sick for the past two days.), (Zenbot: Oh, I see, so have you taken any medication? | User: No), (Zenbot: That's amazing, even I think that we can cure ourselves by just looking into the mirror 😂, being serious you should take meds. Consulted any doc? | User: Yes I understand I should go to the doc, but I don't feel like going out and talking to people.), (Zenbot: Ah, I am always there for you, but medicines are necessary, you should definitely get them.) <Chat Example 2>
 
-  ###Instruction###
-  Always abide by rules just respond say we are not supposed to go there if questions are out of context.
-  <context> Everything that involves a healthy and engaging conversation <context>
+###Instruction###
+Always abide by rules just respond say we are not supposed to go there if questions are out of context.
+<context> Everything that involves a healthy and engaging conversation <context>
 `;
 
-  const [messages, setMessages] = useState([prompt]);
+  const [messages, setMessages] = useState([{ role: "system", content: prompt }]);
 
-  async function openAI(message) {
-    const completion = await openai.chat.completions.create({
-      messages: [
+  async function getOpenAIResponse(userMessage) {
+    try {
+      // Prepare the conversation history
+      const conversation = [...messages, { role: "user", content: userMessage }];
+
+      const response = await axios.post(
+        "https://api.openai.com/v1/chat/completions",
         {
-          role: "system",
-          content: messages.toString(),
+          model: "gpt-4o-mini", // Replace with the desired model
+          messages: conversation,
+          max_tokens: 150,
+          temperature: 0.7,
         },
-        { role: "user", content: message },
-      ],
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${config.apiKey}`, // Using the API key from config.js
+          },
+        } // Ensure this closing bracket is present
+      );
 
-      temperature: 0.7,
-      max_tokens: 48,
-      frequency_penalty: 0.2,
-      model: "gpt-3.5-turbo-1106",
-      response_format: { type: "text" },
-    });
-    //console.log(completion.choices[0].message.content);
-    setMessages((p) => [message, ...p]);
-    return completion.choices[0].message.content;
+      const assistantMessage = response.data.choices[0].message.content.trim();
+
+      // Update messages state
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { role: "user", content: userMessage },
+        { role: "assistant", content: assistantMessage },
+      ]);
+
+      return assistantMessage;
+    } catch (error) {
+      console.error("Error communicating with OpenAI API:", error);
+      return "I'm sorry, I couldn't process your request.";
+    }
   }
 
   const open = () => {
@@ -72,17 +75,6 @@ export const Chat = ({ id, name }) => {
       a.classList.add("reset");
     }
   };
-  const containsLink = (text) => {
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    return urlRegex.test(text);
-  };
-
-  // Function to extract the link from a message
-  const extractLink = (text) => {
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const match = text.match(urlRegex);
-    return match ? match[0] : "";
-  };
 
   const chatEndRef = useRef(null);
 
@@ -90,8 +82,6 @@ export const Chat = ({ id, name }) => {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chats]);
-
-  // Add more chat users as needed
 
   const handleInputChange = (event) => {
     setMessage(event.target.value);
@@ -103,48 +93,35 @@ export const Chat = ({ id, name }) => {
     }
   };
 
-  async function sendMessage(ev, file = null) {
-    //console.log('message bhejrha hu .. . . .. . . . . . .')
+  async function sendMessage(ev) {
     if (ev) ev.preventDefault();
-    //console.log(message)
 
-    setChats((perv) => [
-      ...perv,
+    const userMessage = message.trim();
+    if (userMessage === "") return;
+
+    setChats((prev) => [
+      ...prev,
       {
-        text: message,
+        text: userMessage,
         sender: "user",
         recipient: "zen",
         _id: Date.now(),
       },
     ]);
     setMessage("");
-    console.log(chats);
     setloading(true);
-    await openAI(message).then((value) => {
-      //value = JSON.parse(value)
-      //console.log(value.response)
-      // value = value.message || value.error || value.response;
-      //console.log(typeof value + "  --> " + value);
-      setChats((prev) => [
-        ...prev,
-        {
-          text: value,
-          sender: "zen",
-          recipient: "user",
-          _id: Date.now(),
-        },
-      ]);
-    });
 
-    // setChats((prev) => [
-    //   ...prev,
-    //   {
-    //     text: "i am zen bot",
-    //     sender: "zen",
-    //     recipient: "user",
-    //     _id: Date.now(),
-    //   },
-    // ]);
+    const response = await getOpenAIResponse(userMessage);
+
+    setChats((prev) => [
+      ...prev,
+      {
+        text: response,
+        sender: "zen",
+        recipient: "user",
+        _id: Date.now(),
+      },
+    ]);
 
     setloading(false);
   }
@@ -172,9 +149,9 @@ export const Chat = ({ id, name }) => {
         <div className="chat-main">
           <div className="user-details">
             <Link to="/dashboard">
-              <img className="back-logo" src={Back}></img>
+              <img className="back-logo" src={Back} alt="Back"></img>
             </Link>
-            <img className="chat-logo" src={Bot}></img>
+            <img className="chat-logo" src={Bot} alt="Bot"></img>
 
             <div className="zenchat">ZenChat</div>
           </div>
@@ -183,17 +160,19 @@ export const Chat = ({ id, name }) => {
               {Date().split(" ")[1] + " " + Date().split(" ")[2]}
             </div>
             {chats.map((chatdata) => {
-              console.log(chatdata.sender);
-              const isReceivedMessage = chatdata.sender == "zen";
-              console.log(isReceivedMessage);
+              const isReceivedMessage = chatdata.sender === "zen";
 
               return (
-                <>
+                <React.Fragment key={chatdata._id}>
                   <div
                     className={isReceivedMessage ? "chat-con-cont" : "user-msg"}
                   >
                     {isReceivedMessage ? (
-                      <img className="blu-logo" src={ZenBlue}></img>
+                      <img
+                        className="blu-logo"
+                        src={ZenBlue}
+                        alt="ZenBlue"
+                      ></img>
                     ) : null}
                     <div
                       className={
@@ -211,28 +190,17 @@ export const Chat = ({ id, name }) => {
                   >
                     {currentTime}
                   </div>
-                </>
+                </React.Fragment>
               );
             })}
 
-            {/* <div className="user-msg">
-                  <div className="user-msg-conti">
-                    Lorem ipsum dolor sit amet, consectetur adipisc ing
-                    elitfsff.
-                  </div>
-
-                 {/* <img className="user-reep" src={ZenBlue}></img>}
-                </div>
-
-                <div className="user-msg-conti">
-                  Lorem ipsum dolor sit amet, consectetur adipisc ing elitfsff.
-                </div>
-
-                <div className="user-rep-time">08:00 pm</div> */}
-
             {loading ? (
               <div className="loading-chat">
-                <img className="loading-logo" src={ZenBlue}></img>
+                <img
+                  className="loading-logo"
+                  src={ZenBlue}
+                  alt="Loading"
+                ></img>
                 <div className="is-typing">
                   <div className="jump1"></div>
                   <div className="jump2"></div>
@@ -245,29 +213,26 @@ export const Chat = ({ id, name }) => {
             <div ref={chatEndRef} style={{ height: "0px" }} />
           </div>
 
-          {
-            <div className="message-sender">
-              <div className="typer-cont">
-                <input
-                  className="typer"
-                  type="text"
-                  placeholder="Enter Your Message Here......"
-                  value={message}
-                  onChange={handleInputChange}
-                  onKeyDown={handleKeyDown}
-                />
-                {/* <div onClick={sendMessage}>Send</div> */}
-                {/* Or use PiArrowCircleRightFill icon */}
-                <PiArrowCircleRightFill
-                  style={{ fontSize: "48px", color: "rgba(38, 215, 218, 1)" }}
-                  onClick={sendMessage}
-                />
-              </div>
+          <div className="message-sender">
+            <div className="typer-cont">
+              <input
+                className="typer"
+                type="text"
+                placeholder="Enter Your Message Here......"
+                value={message}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+              />
+              <PiArrowCircleRightFill
+                style={{ fontSize: "48px", color: "rgba(38, 215, 218, 1)" }}
+                onClick={sendMessage}
+              />
             </div>
-          }
+          </div>
         </div>
       </div>
     </>
   );
 };
+
 export default Chat;
