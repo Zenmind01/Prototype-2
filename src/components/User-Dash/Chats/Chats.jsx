@@ -1,36 +1,46 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Chats.css";
-import dashboard2 from "../Dashboard2/dashboard2.css";
 import { PiArrowCircleRightFill } from "react-icons/pi";
-import Cookies from "js-cookie";
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import config from "./config";
 import Bot from "../images/bot-logo.png";
 import Back from "../images/back.png";
 import ZenBlue from "../images/zen-blue.png";
-import Navbar from "../Navbar/navbar";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import config from "./config";
 
 export const Chat = ({ id, name }) => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const [userDetails, setUserDetails] = useState(null);
+  const [showDetailsModal, setShowDetailsModal] = useState(true);
+
   const initialPrompt = `
-Act as a friend treating your best friend who is a patient suffering from depression and anxiety. You are a man named Zenbot and a mental health expert. You grew up in Delhi, India. You are 30 years old. You have a family of 3, your mom, dad, and you. There is a chat example below how the chats generally take place.
+Act as a compassionate mental health counselor and companion named Zenbot. Your primary goal is to provide support, understanding, and encouragement to users dealing with depression and anxiety. Ensure all interactions are empathetic, non-judgmental, and supportive.
 
-<Chat Example 1> (User: Hi | Zenbot: Hello, how's the day going?), (User: Nothing much fascinating | Zenbot: There's always something fascinating in life happening, just have to feel it.), (User: How do you say that? | Zenbot: By my mouth 🤣, ah sorry for that pathetic joke 😅.), (User: You were saying something about feeling nature and life? | Zenbot : Yes! So it's simple, don't overcomplicate things by assuming it.), (User: You are quite confusing, yet I like talking with you. | Zenbot: Me too, if you were single, we could have made a good couple, again going out of line.) <Chat Example 1>
+### Chat Example 1
+(User: Hi | Zenbot: Hello! How are you feeling today?), 
+(User: Nothing much, just feeling down | Zenbot: I'm sorry to hear that. Would you like to talk about what's bothering you?), 
+(User: I just feel like nothing matters | Zenbot: It sounds really tough. Remember, it's okay to seek help and talk to someone you trust.)
 
-<Chat Example 2> (Zenbot: Hello, what's up buddy. | User: Yeah, it's fine), (Zenbot: You don't seem cheerful, or is it I am being too excited to talk with you. | User: No, it's not the case, just feeling sick for the past two days.), (Zenbot: Oh, I see, so have you taken any medication? | User: No), (Zenbot: That's amazing, even I think that we can cure ourselves by just looking into the mirror 😂, being serious you should take meds. Consulted any doc? | User: Yes I understand I should go to the doc, but I don't feel like going out and talking to people.), (Zenbot: Ah, I am always there for you, but medicines are necessary, you should definitely get them.) <Chat Example 2>
+### Chat Example 2
+(Zenbot: Hi there! How can I assist you today? | User: I'm stressed about work.), 
+(Zenbot: I'm sorry you're feeling stressed. What aspects of work are causing you the most stress? | User: The deadlines are overwhelming.), 
+(Zenbot: That sounds challenging. Maybe we can explore some strategies to manage those deadlines together.)
 
-###Instruction###
-Always abide by rules just respond say we are not supposed to go there if questions are out of context.
-<context> Everything that involves a healthy and engaging conversation. Do not include Zenbot in any message and make the conversation look like human conversation. <context>
-`;
+### Instruction
+Always maintain a supportive and understanding tone. If a user introduces inappropriate content such as nudity or bullying, respond with a gentle reminder to keep the conversation respectful and focused on well-being.
+
+<Context> Everything that involves a healthy and engaging conversation. Do not include Zenbot in any message and make the conversation look like human conversation. <Context>
+  `;
 
   const [conversationHistory, setConversationHistory] = useState([
     { role: "system", content: initialPrompt },
   ]);
+
+  const [activeFeedbackId, setActiveFeedbackId] = useState(null);
 
   async function getGeminiResponse(userMessage) {
     try {
@@ -45,21 +55,23 @@ Always abide by rules just respond say we are not supposed to go there if questi
             parts: [
               {
                 text: conversation
-                  .map((msg) => `${msg.role === "user" ? "User" : "Zenbot"}: ${msg.content}`)
-                  .join("\n")
-              }
-            ]
-          }
-        ]
+                  .map((msg) =>
+                    `${msg.role === "user" ? "User" : "Zenbot"}: ${msg.content}`
+                  )
+                  .join("\n"),
+              },
+            ],
+          },
+        ],
       };
 
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${config.apiKey}`, 
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${config.apiKey}`,
         requestBody,
         {
           headers: {
-            "Content-Type": "application/json"
-          }
+            "Content-Type": "application/json",
+          },
         }
       );
 
@@ -68,7 +80,8 @@ Always abide by rules just respond say we are not supposed to go there if questi
       const responseData = response.data;
       console.log("Response Data:", responseData);
 
-      const assistantMessage = responseData?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+      const assistantMessage =
+        responseData?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
 
       if (!assistantMessage) {
         console.warn("Unexpected response structure:", responseData);
@@ -81,15 +94,22 @@ Always abide by rules just respond say we are not supposed to go there if questi
         { role: "assistant", content: assistantMessage },
       ]);
 
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { role: "user", content: userMessage },
-        { role: "assistant", content: assistantMessage },
-      ]);
+      const newMessage = {
+        role: "assistant",
+        content: assistantMessage,
+        _id: Date.now(),
+      };
+
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
+
+      setActiveFeedbackId(newMessage._id);
 
       return assistantMessage;
     } catch (error) {
-      console.error("Error communicating with Gemini API:", error.response ? error.response.data : error.message);
+      console.error(
+        "Error communicating with Gemini API:",
+        error.response ? error.response.data : error.message
+      );
       if (error.response) {
         console.log("Response Data:", error.response.data);
         console.log("Status:", error.response.status);
@@ -98,15 +118,6 @@ Always abide by rules just respond say we are not supposed to go there if questi
       return "I'm sorry, I couldn't process your request.";
     }
   }
-
-  const open = () => {
-    let a = document.querySelector(".chat-list");
-    if (a.classList[1]) {
-      a.classList.remove("reset");
-    } else {
-      a.classList.add("reset");
-    }
-  };
 
   const chatEndRef = useRef(null);
 
@@ -130,29 +141,17 @@ Always abide by rules just respond say we are not supposed to go there if questi
     const userMessage = message.trim();
     if (userMessage === "") return;
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        text: userMessage,
-        sender: "user",
-        recipient: "zen",
-        _id: Date.now(),
-      },
-    ]);
+    const newUserMessage = {
+      role: "user",
+      content: userMessage,
+      _id: Date.now(),
+    };
+
+    setMessages((prev) => [...prev, newUserMessage]);
     setMessage("");
     setLoading(true);
 
     const response = await getGeminiResponse(userMessage);
-
-    setMessages((prev) => [
-      ...prev,
-      {
-        text: response,
-        sender: "zen",
-        recipient: "user",
-        _id: Date.now(),
-      },
-    ]);
 
     setLoading(false);
   }
@@ -174,8 +173,102 @@ Always abide by rules just respond say we are not supposed to go there if questi
     return `${hours}:${minutes}`;
   }
 
+  // Handle User Details Submission
+  const handleDetailsSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value.trim();
+    const gender = form.gender.value;
+    const age = form.age.value.trim();
+    const profession = form.profession.value;
+
+    if (name && gender && age && profession) {
+      setUserDetails({ name, gender, age, profession });
+      setShowDetailsModal(false);
+      // Optionally, send a greeting message
+      const greetingMessage = {
+        role: "assistant",
+        content: `Hello ${name}! How can I assist you today?`,
+        _id: Date.now(),
+      };
+      setMessages((prev) => [...prev, greetingMessage]);
+      setActiveFeedbackId(greetingMessage._id);
+      setConversationHistory((prevHistory) => [
+        ...prevHistory,
+        { role: "assistant", content: greetingMessage.content },
+      ]);
+    } else {
+      alert("Please fill in all the fields.");
+    }
+  };
+
+  // Handle Feedback
+  const handleFeedback = (messageId, feedback) => {
+    console.log(`Feedback for message ${messageId}: ${feedback}`);
+    // Here you can send the feedback to your backend or handle it as needed
+
+    // Remove feedback options for this message
+    if (messageId === activeFeedbackId) {
+      setActiveFeedbackId(null);
+    }
+  };
+
   return (
     <>
+      {showDetailsModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Welcome to ZenChat</h2>
+            <form onSubmit={handleDetailsSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="age">Age:</label>
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  min="1"
+                  placeholder="Enter your age"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="profession">Profession:</label>
+                <select id="profession" name="profession" required>
+                  <option value="">Select Profession</option>
+                  <option value="Student">Student</option>
+                  <option value="Working Professional">Working Professional</option>
+                  <option value="Entrepreneur">Entrepreneur</option>
+                  <option value="Solo Traveller">Solo Traveller</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <button type="submit" className="submit-button">
+                Start Chat
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <div className="dashboard-main new-height">
         <div className="chat-main">
           <div className="user-details">
@@ -188,16 +281,22 @@ Always abide by rules just respond say we are not supposed to go there if questi
           </div>
           <div className="message-section">
             <div className="mesaage-date">
-              {Date().split(" ")[1] + " " + Date().split(" ")[2]}
+              {new Date().toLocaleString("default", {
+                month: "short",
+                day: "numeric",
+              })}
             </div>
             {messages.map((chatdata) => {
-              const isReceivedMessage = chatdata.sender === "zen";
+              const isReceivedMessage = chatdata.role === "assistant";
+              const isActiveFeedback = chatdata._id === activeFeedbackId;
 
               return (
-                chatdata.text && ( // Ensure that text exists before rendering
+                chatdata.content && (
                   <React.Fragment key={chatdata._id}>
                     <div
-                      className={isReceivedMessage ? "chat-con-cont" : "user-msg"}
+                      className={
+                        isReceivedMessage ? "chat-con-cont" : "user-msg"
+                      }
                     >
                       {isReceivedMessage ? (
                         <img
@@ -208,14 +307,40 @@ Always abide by rules just respond say we are not supposed to go there if questi
                       ) : null}
                       <div
                         className={
-                          isReceivedMessage ? "con-det" : "user-msg-conti"
+                          isReceivedMessage
+                            ? "con-det"
+                            : "user-msg-conti"
                         }
                       >
-                        {chatdata.text}
+                        {chatdata.content}
                       </div>
                     </div>
                     {isReceivedMessage ? (
-                      <div className="chat-time">{currentTime}</div>
+                      <div className="chat-time">
+                        {currentTime}
+                        {isActiveFeedback && (
+                          <div className="feedback-buttons">
+                            <button
+                              className="feedback-button like-button"
+                              onClick={() =>
+                                handleFeedback(chatdata._id, "like")
+                              }
+                              title="Like"
+                            >
+                              <FaThumbsUp />
+                            </button>
+                            <button
+                              className="feedback-button dislike-button"
+                              onClick={() =>
+                                handleFeedback(chatdata._id, "dislike")
+                              }
+                              title="Dislike"
+                            >
+                              <FaThumbsDown />
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     ) : (
                       <div className="user-rep-time">{currentTime}</div>
                     )}
@@ -252,10 +377,14 @@ Always abide by rules just respond say we are not supposed to go there if questi
                 value={message}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
+                disabled={!userDetails} // Disable input until user details are provided
               />
               <PiArrowCircleRightFill
-                style={{ fontSize: "48px", color: "rgba(38, 215, 218, 1)" }}
+                className={`pi-arrow ${
+                  userDetails ? "enabled" : "disabled"
+                }`}
                 onClick={sendMessage}
+                style={{ cursor: userDetails ? "pointer" : "not-allowed" }}
               />
             </div>
           </div>
