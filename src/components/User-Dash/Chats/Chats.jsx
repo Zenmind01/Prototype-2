@@ -9,8 +9,7 @@ import Bot from "../images/bot-logo.png";
 import Back from "../images/back.png";
 import ZenBlue from "../images/zen-blue.png";
 
-const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzr9Y9VJxTU8Yd6KgPvQAORJwkMkpen0br23LjDgaV6EwJP2_ixJJhMcLqZG6IHYSEQ/exec"; // Update this with your deployment URL
-
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbzfhETs8TNSrceM0rmMNwYASSJTOHc8BH7LcD3I5hEXjbQCPHJ3p5h_H467I0EK8Akw/exec"; 
 export const Chat = ({ id, name }) => {
 
   const initialPrompt = `
@@ -207,12 +206,13 @@ export const Chat = ({ id, name }) => {
   const handleDetailsSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value.trim();
+    // Removed name field
+    const emotion = form.emotion.value;
     const gender = form.gender.value;
     const age = form.age.value.trim();
     const profession = form.profession.value;
 
-    if (name && gender && age && profession) {
+    if (emotion && gender && age && profession) {
       // Generate a unique userId on frontend
       const generatedUserId = generateUserId();
       userIdRef.current = generatedUserId; // Set the userId immediately
@@ -220,28 +220,29 @@ export const Chat = ({ id, name }) => {
       console.log("Generated UserID:", generatedUserId);
 
       // Save user details to backend without expecting a response
-      await saveUserDetails(generatedUserId, { name, gender, age, profession });
+      await saveUserDetails(generatedUserId, { emotion, gender, age, profession });
 
-      setUserDetails({ name, gender, age, profession });
+      setUserDetails({ emotion, gender, age, profession });
       setShowDetailsModal(false);
       
-      // Optionally, send a greeting message
+      // Optionally, send a greeting message based on emotion
+      const greetingContent = `I see you're feeling ${emotion}. How can I assist you today?`;
       const greetingMessage = {
         role: "assistant",
-        content: `Hello ${name}! How can I assist you today?`,
+        content: greetingContent,
         _id: Date.now(),
       };
       setMessages((prev) => [...prev, greetingMessage]);
       setActiveFeedbackId(greetingMessage._id);
       setConversationHistory((prevHistory) => [
         ...prevHistory,
-        { role: "assistant", content: greetingMessage.content },
+        { role: "assistant", content: greetingContent },
       ]);
 
       console.log("Sending greeting message with UserID:", userIdRef.current);
 
       // Save the greeting message to backend
-      await saveMessageToBackend(userIdRef.current, 'assistant', greetingMessage.content);
+      await saveMessageToBackend(userIdRef.current, 'assistant', greetingContent);
     } else {
       alert("Please fill in all the fields.");
     }
@@ -320,16 +321,21 @@ export const Chat = ({ id, name }) => {
           <div className="modal">
             <h2>Welcome to ZenChat</h2>
             <form onSubmit={handleDetailsSubmit}>
+              {/* Replaced Name Field with Emotion Dropdown */}
               <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your name"
-                  required
-                />
+                <label htmlFor="emotion">How are you feeling today?</label>
+                <select id="emotion" name="emotion" required>
+                  <option value="">Select Emotion</option>
+                  <option value="Happy">Happy</option>
+                  <option value="Sad">Sad</option>
+                  <option value="Anxious">Anxious</option>
+                  <option value="Stressed">Stressed</option>
+                  <option value="Excited">Excited</option>
+                  <option value="Angry">Angry</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
+              {/* Kept Other Fields (Gender, Age, Profession) as is */}
               <div className="form-group">
                 <label htmlFor="gender">Gender:</label>
                 <select id="gender" name="gender" required>
